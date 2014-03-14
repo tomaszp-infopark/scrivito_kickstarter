@@ -1,7 +1,7 @@
 $ ->
   # Define editor behavior for multienum attributes.
 
-  infopark.on 'editing', ->
+  scrival.on 'editing', ->
     template = (values) ->
       element = $('<select></select>')
         .attr('multiple', 'true')
@@ -18,12 +18,12 @@ $ ->
       element = $(event.currentTarget)
       cmsField = element.data('cmsField')
       content = element.val()
-      cmsField.infopark('save', content).done ->
-        cmsField.trigger('infopark_reload')
+      cmsField.scrival('save', content).done ->
+        cmsField.trigger('scrival_reload')
 
     $(document).on 'click', '[data-ip-field-type="multienum"]:not([data-editor]), [data-editor="multienum"]', (event) ->
       cmsField = $(event.currentTarget)
-      selected = cmsField.infopark('content')
+      selected = cmsField.scrival('content')
       values = cmsField.data('values')
 
       template(values)

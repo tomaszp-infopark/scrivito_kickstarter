@@ -1,15 +1,15 @@
 $ ->
   # Slider for integer values stored in a string CMS attribute.
 
-  infopark.on 'editing', ->
+  scrival.on 'editing', ->
     template = ->
       $('<div></div>')
 
     onStop = (event, ui) ->
       cmsField = $(@).data('cmsField')
       content = ui.value
-      cmsField.infopark('save', content).done ->
-        cmsField.trigger('infopark_reload')
+      cmsField.scrival('save', content).done ->
+        cmsField.trigger('scrival_reload')
 
     onSlide = (event, ui) ->
       cmsField = $(@).data('cmsField')
@@ -18,7 +18,7 @@ $ ->
 
     $('body').on 'click', '[data-editor="slider"]', (event) ->
       cmsField = $(event.currentTarget)
-      content = cmsField.infopark('content')
+      content = cmsField.scrival('content')
       min = cmsField.attr('data-min') || 1
       max = cmsField.attr('data-max') || 10
       step = cmsField.attr('data-step') || 1

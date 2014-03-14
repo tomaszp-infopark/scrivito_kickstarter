@@ -1,7 +1,7 @@
 $ ->
   # Define editor behavior for enum attributes.
 
-  infopark.on 'editing', ->
+  scrival.on 'editing', ->
     template = (values) ->
       element = $('<select></select>')
 
@@ -17,12 +17,12 @@ $ ->
       element = $(event.currentTarget)
       cmsField = element.data('cmsField')
       content = element.val()
-      cmsField.infopark('save', content).done ->
-        cmsField.trigger('infopark_reload')
+      cmsField.scrival('save', content).done ->
+        cmsField.trigger('scrival_reload')
 
     $(document).on 'click', '[data-ip-field-type="enum"]:not([data-editor]), [data-editor="enum"]', (event) ->
       cmsField = $(event.currentTarget)
-      selected = cmsField.infopark('content')
+      selected = cmsField.scrival('content')
       values = cmsField.data('values')
 
       template(values)

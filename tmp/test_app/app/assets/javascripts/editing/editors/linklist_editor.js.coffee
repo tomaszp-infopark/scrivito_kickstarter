@@ -30,7 +30,7 @@ $ ->
     lastSaved = getLastSaved(cmsField)
 
     unless JSON.stringify(value) == JSON.stringify(lastSaved)
-      cmsField.infopark('save', value).done ->
+      cmsField.scrival('save', value).done ->
         storeLastSaved(cmsField, value)
 
   # Run when clicking the '...' button inside a li.
@@ -121,7 +121,7 @@ $ ->
     save(cmsField)
 
   # Initialize linklist editor and setup event callbacks.
-  infopark.on 'new_content', (root) ->
+  scrival.on 'new_content', (root) ->
     linklistElements = $(root).find('[data-ip-field-type="linklist"]:not([data-editor]), [data-editor="linklist"]')
 
     if linklistElements.length

@@ -3,7 +3,7 @@ $ ->
 
   timeout = undefined
 
-  infopark.on 'editing', ->
+  scrival.on 'editing', ->
     template = ->
       editor = $('<div></div>')
         .addClass('text-editor')
@@ -54,7 +54,7 @@ $ ->
       if closeInput
         box.addClass('saving')
 
-      cmsField.infopark('save', content).done ->
+      cmsField.scrival('save', content).done ->
         if closeInput
           cmsField.html(content)
           disableEditMode(box)
@@ -79,7 +79,7 @@ $ ->
         .data('cmsField', cmsField)
         .insertAfter(cmsField)
         .find('textarea')
-        .val(cmsField.infopark('content') || '')
+        .val(cmsField.scrival('content') || '')
         .focusout(onBlur)
         .keyup(keyUp)
         .focus()

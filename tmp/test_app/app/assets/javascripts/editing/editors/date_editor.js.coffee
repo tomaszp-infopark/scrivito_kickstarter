@@ -1,7 +1,7 @@
 $ ->
   # Define editor behavior for date attributes.
 
-  infopark.on 'editing', ->
+  scrival.on 'editing', ->
     template = ->
       $('<input />')
         .attr('type', 'text')
@@ -21,9 +21,9 @@ $ ->
       if dateTimeText? && dateTimeText.length > 0
         dateTimeText = new Date(dateTimeText)
 
-      cmsField.infopark('save', dateTimeText)
+      cmsField.scrival('save', dateTimeText)
         .done ->
-          cmsField.trigger('infopark_reload')
+          cmsField.trigger('scrival_reload')
 
     $('body').on 'click', '[data-ip-field-type="date"]:not(.hasDatepicker):not([data-editor]), [data-editor="date"]', (event) ->
       event.preventDefault()

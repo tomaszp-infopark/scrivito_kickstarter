@@ -27,10 +27,10 @@ $ ->
     unless JSON.stringify(ids) == JSON.stringify(lastSaved)
       cmsField.addClass('saving')
 
-      cmsField.infopark('save', ids)
+      cmsField.scrival('save', ids)
         .done ->
           storeLastSaved(cmsField, ids)
-          cmsField.trigger('infopark_reload')
+          cmsField.trigger('scrival_reload')
         .fail ->
           cmsField.removeClass('saving')
 
@@ -91,7 +91,7 @@ $ ->
     $(cmsField).data('last-saved', value)
 
   # Initialize referencelist editor and setup event callbacks.
-  infopark.on 'new_content', (root) ->
+  scrival.on 'new_content', (root) ->
     elements = $(root).find('[data-ip-field-type="referencelist"]:not([data-editor]), [data-editor="referencelist"]')
 
     if elements.length

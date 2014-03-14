@@ -1,12 +1,12 @@
 $ ->
   # Integrates a mediabrowser based editor for reference CMS attributes.
 
-  infopark.on 'editing', ->
+  scrival.on 'editing', ->
     $('body').on 'click', '[data-ip-field-type="reference"]:not([data-editor]), [data-editor="reference"]', (event) ->
       event.preventDefault()
 
       cmsField = $(event.currentTarget)
-      selected = [cmsField.infopark('content')].filter (element) -> element
+      selected = [cmsField.scrival('content')].filter (element) -> element
       filters = cmsField.data('filters') || cmsField.data('filter')
 
       # Open mediabrowser with current reference selected and restrict selection to one reference.
@@ -23,9 +23,9 @@ $ ->
 
       value = selection[0] || null
 
-      cmsField.infopark('save', value)
+      cmsField.scrival('save', value)
       .done ->
-        cmsField.trigger('infopark_reload')
+        cmsField.trigger('scrival_reload')
       .fail ->
         cmsField.removeClass('saving')
 

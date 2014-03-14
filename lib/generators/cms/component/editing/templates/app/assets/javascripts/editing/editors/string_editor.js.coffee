@@ -3,7 +3,7 @@ $ ->
 
   timeout = undefined
 
-  infopark.on 'editing', ->
+  scrival.on 'editing', ->
     onKey = (event) ->
       if timeout
         clearTimeout(timeout)
@@ -19,7 +19,7 @@ $ ->
           event.stopPropagation()
           cmsField
             .off('blur')
-            .trigger('infopark_reload')
+            .trigger('scrival_reload')
         else
           timeout = setTimeout ( ->
             save(cmsField)
@@ -28,14 +28,14 @@ $ ->
     onBlur = (event) ->
       cmsField = $(event.currentTarget)
       save(cmsField).done ->
-        cmsField.trigger('infopark_reload')
+        cmsField.trigger('scrival_reload')
 
     save = (cmsField) ->
       if timeout
         clearTimeout(timeout)
 
       content = cmsField.html()
-      cmsField.infopark('save', content)
+      cmsField.scrival('save', content)
 
     $('body').on 'click', '[data-ip-field-type="string"]:not([data-editor]), [data-editor="string"]', (event) ->
       cmsField = $(event.currentTarget)

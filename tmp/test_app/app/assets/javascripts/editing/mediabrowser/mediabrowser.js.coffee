@@ -102,7 +102,7 @@
 
   _prepareQuery: (query) ->
     params = $.extend(true, {}, query.query())
-    infopark.chainable_search.create_instance(params)
+    scrival.chainable_search.create_instance(params)
       .order('_last_changed')
       .reverse_order()
       .format('mediabrowser')
@@ -119,7 +119,7 @@
       item = @_getItemContainer(id)
       @_itemLoading(item)
 
-      infopark.delete_obj(id).then =>
+      scrival.delete_obj(id).then =>
         @modal.trigger('resource_change.mediabrowser')
         item.remove()
 

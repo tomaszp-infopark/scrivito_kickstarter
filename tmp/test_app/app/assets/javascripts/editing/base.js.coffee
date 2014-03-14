@@ -2,7 +2,7 @@ $ ->
   # The "editing" event is only fired, when an editable working copy is selected. The callback
   # allows different styling based on whether the published or an editable working copy is selected.
 
-  infopark.on 'editing', ->
+  scrival.on 'editing', ->
     $('body').addClass('ip_editable_workspace')
 
 
@@ -12,10 +12,10 @@ $ ->
   # click on the menu item 'Deactivate in-place editing' to deactivate it.
 
   $('a#edit-toggle').on 'click', ->
-    if infopark.gui.is_open()
-      infopark.gui.close()
+    if scrival.gui.is_open()
+      scrival.gui.close()
     else
-      infopark.gui.open()
+      scrival.gui.open()
 
 
   # Define available filters for the mediabrowser.
@@ -32,17 +32,17 @@ $ ->
   #     images: {
   #       title: 'Images',
   #       icon: 'editing-icon-image',
-  #       query: infopark.obj_where('_obj_class', 'equals', 'Image')
+  #       query: scrival.obj_where('_obj_class', 'equals', 'Image')
   #     }
   #   }
   Mediabrowser.filters = ->
     'images':
       title: 'Images'
-      query: infopark.obj_where('_obj_class', 'equals', 'Image')
+      query: scrival.obj_where('_obj_class', 'equals', 'Image')
       icon: 'editing-icon-image'
     'videos':
       title: 'Videos'
-      query: infopark.obj_where('_obj_class', 'equals', 'Video')
+      query: scrival.obj_where('_obj_class', 'equals', 'Video')
     'error_pages':
       title: 'Error Pages'
-      query: infopark.obj_where('_obj_class', 'equals', 'ErrorPage')
+      query: scrival.obj_where('_obj_class', 'equals', 'ErrorPage')

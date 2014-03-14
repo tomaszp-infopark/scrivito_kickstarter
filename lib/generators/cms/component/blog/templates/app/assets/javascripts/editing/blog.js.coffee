@@ -1,7 +1,7 @@
 $ ->
   # When in-place editing is active and the editor is in an editable working
   # copy, a button is inserted to be able to create a new blog post.
-  infopark.on 'editing', ->
+  scrival.on 'editing', ->
     # Create a new DOM element for the button, that allows editors to create a
     # new blog post in place.
     button = $('<button />')
