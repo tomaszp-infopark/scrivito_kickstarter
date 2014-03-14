@@ -1,0 +1,2 @@
+class TwoColumnWidget < Widget
+end

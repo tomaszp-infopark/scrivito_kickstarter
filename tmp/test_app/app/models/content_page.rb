@@ -1,0 +1,2 @@
+class ContentPage < Obj
+end

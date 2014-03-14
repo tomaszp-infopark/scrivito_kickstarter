@@ -1,0 +1,2 @@
+class SearchPage < Obj
+end

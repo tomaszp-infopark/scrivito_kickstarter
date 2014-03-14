@@ -1,0 +1,2 @@
+class ThreeColumnWidget < Widget
+end

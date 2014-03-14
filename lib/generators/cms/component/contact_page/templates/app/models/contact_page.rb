@@ -1,0 +1,2 @@
+class ContactPage < Obj
+end
