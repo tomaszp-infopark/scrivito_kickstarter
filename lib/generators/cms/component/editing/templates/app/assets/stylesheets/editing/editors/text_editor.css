@@ -1,4 +1,4 @@
-body.ip_editing_active.ip_editable_workspace .text-editor.saving {
+body.scrival_editing_active.scrival_editable_workspace .text-editor.saving {
   opacity: 0.4;
   filter: alpha(opacity=40);
   -webkit-background-size: 40px 40px;
@@ -18,11 +18,11 @@ body.ip_editing_active.ip_editable_workspace .text-editor.saving {
   animation: progress-bar-stripes 1s linear infinite;
 }
 
-body.ip_editing_active.ip_editable_workspace .text-editor.saving textarea {
+body.scrival_editing_active.scrival_editable_workspace .text-editor.saving textarea {
   opacity: 0.1;
   filter: alpha(opacity=10);
 }
 
-body.ip_editing_active.ip_editable_workspace .text-editor textarea {
+body.scrival_editing_active.scrival_editable_workspace .text-editor textarea {
   width: 98%;
 }

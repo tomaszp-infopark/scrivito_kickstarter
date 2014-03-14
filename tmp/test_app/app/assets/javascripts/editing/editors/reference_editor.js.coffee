@@ -2,7 +2,7 @@ $ ->
   # Integrates a mediabrowser based editor for reference CMS attributes.
 
   scrival.on 'editing', ->
-    $('body').on 'click', '[data-ip-field-type="reference"]:not([data-editor]), [data-editor="reference"]', (event) ->
+    $('body').on 'click', '[data-scrival-field-type="reference"]:not([data-editor]), [data-editor="reference"]', (event) ->
       event.preventDefault()
 
       cmsField = $(event.currentTarget)

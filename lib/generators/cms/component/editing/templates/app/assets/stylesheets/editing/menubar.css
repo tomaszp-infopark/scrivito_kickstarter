@@ -16,10 +16,10 @@ a#edit-toggle:hover {
   color: #6e84a8;
 }
 
-body.ip_editing_active {
+body.scrival_editing_active {
   padding-top: 47px;
 }
 
-body.ip_editing_active #edit-toggle {
+body.scrival_editing_active #edit-toggle {
   display: none;
 }

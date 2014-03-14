@@ -20,7 +20,7 @@ $ ->
       cmsField.scrival('save', content).done ->
         cmsField.trigger('scrival_reload')
 
-    $(document).on 'click', '[data-ip-field-type="enum"]:not([data-editor]), [data-editor="enum"]', (event) ->
+    $(document).on 'click', '[data-scrival-field-type="enum"]:not([data-editor]), [data-editor="enum"]', (event) ->
       cmsField = $(event.currentTarget)
       selected = cmsField.scrival('content')
       values = cmsField.data('values')

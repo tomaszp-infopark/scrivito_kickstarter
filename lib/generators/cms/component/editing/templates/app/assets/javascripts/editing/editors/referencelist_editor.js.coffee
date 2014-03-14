@@ -18,7 +18,7 @@ $ ->
 
   # Returns the closest referencelist DOM element.
   getCmsField = (element) ->
-    element.closest('[data-ip-field-type=referencelist]')
+    element.closest('[data-scrival-field-type=referencelist]')
 
   # Saves the referencelist to the CMS when changed and stores the last successfully saved value.
   save = (ids, cmsField) ->
@@ -92,7 +92,7 @@ $ ->
 
   # Initialize referencelist editor and setup event callbacks.
   scrival.on 'new_content', (root) ->
-    elements = $(root).find('[data-ip-field-type="referencelist"]:not([data-editor]), [data-editor="referencelist"]')
+    elements = $(root).find('[data-scrival-field-type="referencelist"]:not([data-editor]), [data-editor="referencelist"]')
 
     if elements.length
       transform(elements)

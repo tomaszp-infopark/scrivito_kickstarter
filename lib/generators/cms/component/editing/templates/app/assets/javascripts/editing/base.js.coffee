@@ -3,7 +3,7 @@ $ ->
   # allows different styling based on whether the published or an editable working copy is selected.
 
   scrival.on 'editing', ->
-    $('body').addClass('ip_editable_workspace')
+    $('body').addClass('scrival_editable_workspace')
 
 
   # Activate or deactivate in-place editing.

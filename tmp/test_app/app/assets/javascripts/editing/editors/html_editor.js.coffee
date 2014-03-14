@@ -127,7 +127,7 @@ $ ->
 
   # Registers Redactor for all CMS html attributes found in the given scope of the DOM element.
   addOnclickRedactorHandlers = (domElement) ->
-    domElement.on 'click', '[data-ip-field-type="html"]:not([data-editor]), [data-editor="html"]', (event) ->
+    domElement.on 'click', '[data-scrival-field-type="html"]:not([data-editor]), [data-editor="html"]', (event) ->
       event.preventDefault()
       cmsField = $(@)
 

@@ -25,7 +25,7 @@ $ ->
         .done ->
           cmsField.trigger('scrival_reload')
 
-    $('body').on 'click', '[data-ip-field-type="date"]:not(.hasDatepicker):not([data-editor]), [data-editor="date"]', (event) ->
+    $('body').on 'click', '[data-scrival-field-type="date"]:not(.hasDatepicker):not([data-editor]), [data-editor="date"]', (event) ->
       event.preventDefault()
 
       cmsField = $(this)

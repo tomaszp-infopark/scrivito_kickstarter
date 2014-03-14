@@ -22,7 +22,7 @@ $ ->
 
   # Returns the closest linklist DOM element.
   getCmsField = (element) ->
-    element.closest('[data-ip-field-type=linklist]')
+    element.closest('[data-scrival-field-type=linklist]')
 
   # Saves the entire linklist to the CMS and stores the last successfully saved value.
   save = (cmsField) ->
@@ -122,7 +122,7 @@ $ ->
 
   # Initialize linklist editor and setup event callbacks.
   scrival.on 'new_content', (root) ->
-    linklistElements = $(root).find('[data-ip-field-type="linklist"]:not([data-editor]), [data-editor="linklist"]')
+    linklistElements = $(root).find('[data-scrival-field-type="linklist"]:not([data-editor]), [data-editor="linklist"]')
 
     if linklistElements.length
       transformLinks(linklistElements)

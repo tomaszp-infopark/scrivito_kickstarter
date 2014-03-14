@@ -37,7 +37,7 @@ $ ->
       content = cmsField.html()
       cmsField.scrival('save', content)
 
-    $('body').on 'click', '[data-ip-field-type="string"]:not([data-editor]), [data-editor="string"]', (event) ->
+    $('body').on 'click', '[data-scrival-field-type="string"]:not([data-editor]), [data-editor="string"]', (event) ->
       cmsField = $(event.currentTarget)
 
       unless cmsField.attr('contenteditable')?

@@ -18,7 +18,7 @@ $ ->
       element.closest('.text-editor')
 
     editMarker = (cmsField) ->
-      cmsField.closest('[data-ip-private-widget-obj-class]').find('.ip_editing_marker')
+      cmsField.closest('[data-scrival-private-widget-obj-class]').find('.scrival_editing_marker')
 
     disableEditMode = (box) ->
       cmsField = box.data('cmsField')
@@ -69,7 +69,7 @@ $ ->
     onBlur = (event) ->
       save(event, true)
 
-    $('body').on 'click', '[data-ip-field-type="text"]:not([data-editor]), [data-editor="text"]', (event) ->
+    $('body').on 'click', '[data-scrival-field-type="text"]:not([data-editor]), [data-editor="text"]', (event) ->
       event.preventDefault()
       event.stopPropagation()
 
