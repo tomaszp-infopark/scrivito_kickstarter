@@ -1,4 +1,4 @@
-class FlickrWidget < ::RailsConnector::Migration
+class FlickrWidget < ::Scrival::Migration
   def up
     create_obj_class(
       name: 'FlickrWidget',

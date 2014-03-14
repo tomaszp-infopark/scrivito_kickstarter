@@ -58,7 +58,7 @@ $ ->
 
     true
 
-  # Transforms an obj id into an url that can be parsed by the RailsConnector
+  # Transforms an obj id into an url that can be parsed by Scrival
   # to establish an internal link.
   buildUrl = (id) ->
     "/#{id}"

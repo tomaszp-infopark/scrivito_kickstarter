@@ -1,4 +1,4 @@
-class TwoColumnWidget < ::RailsConnector::Migration
+class TwoColumnWidget < ::Scrival::Migration
   def up
     create_obj_class(
       name: 'TwoColumnWidget',

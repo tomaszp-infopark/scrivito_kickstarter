@@ -1,4 +1,4 @@
-class CreateStructure < ::RailsConnector::Migration
+class CreateStructure < ::Scrival::Migration
   def up
     homepage_path = '/en'
     configuration_path = "#{homepage_path}/_configuration"
@@ -44,17 +44,17 @@ class CreateStructure < ::RailsConnector::Migration
 
   def try_update_obj_class(id, attributes)
     update_obj_class(id, attributes)
-  rescue RailsConnector::ClientError => error
+  rescue Scrival::ClientError => error
   end
 
   def try_create_obj(attributes = {})
     Obj.create(attributes)
-  rescue RailsConnector::ClientError => error
+  rescue Scrival::ClientError => error
   end
 
   def try_update_obj(obj, attributes = {})
     obj.update(attributes)
-  rescue RailsConnector::ClientError => error
+  rescue Scrival::ClientError => error
   end
 
   def destroy_obj_by_path(path)
@@ -65,6 +65,6 @@ class CreateStructure < ::RailsConnector::Migration
     else
       puts "[delete obj] The object at '#{path}' does not exist."
     end
-  rescue RailsConnector::ClientError => error
+  rescue Scrival::ClientError => error
   end
 end

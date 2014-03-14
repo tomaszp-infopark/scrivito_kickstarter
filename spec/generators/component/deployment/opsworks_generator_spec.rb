@@ -21,15 +21,15 @@ describe Cms::Generators::Component::Deployment::OpsworksGenerator do
     mkdir_p(initializers_path)
 
     File.open("#{destination_root}/Gemfile", 'w')
-    File.open("#{initializers_path}/rails_connector.rb", 'w')
+    File.open("#{initializers_path}/scrival.rb", 'w')
   end
 
   it 'creates initializer file' do
     destination_root.should have_structure {
       directory 'config' do
         directory 'initializers' do
-          file 'rails_connector.rb' do
-            contains 'RailsConnector::Configuration.cache_path = "/tmp/cache/#{Rails.root.basename}"'
+          file 'scrival.rb' do
+            contains 'Scrival::Configuration.cache_path = "/tmp/cache/#{Rails.root.basename}"'
           end
         end
 

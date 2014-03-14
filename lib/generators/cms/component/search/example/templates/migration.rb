@@ -1,4 +1,4 @@
-class SearchExample < ::RailsConnector::Migration
+class SearchExample < ::Scrival::Migration
   def up
     search_page = Obj.create(
       _path: '/en/_configuration/search',

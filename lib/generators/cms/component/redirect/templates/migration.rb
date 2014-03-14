@@ -1,4 +1,4 @@
-class Redirect < ::RailsConnector::Migration
+class Redirect < ::Scrival::Migration
   def up
     create_obj_class(
       name: 'Redirect',

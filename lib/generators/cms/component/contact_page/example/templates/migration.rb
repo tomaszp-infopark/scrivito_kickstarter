@@ -1,4 +1,4 @@
-class ContactPageExample < ::RailsConnector::Migration
+class ContactPageExample < ::Scrival::Migration
   def up
     Obj.create(
       _path: '/en/contact',

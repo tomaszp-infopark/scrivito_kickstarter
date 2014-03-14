@@ -5,7 +5,7 @@ require 'open-uri'
 OpenURI::Buffer.send :remove_const, 'StringMax'
 OpenURI::Buffer.const_set 'StringMax', 0
 
-class TextImageWidgetExample < RailsConnector::Migration
+class TextImageWidgetExample < Scrival::Migration
   def up
     asset_url = 'http://lorempixel.com/400/120/abstract'
 
@@ -36,9 +36,9 @@ class TextImageWidgetExample < RailsConnector::Migration
   private
 
   def add_widget(obj, attribute, widget_params)
-    workspace_id = RailsConnector::Workspace.current.id
-    obj_params = RailsConnector::CmsRestApi.get("workspaces/#{workspace_id}/objs/#{obj.id}")
-    widget_id = RailsConnector::BasicObj.generate_widget_pool_id
+    workspace_id = Scrival::Workspace.current.id
+    obj_params = Scrival::CmsRestApi.get("workspaces/#{workspace_id}/objs/#{obj.id}")
+    widget_id = Scrival::BasicObj.generate_widget_pool_id
 
     params = {}
     params['_widget_pool'] = { widget_id => widget_params }

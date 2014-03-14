@@ -36,7 +36,7 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem "infopark_cloud_connector"
+gem "scrival_sdk"
 group :test, :development do
   gem "scrival_kickstarter", :path => "../../"
 end

@@ -42,7 +42,7 @@ describe Cms::Generators::Component::EditingGenerator do
     File.open("#{layouts_path}/application.html.haml", 'w') { |file| file.write("  %body{body_attributes(@obj)}\n") }
     File.open("#{config_path}/routes.rb", 'w') { |file| file.write('Dummy::Application.routes.draw do') }
     File.open("#{config_path}/application.rb", 'w') { |file| file.write("# config.time_zone = 'Central Time (US & Canada)'") }
-    File.open("#{initializers_path}/rails_connector.rb", 'w')
+    File.open("#{initializers_path}/scrival.rb", 'w')
   end
 
   it 'creates files' do
@@ -121,8 +121,8 @@ describe Cms::Generators::Component::EditingGenerator do
 
       directory 'config' do
         directory 'initializers' do
-          file 'rails_connector.rb' do
-            contains "RailsConnector::Configuration.register_obj_format('mediabrowser')"
+          file 'scrival.rb' do
+            contains "Scrival::Configuration.register_obj_format('mediabrowser')"
           end
         end
 

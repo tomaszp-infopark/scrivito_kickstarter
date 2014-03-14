@@ -1,9 +1,9 @@
-require File.join(Rails.root + 'lib/rails_connector/cms_definitions')
+require File.join(Rails.root + 'lib/scrival/cms_definitions')
 
 # This class represents the base class of all CMS objects and implements behavior that all CMS
 # objects have in common.
-class Obj < ::RailsConnector::BasicObj
-  include RailsConnector::CmsDefinitions
+class Obj < ::Scrival::BasicObj
+  include Scrival::CmsDefinitions
 
   def self.homepage
     default_homepage

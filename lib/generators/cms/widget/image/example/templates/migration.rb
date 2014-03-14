@@ -1,6 +1,6 @@
 require 'open-uri'
 
-class ImageWidgetExample < RailsConnector::Migration
+class ImageWidgetExample < Scrival::Migration
   def up
     asset_url = 'http://lorempixel.com/1170/400/abstract'
 
@@ -17,9 +17,9 @@ class ImageWidgetExample < RailsConnector::Migration
   private
 
   def add_widget(obj, attribute, widget_params)
-    workspace_id = RailsConnector::Workspace.current.id
-    obj_params = RailsConnector::CmsRestApi.get("workspaces/#{workspace_id}/objs/#{obj.id}")
-    widget_id = RailsConnector::BasicObj.generate_widget_pool_id
+    workspace_id = Scrival::Workspace.current.id
+    obj_params = Scrival::CmsRestApi.get("workspaces/#{workspace_id}/objs/#{obj.id}")
+    widget_id = Scrival::BasicObj.generate_widget_pool_id
 
     params = {}
     params['_widget_pool'] = { widget_id => widget_params }

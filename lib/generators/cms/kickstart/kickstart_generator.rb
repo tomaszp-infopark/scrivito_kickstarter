@@ -54,7 +54,7 @@ module Cms
         destination = '.gitignore'
 
         if File.exist?(destination)
-          append_file(destination, "config/rails_connector.yml\n")
+          append_file(destination, "config/scrival.yml\n")
         end
       end
 
