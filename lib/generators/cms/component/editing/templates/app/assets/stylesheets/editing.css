@@ -11,6 +11,7 @@
  *= require jquery.ui.datepicker
  *= require jquery.ui.slider
  *= require jquery-ui-timepicker-addon.min
+ *= require scrival
  *= require_self
  *= require_tree ./editing
  */
