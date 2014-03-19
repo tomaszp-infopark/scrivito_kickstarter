@@ -15,14 +15,10 @@ describe Cms::Generators::Component::EditingGenerator do
   end
 
   def prepare_environments
-    javascripts_path = "#{destination_root}/app/assets/javascripts"
-    stylesheets_path = "#{destination_root}/app/assets/stylesheets"
     environments_path = "#{destination_root}/config/environments"
     layouts_path = "#{destination_root}/app/views/layouts"
     config_path = "#{destination_root}/config"
 
-    mkdir_p(javascripts_path)
-    mkdir_p(stylesheets_path)
     mkdir_p(environments_path)
     mkdir_p(layouts_path)
     mkdir_p(config_path)
@@ -39,10 +35,8 @@ describe Cms::Generators::Component::EditingGenerator do
         directory 'assets' do
           directory 'stylesheets' do
             directory 'editing' do
-              file 'base.css'
-              file 'icons.css.erb'
-              file 'base.css'
-              file 'menubar.css'
+              file 'dialog.css'
+              file 'edit_toggle.css'
             end
 
             file 'editing.css' do
@@ -52,7 +46,7 @@ describe Cms::Generators::Component::EditingGenerator do
 
           directory 'javascripts' do
             directory 'editing' do
-              file 'base.js.coffee'
+              file 'edit_toggle.js.coffee'
               file 'mediabrowser_filters.js.coffee'
             end
 
@@ -62,16 +56,12 @@ describe Cms::Generators::Component::EditingGenerator do
           end
         end
 
-        directory 'helpers' do
-          file 'editing_helper.rb'
-        end
-
         directory 'views' do
           directory 'layouts' do
-            file '_menubar.html.haml'
+            file '_edit_toggle.html.haml'
 
             file 'application.html.haml' do
-              contains "    = render('layouts/menubar', current_user: current_user)"
+              contains "    = render('layouts/edit_toggle', current_user: current_user)"
             end
           end
 
