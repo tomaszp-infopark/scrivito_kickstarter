@@ -5,7 +5,7 @@ module Cms
         source_root File.expand_path('../templates', __FILE__)
 
         def install_gems
-          gem('scrival_editors', path: '../../../scrival_editors')
+          gem('scrival_editors')
 
           Bundler.with_clean_env do
             run('bundle --quiet')

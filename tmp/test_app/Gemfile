@@ -43,7 +43,7 @@ end
 
 gem "haml-rails"
 gem "utf8-cleaner"
-gem "scrival_editors", :path => "../../../scrival_editors"
+gem "scrival_editors"
 gem "gravatar_image_tag"
 gem "momentjs-rails"
 gem "whenever", :require => false

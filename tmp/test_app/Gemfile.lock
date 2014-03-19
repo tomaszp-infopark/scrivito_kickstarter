@@ -6,15 +6,6 @@ PATH
       rails
       scrival_sdk
 
-PATH
-  remote: ../../../scrival_editors
-  specs:
-    scrival_editors (0.0.1)
-      coffee-rails
-      jquery-ui-rails
-      railties
-      scrival_sdk
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -117,6 +108,11 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    scrival_editors (0.0.1)
+      coffee-rails
+      jquery-ui-rails
+      railties
+      scrival_sdk
     scrival_sdk (7.1.0.516.206132828)
       addressable (~> 2.3.2)
       jquery-rails (~> 2.2.1)
@@ -156,7 +152,7 @@ DEPENDENCIES
   projekktor-rails
   rails (= 3.2.17)
   sass-rails (~> 3.2.3)
-  scrival_editors!
+  scrival_editors
   scrival_kickstarter!
   scrival_sdk
   uglifier (>= 1.0.3)
