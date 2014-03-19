@@ -1,4 +1,8 @@
 # v1.0.0
+  * Removed JavaScript editors and the media browser and inserted the gem `Scrival Editors` instead,
+    to get that functionality. This allows much easier updates of these components and removes
+    many more complex files from a starting project.
+  * Renamed `menubar` to `edit_toggle` which describes better, what it actually does.
   * Update blog posts to edit the author and date in-place instead of on the property view.
   * Added a slider editor for CMS string attributes that represent an integer. The slider editor
     allows to set the min, max and step value and uses jQuery UI. Simply use `data-editor="slider"`

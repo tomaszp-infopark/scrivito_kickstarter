@@ -10,11 +10,7 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery.ui.sortable
-//= require jquery.ui.datepicker
-//= require jquery.ui.slider
-//= require jquery-ui-timepicker-addon.min
-//= require redactor
+//= require scrival_editors
 //= require moment
 //= require_self
 //= require_tree ./editing

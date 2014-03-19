@@ -4,26 +4,8 @@ module Cms
       class EditingGenerator < ::Rails::Generators::Base
         source_root File.expand_path('../templates', __FILE__)
 
-        SUPPORTED_EDITORS = %w(redactor)
-
-        class_option :editor,
-          type: :string,
-          default: SUPPORTED_EDITORS.first,
-          desc: "Select what html editor to use. (#{SUPPORTED_EDITORS.join(' | ')})"
-
-        def validate_editor
-          unless SUPPORTED_EDITORS.include?(editor)
-            puts 'Please choose a supported editor. See options for more details.'
-            puts
-
-            self.class.help(self)
-
-            exit
-          end
-        end
-
         def install_gems
-          gem('jquery-ui-rails')
+          gem('scrival_editors')
 
           Bundler.with_clean_env do
             run('bundle --quiet')
@@ -32,7 +14,6 @@ module Cms
 
         def create_common_files
           directory('app')
-          directory('vendor')
         end
 
         def set_timezone
@@ -65,25 +46,12 @@ module Cms
 
           data = []
 
-          data << "    = render('layouts/menubar', current_user: current_user)\n"
+          data << "    = render('layouts/edit_toggle', current_user: current_user)\n"
           data << ''
 
           data = data.join("\n")
 
           insert_into_file(file, data, after: insert_point)
-        end
-
-        def append_configuration
-          destination = File.join(destination_root, 'config', 'initializers', 'scrival.rb')
-
-          append_file(destination) do
-            File.read(find_in_source_paths('scrival.rb'))
-          end
-        end
-
-        def run_generator_for_selected_editor
-          Rails::Generators.invoke("cms:component:editing:#{editor}", [], behavior: behavior)
-          Rails::Generators.invoke('cms:component:editing:mediabrowser', [], behavior: behavior)
         end
 
         private
