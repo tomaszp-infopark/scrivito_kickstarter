@@ -46,7 +46,7 @@ module Cms
 
           data = []
 
-          data << "    = render('layouts/menubar', current_user: current_user)\n"
+          data << "    = render('layouts/edit_toggle', current_user: current_user)\n"
           data << ''
 
           data = data.join("\n")
