@@ -13,8 +13,10 @@ module Cms
             '  end',
             '',
             '  def breadcrumbs',
-            '    list = ancestors.select { |obj| obj.respond_to?(:show_in_navigation?) && obj.show_in_navigation? }',
-            '    list + [self]',
+            '    @breadcrumbs ||= begin',
+            '      breadcrumbs = ancestors.select { |obj| obj.respond_to?(:show_in_navigation?) && obj.show_in_navigation? }',
+            '      breadcrumbs + [self]',
+            '    end',
             '  end',
             '',
           ].join("\n")
