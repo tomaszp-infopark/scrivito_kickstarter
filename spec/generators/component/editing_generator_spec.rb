@@ -56,6 +56,10 @@ describe Cms::Generators::Component::EditingGenerator do
           end
         end
 
+        directory 'helpers' do
+          file 'editing_helper.rb'
+        end
+
         directory 'views' do
           directory 'layouts' do
             file '_edit_toggle.html.haml'
