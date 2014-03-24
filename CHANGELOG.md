@@ -1,4 +1,5 @@
 # v1.0.0
+  * The homepage headline is now editable in place, instead of on the property view only.
   * Breadcrumbs access is now memoized for better performance on pages like the search result page,
     where breadcrumbs of one object are potentially displayed multiple times.
   * Removed JavaScript editors and the media browser and inserted the gem `Scrival Editors` instead,
