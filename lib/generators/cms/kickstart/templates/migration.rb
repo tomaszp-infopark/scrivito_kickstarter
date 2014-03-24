@@ -39,6 +39,10 @@ class Kickstart < ::Scrival::Migration
           name: 'locale',
           type: :string,
         },
+        {
+          name: 'child_order',
+          type: :referencelist,
+        },
       ]
     )
 

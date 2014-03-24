@@ -1,4 +1,6 @@
 # v1.0.0
+  * Add `child_order` referencelist attribut to the homepage to allow to sort child elements in
+    place. (Thanks @kostia)
   * The homepage headline is now editable in place, instead of on the property view only.
   * Breadcrumbs access is now memoized for better performance on pages like the search result page,
     where breadcrumbs of one object are potentially displayed multiple times.
