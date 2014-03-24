@@ -1,4 +1,6 @@
 # v1.0.0
+  * Breadcrumbs access is now memoized for better performance on pages like the search result page,
+    where breadcrumbs of one object are potentially displayed multiple times.
   * Removed JavaScript editors and the media browser and inserted the gem `Scrival Editors` instead,
     to get that functionality. This allows much easier updates of these components and removes
     many more complex files from a starting project.
