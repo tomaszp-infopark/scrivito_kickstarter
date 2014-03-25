@@ -6,7 +6,7 @@ module Cms
 
         source_root File.expand_path('../templates', __FILE__)
 
-        def create_migration
+        def migrations
           migration_template('migration.rb', 'cms/migrate/vimeo_widget.rb')
         rescue Rails::Generators::Error
         end

@@ -40,7 +40,7 @@ module Cms
           insert_into_file(file, data, before: insert_point)
         end
 
-        def create_migration
+        def migrations
           migration_template('migration.rb', 'cms/migrate/video_widget.rb')
         rescue Rails::Generators::Error
         end

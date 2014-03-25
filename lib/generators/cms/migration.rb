@@ -8,17 +8,8 @@ module Cms
 
       module ClassMethods
         def next_migration_number(dirname)
-          migration_paths = Dir.glob([
-            Rails.root + 'cms/migrate',
-            Rails.root + 'app/widgets/**/migrate/',
-          ])
-
-          ids = migration_paths.inject([]) do |ids, dirname|
-            ids << current_migration_number(dirname)
-          end
-
+          max = current_migration_number(Rails.root + 'cms/migrate').to_i
           timestamp = [Time.now.utc.strftime("%Y%m%d%H%M%S"), "%.14d"].max.to_i
-          max = ids.max.to_i
 
           while max >= timestamp do
             timestamp += 1

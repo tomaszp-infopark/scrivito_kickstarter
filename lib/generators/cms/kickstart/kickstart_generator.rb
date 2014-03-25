@@ -60,7 +60,7 @@ module Cms
 
       def create_structure_migration_file
         # TODO: remove special migration once the CMS tenant is properly reset after signup.
-        migration_template('create_image.rb', 'cms/migrate/create_image')
+        migration_template('create_image.rb', 'cms/migrate/create_image.rb')
 
         migration_template('migration.rb', 'cms/migrate/kickstart.rb')
         migration_template('create_structure.rb', 'cms/migrate/create_structure.rb')
