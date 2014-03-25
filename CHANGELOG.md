@@ -1,4 +1,5 @@
 # v1.0.0
+  * Updated to Ruby on Rails version 4.
   * Add `child_order` referencelist attribut to the homepage to allow to sort child elements in
     place. (Thanks @kostia)
   * The homepage headline is now editable in place, instead of on the property view only.
