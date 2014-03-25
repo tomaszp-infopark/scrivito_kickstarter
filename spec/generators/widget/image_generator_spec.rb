@@ -29,13 +29,11 @@ describe Cms::Generators::Widget::ImageGenerator do
           end
         end
 
-        directory 'widgets' do
+        directory 'views' do
           directory 'image_widget' do
-            directory 'views' do
-              file 'show.html.haml'
-              file 'edit.html.haml'
-              file 'thumbnail.html.haml'
-            end
+            file 'show.html.haml'
+            file 'edit.html.haml'
+            file 'thumbnail.html.haml'
           end
         end
 

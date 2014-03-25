@@ -16,14 +16,12 @@ describe Cms::Generators::Widget::ThreeColumnGenerator do
   it 'creates files' do
     destination_root.should have_structure {
       directory 'app' do
-        directory 'widgets' do
+        directory 'views' do
           directory 'three_column_widget' do
-            directory 'views' do
-              file 'show.html.haml'
-              file 'edit.html.haml'
-              file 'thumbnail.html.haml' do
-                contains '.editing-icon-3cols'
-              end
+            file 'show.html.haml'
+            file 'edit.html.haml'
+            file 'thumbnail.html.haml' do
+              contains '.editing-icon-3cols'
             end
           end
         end

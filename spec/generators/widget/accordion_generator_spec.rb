@@ -29,21 +29,17 @@ describe Cms::Generators::Widget::AccordionGenerator do
           end
         end
 
-        directory 'widgets' do
+        directory 'views' do
           directory 'accordion_widget' do
-            directory 'views' do
-              file 'show.html.haml'
-              file 'thumbnail.html.haml'
-              no_file 'edit.html.haml'
-            end
+            file 'show.html.haml'
+            file 'thumbnail.html.haml'
+            no_file 'edit.html.haml'
           end
 
           directory 'accordion_panel_widget' do
-            directory 'views' do
-              file 'show.html.haml'
-              file 'thumbnail.html.haml'
-              file 'edit.html.haml'
-            end
+            file 'show.html.haml'
+            file 'thumbnail.html.haml'
+            file 'edit.html.haml'
           end
         end
 
