@@ -43,13 +43,13 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem "scrival_sdk"
+gem "scrival_editors"
 group :test, :development do
   gem "scrival_kickstarter", path: "../../"
 end
 
 gem "haml-rails"
 gem "utf8-cleaner"
-gem "scrival_editors"
 gem "gravatar_image_tag"
 gem "momentjs-rails"
 gem "whenever", require: false

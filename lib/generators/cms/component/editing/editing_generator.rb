@@ -4,14 +4,6 @@ module Cms
       class EditingGenerator < ::Rails::Generators::Base
         source_root File.expand_path('../templates', __FILE__)
 
-        def install_gems
-          gem('scrival_editors')
-
-          Bundler.with_clean_env do
-            run('bundle --quiet')
-          end
-        end
-
         def create_common_files
           directory('app')
         end

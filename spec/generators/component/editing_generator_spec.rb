@@ -23,7 +23,6 @@ describe Cms::Generators::Component::EditingGenerator do
     mkdir_p(layouts_path)
     mkdir_p(config_path)
 
-    File.open("#{destination_root}/Gemfile", 'w')
     File.open("#{environments_path}/production.rb", 'a') { |f| f.write('Test::Application.configure do') }
     File.open("#{layouts_path}/application.html.haml", 'w') { |file| file.write("  %body{body_attributes(@obj)}\n") }
     File.open("#{config_path}/application.rb", 'w') { |file| file.write("# config.time_zone = 'Central Time (US & Canada)'") }
