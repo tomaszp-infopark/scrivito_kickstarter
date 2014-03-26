@@ -5,4 +5,12 @@ class VideoWidget < Widget
       source.mime_type
     end
   end
+
+  def width
+    self[:width].presence || '660'
+  end
+
+  def height
+    self[:height].presence || '430'
+  end
 end

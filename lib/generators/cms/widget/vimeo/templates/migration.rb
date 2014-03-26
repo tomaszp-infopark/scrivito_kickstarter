@@ -17,11 +17,7 @@ class VimeoWidget < ::Scrival::Migration
           name: 'height',
           type: :string,
         },
-      ],
-      preset_attributes: {
-        width: '660',
-        height: '430',
-      }
+      ]
     )
   end
 end

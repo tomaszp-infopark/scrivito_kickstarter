@@ -29,12 +29,7 @@ class ThreeColumnWidget < ::Scrival::Migration
           name: 'column_3_width',
           type: :string,
         },
-      ],
-      preset_attributes: {
-        column_1_width: '4',
-        column_2_width: '4',
-        column_3_width: '4',
-      }
+      ]
     )
   end
 end

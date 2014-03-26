@@ -18,10 +18,7 @@ class TextImageWidget < ::Scrival::Migration
           name: 'content',
           type: :html,
         },
-      ],
-      preset_attributes: {
-        align: 'left',
-      }
+      ]
     )
   end
 end

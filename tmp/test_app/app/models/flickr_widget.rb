@@ -3,10 +3,10 @@ require 'uri'
 class FlickrWidget < Widget
   def flickr_uri
     FlickrUri.new.tap do |uri|
-      uri.display = self[:display]
-      uri.count = self[:count]
-      uri.size = self[:size]
-      uri.source = self[:source]
+      uri.display = self[:display].presence || 'latest'
+      uri.count = self[:count].presence || '9'
+      uri.size = self[:size].presence || 'small'
+      uri.source = self[:source].presence || 'all'
       uri.user = self[:user]
       uri.tags = self[:tags]
     end

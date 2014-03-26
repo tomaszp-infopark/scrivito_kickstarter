@@ -21,11 +21,7 @@ class TwoColumnWidget < ::Scrival::Migration
           name: 'column_2_width',
           type: :string,
         },
-      ],
-      preset_attributes: {
-        column_1_width: '6',
-        column_2_width: '6',
-      }
+      ]
     )
   end
 end
