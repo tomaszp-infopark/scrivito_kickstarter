@@ -1,4 +1,5 @@
 # v1.0.0
+  * Removed usage of `preset_attributes` and moved the logic into the Ruby on Rails application.
   * All generated widgets now use the new view template path under `app/views`.
   * Updated to Ruby on Rails version 4.
   * Add `child_order` referencelist attribut to the homepage to allow to sort child elements in
