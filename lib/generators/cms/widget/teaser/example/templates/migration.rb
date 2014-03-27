@@ -9,9 +9,9 @@ class TeaserWidgetExample < Scrival::Migration
         project. Basic components such as a top navigation, a search panel, this text widget, and a
         login page have been created for you to experiment with the building blocks of your website
         application. To access the documentation or get in touch with the Scrival support team,
-        visit the Dev Center.</p>',
+        visit the Scrival Documentation.</p>',
       link_to: [{
-        title: 'Browse Scrival Dev Center',
+        title: 'Browse Scrival Documentation',
         url: 'https://dev.infopark.net/preparation',
       }],
     })

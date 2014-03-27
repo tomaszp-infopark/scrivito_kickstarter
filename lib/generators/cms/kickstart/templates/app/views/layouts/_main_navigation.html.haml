@@ -10,8 +10,7 @@
           %span.icon-bar
           %span.icon-bar
 
-        = link_to(cms_path(homepage), class: 'navbar-brand') do
-          = display_field(homepage, :headline)
+        = cms_tag(:a, homepage, :headline, class: 'navbar-brand', href: cms_path(homepage))
 
       .navbar-collapse.collapse
         = cms_tag_list(:ul, homepage, :toclist, class: 'nav navbar-nav', id: 'main_nav') do |list, obj|

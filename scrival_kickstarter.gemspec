@@ -9,9 +9,6 @@ Gem::Specification.new do |gem|
   gem.summary     = 'Scrival Kickstarter'
   gem.description = 'Scrival Kickstarter'
 
-  gem.required_ruby_version     = Gem::Requirement.new('>= 1.9')
-  gem.required_rubygems_version = Gem::Requirement.new('>= 1.8')
-
   gem.license = 'LGPLv3'
 
   gem.authors   = ['Scrival']

@@ -24,12 +24,10 @@ describe Cms::Generators::Widget::Maps::GoogleMapsGenerator do
           end
         end
 
-        directory 'widgets' do
+        directory 'views' do
           directory 'google_maps_widget' do
-            directory 'views' do
-              file 'show.html.haml'
-              file 'thumbnail.html.haml'
-            end
+            file 'show.html.haml'
+            file 'thumbnail.html.haml'
           end
         end
 

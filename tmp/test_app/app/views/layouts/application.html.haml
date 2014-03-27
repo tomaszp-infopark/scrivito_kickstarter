@@ -25,7 +25,7 @@
     = render('blog/discovery', page: @obj)
 
   %body{body_attributes(@obj)}
-    = render('layouts/menubar', current_user: current_user)
+    = render('layouts/edit_toggle', current_user: current_user)
 
     .container
       = render('layouts/main_navigation', homepage: @obj.homepage)

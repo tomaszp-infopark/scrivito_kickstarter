@@ -1,4 +1,16 @@
 # v1.0.0
+  * Removed usage of `preset_attributes` and moved the logic into the Ruby on Rails application.
+  * All generated widgets now use the new view template path under `app/views`.
+  * Updated to Ruby on Rails version 4.
+  * Add `child_order` referencelist attribut to the homepage to allow to sort child elements in
+    place. (Thanks @kostia)
+  * The homepage headline is now editable in place, instead of on the property view only.
+  * Breadcrumbs access is now memoized for better performance on pages like the search result page,
+    where breadcrumbs of one object are potentially displayed multiple times.
+  * Removed JavaScript editors and the media browser. The functionality is now available with the
+    new gem `scrival_editors`. This allows much easier updates of these components and removes many
+    more complex files from a starting project.
+  * Renamed `menubar` to `edit_toggle` which describes better, what it actually does.
   * Update blog posts to edit the author and date in-place instead of on the property view.
   * Added a slider editor for CMS string attributes that represent an integer. The slider editor
     allows to set the min, max and step value and uses jQuery UI. Simply use `data-editor="slider"`

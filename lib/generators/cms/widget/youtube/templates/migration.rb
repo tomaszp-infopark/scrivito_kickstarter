@@ -17,11 +17,7 @@ class YoutubeWidget < ::Scrival::Migration
           name: 'max_height',
           type: :string,
         },
-      ],
-      preset_attributes: {
-        max_width: '660',
-        max_height: '430',
-      },
+      ]
     )
   end
 end

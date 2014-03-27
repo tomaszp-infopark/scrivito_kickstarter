@@ -33,13 +33,7 @@ class FlickrWidget < ::Scrival::Migration
           name: 'tags',
           type: :string,
         },
-      ],
-      preset_attributes: {
-        display: 'latest',
-        count: '9',
-        size: 'small',
-        source: 'all'
-      }
+      ]
     )
   end
 end

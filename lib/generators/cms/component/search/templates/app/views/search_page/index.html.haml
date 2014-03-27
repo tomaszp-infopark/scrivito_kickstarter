@@ -12,7 +12,7 @@
 
           %p
             - text = strip_tags(cms_tag(:span, hit, :content) + cms_tag(:span, hit, :main_content))
-            - snippet = excerpt(text, @query, 200) || truncate(text, length: 400)
+            - snippet = excerpt(text, @query, radius: 200) || truncate(text, length: 400)
             = highlight(snippet, @query)
 
           - if hit.respond_to?(:breadcrumbs)

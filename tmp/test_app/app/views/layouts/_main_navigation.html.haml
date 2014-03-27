@@ -10,8 +10,7 @@
           %span.icon-bar
           %span.icon-bar
 
-        = link_to(cms_path(homepage), class: 'navbar-brand') do
-          = display_field(homepage, :headline)
+        = cms_tag(:a, homepage, :headline, class: 'navbar-brand', href: cms_path(homepage))
 
       .navbar-collapse.collapse
         = render('layouts/search', search_page: homepage.search_page, query: params[:q])

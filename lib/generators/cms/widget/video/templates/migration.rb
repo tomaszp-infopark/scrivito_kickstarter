@@ -26,12 +26,7 @@ class VideoWidget < ::Scrival::Migration
           type: :enum,
           values: %w(Yes No),
         },
-      ],
-      preset_attributes: {
-        width: 660,
-        height: 430,
-        autoplay: 'No',
-      }
+      ]
     )
   end
 end

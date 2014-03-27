@@ -12,7 +12,7 @@ represents a working example, but can be fully customized within the application
 
 ## Installation and Usage
 
-Please visit our Dev Center to get the
+Please visit our Documentation to get the
 [latest installation and usage information](https://dev.infopark.net/kickstarter).
 
 

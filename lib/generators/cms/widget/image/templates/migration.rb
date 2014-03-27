@@ -14,10 +14,7 @@ class ImageWidget < ::Scrival::Migration
           type: :enum,
           values: %w(left center right),
         },
-      ],
-      preset_attributes: {
-        align: 'left',
-      }
+      ]
     )
   end
 end
