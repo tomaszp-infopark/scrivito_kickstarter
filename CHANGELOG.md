@@ -1,3 +1,7 @@
+# v1.1.0
+  * Update Travis Rake task to only use the tenant name and the api key.
+  * Update Scrival SDK configuration.
+
 # v1.0.0
   * Removed usage of `preset_attributes` and moved the logic into the Ruby on Rails application.
   * All generated widgets now use the new view template path under `app/views`.

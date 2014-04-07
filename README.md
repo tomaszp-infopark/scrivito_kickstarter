@@ -84,8 +84,8 @@ do so any time by following the steps below.
 
         ruby --version
 
-3. Download the configuration files for your Ruby on Rails application from the Scrival Dashboard
-   and copy them to your cloned Kickstarter gem `config` folder.
+3. Copy the tenant name and api key for your Ruby on Rails application from the Scrival Dashboard
+   and insert them to your cloned Kickstarter gem `config` folder.
 
         config/scrival.yml
 
