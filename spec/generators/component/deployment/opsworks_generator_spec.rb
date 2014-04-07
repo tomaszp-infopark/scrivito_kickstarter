@@ -29,7 +29,8 @@ describe Cms::Generators::Component::Deployment::OpsworksGenerator do
       directory 'config' do
         directory 'initializers' do
           file 'scrival.rb' do
-            contains 'Scrival::Configuration.cache_path = "/tmp/cache/#{Rails.root.basename}"'
+            contains 'Scrival.configure do |config|'
+            contains 'config.cache_path = "/tmp/cache/#{Rails.root.basename}"'
           end
         end
 
