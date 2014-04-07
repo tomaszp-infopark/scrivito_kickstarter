@@ -5,7 +5,7 @@ module ScrivalKickstarter
   module Rake
     class CmsClient
       def reset_cms
-        uri = URI("#{url}/workspaces?tenant_name=#{tenant_name}&revision_id=#{revision_id}")
+        uri = URI("#{url}/workspaces?tenant_name=#{tenant}&revision_id=#{revision_id}")
         request = Net::HTTP::Delete.new(uri.request_uri)
         send_request(request)
       end
@@ -18,27 +18,27 @@ module ScrivalKickstarter
           file = File.join(path, 'scrival.yml')
 
           if File.exists?(file)
-            YAML.load_file(file)['cms_api']
+            YAML.load_file(file)
           else
             {}
           end
         end
       end
 
-      def tenant_name
-        url.match(/\/\/(.*?)\./)[1]
-      end
-
       def url
-        ENV['CMS_URL'] || config['url']
+        "https://api.scrival.com/tenants/#{tenant}"
       end
 
       def login
-        ENV['CMS_LOGIN'] || config['login']
+        'api_token'
+      end
+
+      def tenant
+        ENV['SCRIVAL_TENANT'] || config['tenant']
       end
 
       def api_key
-        ENV['CMS_API_KEY'] || config['api_key']
+        ENV['SCRIVAL_API_KEY'] || config['api_key']
       end
 
       def revision_id

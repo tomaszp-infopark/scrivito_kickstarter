@@ -26,12 +26,8 @@ module ScrivalKickstarter
         end
 
         configuration = {
-          'CONTENT_SERVICE_URL' => content_service_config['url'],
-          'CONTENT_SERVICE_LOGIN' => content_service_config['login'],
-          'CONTENT_SERVICE_API_KEY' => content_service_config['api_key'],
-          'CMS_URL' => cms_config['url'],
-          'CMS_LOGIN' => cms_config['login'],
-          'CMS_API_KEY' => cms_config['api_key'],
+          'SCRIVAL_TENANT' => scrival_config['tenant'],
+          'SCRIVAL_API_KEY' => scrival_config['api_key'],
         }
 
         contributor = %x(whoami).strip
@@ -48,12 +44,8 @@ module ScrivalKickstarter
         end
       end
 
-      def content_service_config
-        YAML.load_file('config/scrival.yml')['content_service']
-      end
-
-      def cms_config
-        YAML.load_file('config/scrival.yml')['cms_api']
+      def scrival_config
+        YAML.load_file('config/scrival.yml')
       end
     end
   end
