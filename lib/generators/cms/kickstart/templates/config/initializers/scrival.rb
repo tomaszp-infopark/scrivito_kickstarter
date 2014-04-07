@@ -1,6 +1,5 @@
 def scrival_config
-  config = YAML.load_file(Rails.root + 'config/scrival.yml')
-  config['scrival'] || {}
+  YAML.load_file(Rails.root + 'config/scrival.yml') || {}
 rescue Errno::ENOENT
   {}
 end

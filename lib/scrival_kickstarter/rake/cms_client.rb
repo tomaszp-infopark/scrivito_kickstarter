@@ -18,7 +18,7 @@ module ScrivalKickstarter
           file = File.join(path, 'scrival.yml')
 
           if File.exists?(file)
-            YAML.load_file(file)['scrival']
+            YAML.load_file(file)
           else
             {}
           end
