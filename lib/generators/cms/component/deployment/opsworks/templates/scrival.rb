@@ -1,3 +1,5 @@
 
-# Set cache path outside of the application directory.
-Scrival::Configuration.cache_path = "/tmp/cache/#{Rails.root.basename}"
+Scrival.configure do |config|
+  # Set cache path outside of the application directory.
+  config.cache_path = "/tmp/cache/#{Rails.root.basename}"
+end
