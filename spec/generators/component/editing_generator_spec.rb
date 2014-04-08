@@ -34,7 +34,6 @@ describe Cms::Generators::Component::EditingGenerator do
         directory 'assets' do
           directory 'stylesheets' do
             directory 'editing' do
-              file 'dialog.css'
               file 'edit_toggle.css'
             end
 
