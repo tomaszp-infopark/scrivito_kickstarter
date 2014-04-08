@@ -1,3 +1,7 @@
+# v1.2.0
+  * The `dialog.css` file has been removed. The functionality will be provided by the
+    scrival_editors gem. (Thanks @agessler)
+
 # v1.1.0
   * Update Travis Rake task to only use the tenant name and the api key.
   * Update Scrival SDK configuration.
