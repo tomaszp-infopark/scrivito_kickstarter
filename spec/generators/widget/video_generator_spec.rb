@@ -51,7 +51,7 @@ describe Cms::Generators::Widget::VideoGenerator do
         directory 'views' do
           directory 'video_widget' do
             file 'show.html.haml'
-            file 'edit.html.haml'
+            file 'details.html.haml'
             file 'thumbnail.html.haml'
           end
         end

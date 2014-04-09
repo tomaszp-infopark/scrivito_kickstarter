@@ -25,7 +25,7 @@ describe Cms::Generators::Component::SearchGenerator do
         directory 'views' do
           directory 'search_page' do
             file 'index.html.haml'
-            file 'edit.html.haml'
+            file 'details.html.haml'
           end
 
           directory 'layouts' do

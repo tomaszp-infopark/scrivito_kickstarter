@@ -13,8 +13,8 @@ class Obj < ::Scrival::BasicObj
     Homepage.for_hostname('default')
   end
 
-  def mediabrowser_edit_view_path
-    "#{obj_class.underscore}/edit"
+  def mediabrowser_details_view_path
+    "#{obj_class.underscore}/details"
   end
 
   # Determines the homepage for the current object by traversing up the tree

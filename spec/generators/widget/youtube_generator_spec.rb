@@ -20,7 +20,7 @@ describe Cms::Generators::Widget::YoutubeGenerator do
         directory 'views' do
           directory 'youtube_widget' do
             file 'show.html.haml'
-            file 'edit.html.haml'
+            file 'details.html.haml'
             file 'thumbnail.html.haml'
           end
         end

@@ -32,7 +32,7 @@ describe Cms::Generators::Widget::ImageGenerator do
         directory 'views' do
           directory 'image_widget' do
             file 'show.html.haml'
-            file 'edit.html.haml'
+            file 'details.html.haml'
             file 'thumbnail.html.haml'
           end
         end
