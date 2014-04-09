@@ -1,4 +1,6 @@
 # v1.2.0
+  * Rename `edit.html` to `details.html` as it is now required by the latest Scrival SDK. This also
+    changed the method `mediabrowser_edit_view_path` to `mediabrowser_details_view_path`.
   * The `dialog.css` file has been removed. The functionality will be provided by the
     scrival_editors gem. (Thanks @agessler)
 

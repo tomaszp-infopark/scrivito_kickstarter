@@ -52,7 +52,7 @@ describe Cms::Generators::Widget::DiagramGenerator do
         directory 'views' do
           directory 'diagram_widget' do
             file 'show.html.haml'
-            file 'edit.html.haml'
+            file 'details.html.haml'
             file 'thumbnail.html.haml'
           end
         end

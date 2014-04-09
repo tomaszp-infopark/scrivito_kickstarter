@@ -25,7 +25,7 @@ describe Cms::Generators::Component::RedirectGenerator do
         directory 'views' do
           directory 'redirect' do
             file 'index.html.haml'
-            file 'edit.html.haml'
+            file 'details.html.haml'
             file 'thumbnail.html.haml'
           end
         end

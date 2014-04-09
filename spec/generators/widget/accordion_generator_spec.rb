@@ -33,13 +33,13 @@ describe Cms::Generators::Widget::AccordionGenerator do
           directory 'accordion_widget' do
             file 'show.html.haml'
             file 'thumbnail.html.haml'
-            no_file 'edit.html.haml'
+            no_file 'details.html.haml'
           end
 
           directory 'accordion_panel_widget' do
             file 'show.html.haml'
             file 'thumbnail.html.haml'
-            file 'edit.html.haml'
+            file 'details.html.haml'
           end
         end
 

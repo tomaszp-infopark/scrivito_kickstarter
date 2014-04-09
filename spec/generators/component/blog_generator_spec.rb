@@ -45,7 +45,7 @@ describe Cms::Generators::Component::BlogGenerator do
         directory 'views' do
           directory 'blog' do
             file 'index.html.haml'
-            file 'edit.html.haml'
+            file 'details.html.haml'
             file 'thumbnail.html.haml'
             file 'index.atom.builder'
             file '_comment_count.html.haml'
@@ -59,7 +59,7 @@ describe Cms::Generators::Component::BlogGenerator do
 
           directory 'blog_post' do
             file 'index.html.haml'
-            file 'edit.html.haml'
+            file 'details.html.haml'
             file '_comments.html.haml'
             file '_gravatar.html.haml'
             file '_main_content.html.haml'

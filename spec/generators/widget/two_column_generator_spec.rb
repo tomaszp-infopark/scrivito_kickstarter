@@ -19,7 +19,7 @@ describe Cms::Generators::Widget::TwoColumnGenerator do
         directory 'views' do
           directory 'two_column_widget' do
             file 'show.html.haml'
-            file 'edit.html.haml'
+            file 'details.html.haml'
             file 'thumbnail.html.haml' do
               contains '.editing-icon-2cols'
             end

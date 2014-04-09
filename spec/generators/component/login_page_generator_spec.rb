@@ -29,7 +29,7 @@ describe Cms::Generators::Component::LoginPageGenerator do
         directory 'views' do
           directory 'login_page' do
             file 'index.html.haml'
-            file 'edit.html.haml'
+            no_file 'details.html.haml'
             no_file 'thumbnail.html.haml'
           end
         end

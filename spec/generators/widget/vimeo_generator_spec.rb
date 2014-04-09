@@ -20,7 +20,7 @@ describe Cms::Generators::Widget::VimeoGenerator do
         directory 'views' do
           directory 'vimeo_widget' do
             file 'show.html.haml'
-            file 'edit.html.haml'
+            file 'details.html.haml'
             file 'thumbnail.html.haml'
           end
         end
