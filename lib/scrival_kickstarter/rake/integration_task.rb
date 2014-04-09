@@ -11,6 +11,10 @@ module ScrivalKickstarter
         namespace :test do
           desc 'Run Kickstarter Integration Tests'
 
+          task :reset do
+            reset_cms
+          end
+
           task :integration do
             create_application
             create_configuration_files
