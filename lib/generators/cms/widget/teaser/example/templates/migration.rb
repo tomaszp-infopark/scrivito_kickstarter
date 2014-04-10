@@ -12,7 +12,7 @@ class TeaserWidgetExample < Scrival::Migration
         visit the Scrival Documentation.</p>',
       link_to: [{
         title: 'Browse Scrival Documentation',
-        url: 'https://dev.infopark.net/preparation',
+        url: 'https://scrival.com/preparation',
       }],
     })
   end

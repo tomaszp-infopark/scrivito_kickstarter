@@ -12,7 +12,7 @@ Gem::Specification.new do |gem|
   gem.license = 'LGPLv3'
 
   gem.authors   = ['Scrival']
-  gem.email     = ['info@infopark.de']
+  gem.email     = ['support@scrival.com']
   gem.homepage  = 'http://www.scrival.com'
 
   gem.bindir      = 'bin'

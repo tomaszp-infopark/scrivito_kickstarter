@@ -36,7 +36,7 @@ describe Cms::Generators::Component::Deployment::OpsworksGenerator do
 
         file 'schedule.rb' do
           contains "set :output, 'log/cron.log'"
-          contains "rake 'infopark:cache:gc'"
+          contains "rake 'scrival:cache:gc'"
           contains "job_type :rake, 'cd :path && RAILS_ENV=:environment PATH=/usr/local/bin:/usr/bin:/bin /usr/local/bin/bundle exec rake :task --silent :output'"
           contains 'every 1.day do'
         end
