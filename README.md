@@ -13,7 +13,8 @@ represents a working example, but can be fully customized within the application
 ## Installation and Usage
 
 Please visit our Documentation to get the
-[latest installation and usage information](https://dev.infopark.net/kickstarter).
+[latest installation and usage information](https://dev.infopark.net/preparation). An [overview and
+and more detailed information](https://dev.infopark.net/kickstarter) are also available.
 
 
 ## Testing
