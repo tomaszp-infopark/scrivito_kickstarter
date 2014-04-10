@@ -1,3 +1,6 @@
+# v1.3.0
+  * Added `scrival_editors` as a dependency.
+
 # v1.2.0
   * Rename `edit.html` to `details.html` as it is now required by the latest Scrival SDK. This also
     changed the method `mediabrowser_edit_view_path` to `mediabrowser_details_view_path`.
