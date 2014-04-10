@@ -29,6 +29,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'bundler'
   gem.add_dependency 'rails'
   gem.add_dependency 'scrival_sdk'
+  gem.add_dependency 'scrival_editors'
 
   gem.add_development_dependency 'pry'
   gem.add_development_dependency 'rspec-rails'

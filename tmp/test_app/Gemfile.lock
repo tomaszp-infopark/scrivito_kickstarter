@@ -4,6 +4,7 @@ PATH
     scrival_kickstarter (1.2.0)
       bundler
       rails
+      scrival_editors
       scrival_sdk
 
 GEM
