@@ -1,28 +1,15 @@
 class VimeoWidgetExample < Scrival::Migration
   def up
-    homepage = Obj.find_by_path('<%= example_cms_path %>')
+    obj = Obj.find_by_path('<%= example_cms_path %>')
 
-    add_widget(homepage, '<%= example_widget_attribute %>', {
+    widget = Scrival::BasicWidget.new(
       _obj_class: 'VimeoWidget',
-      source: [{
-        url: 'http://vimeo.com/5545659'
-      }],
-    })
-  end
+      source: [
+        Scrival::Link.new(url: 'http://vimeo.com/5545659')
+      ]
+    )
 
-  private
-
-  def add_widget(obj, attribute, widget_params)
-    workspace_id = Scrival::Workspace.current.id
-    obj_params = Scrival::CmsRestApi.get("workspaces/#{workspace_id}/objs/#{obj.id}")
-    widget_id = Scrival::BasicObj.generate_widget_pool_id
-
-    params = {}
-    params['_widget_pool'] = { widget_id => widget_params }
-    params[attribute] = obj_params[attribute] || {}
-    params[attribute]['list'] ||= []
-    params[attribute]['list'] << { widget: widget_id }
-
-    update_obj(obj_params['id'], params)
+    widgets = obj.send('<%= example_widget_attribute %>') << widget
+    obj.update('<%= example_widget_attribute %>' => widgets)
   end
 end

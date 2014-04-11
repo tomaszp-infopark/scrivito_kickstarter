@@ -1,8 +1,6 @@
 class AccordionWidgetExample < ::Scrival::Migration
   def up
-    homepage = Obj.find_by_path('<%= example_cms_path %>')
-
-    text_widget1_id = add_widget_to_widget_pool(homepage, {
+    text_widget1 = Scrival::BasicWidget.new(
       _obj_class: 'TextWidget',
       content: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -10,9 +8,9 @@ class AccordionWidgetExample < ::Scrival::Migration
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',
-    })
+    )
 
-    text_widget2_id = add_widget_to_widget_pool(homepage, {
+    text_widget2 = Scrival::BasicWidget.new(
       _obj_class: 'TextWidget',
       content: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -20,65 +18,35 @@ class AccordionWidgetExample < ::Scrival::Migration
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',
-    })
+    )
 
-    panel_widget1_id = add_widget_to_widget_pool(homepage, {
+    panel_widget1 = Scrival::BasicWidget.new(
       _obj_class: '<%= panel_obj_class_name %>',
       headline: 'Duis aute irure dolor in reprehenderit',
-      main_content: {
-        'list' => [
-          { widget: text_widget1_id },
-        ]
-      },
-    })
+      main_content: [
+        text_widget1,
+      ]
+    )
 
-    panel_widget2_id = add_widget_to_widget_pool(homepage, {
+    panel_widget2 = Scrival::BasicWidget.new(
       _obj_class: '<%= panel_obj_class_name %>',
       headline: 'Excepteur sint occaecat cupidatat',
-      main_content: {
-        'list' => [
-          { widget: text_widget2_id },
-        ]
-      },
-    })
+      main_content: [
+        text_widget2,
+      ]
+    )
 
-    add_widget(homepage, '<%= example_widget_attribute %>', {
+    obj = Obj.find_by_path('<%= example_cms_path %>')
+
+    widget = Scrival::BasicWidget.new(
       _obj_class: '<%= obj_class_name %>',
-      panels: {
-        'list' => [
-          { widget: panel_widget1_id },
-          { widget: panel_widget2_id },
-        ]
-      }
-    })
-  end
+      panels: [
+        panel_widget1,
+        panel_widget2,
+      ]
+    )
 
-  private
-
-  def add_widget_to_widget_pool(obj, widget_params)
-    workspace_id = Scrival::Workspace.current.id
-    obj_params = Scrival::CmsRestApi.get("workspaces/#{workspace_id}/objs/#{obj.id}")
-    widget_id = Scrival::BasicObj.generate_widget_pool_id
-
-    params = {}
-    params['_widget_pool'] = { widget_id => widget_params }
-
-    update_obj(obj_params['id'], params)
-
-    widget_id
-  end
-
-  def add_widget(obj, attribute, widget_params)
-    workspace_id = Scrival::Workspace.current.id
-    obj_params = Scrival::CmsRestApi.get("workspaces/#{workspace_id}/objs/#{obj.id}")
-    widget_id = Scrival::BasicObj.generate_widget_pool_id
-
-    params = {}
-    params['_widget_pool'] = { widget_id => widget_params }
-    params[attribute] = obj_params[attribute] || {}
-    params[attribute]['list'] ||= []
-    params[attribute]['list'] << { widget: widget_id }
-
-    update_obj(obj_params['id'], params)
+    widgets = obj.send('<%= example_widget_attribute %>') << widget
+    obj.update('<%= example_widget_attribute %>' => widgets)
   end
 end

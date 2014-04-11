@@ -108,12 +108,12 @@ GEM
       sass (~> 3.2.0)
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
-    scrival_editors (0.0.3)
+    scrival_editors (0.0.4)
       coffee-rails
       jquery-ui-rails
       railties
       scrival_sdk
-    scrival_sdk (0.8.0)
+    scrival_sdk (0.9.0)
       addressable (~> 2.3.2)
       diff-lcs (~> 1.2.5)
       hyp_diff (~> 0.0.3)
