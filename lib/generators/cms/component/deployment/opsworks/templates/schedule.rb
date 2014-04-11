@@ -2,5 +2,5 @@ job_type :rake, 'cd :path && RAILS_ENV=:environment PATH=/usr/local/bin:/usr/bin
 set :output, 'log/cron.log'
 
 every 1.day do
-  rake 'infopark:cache:gc'
+  rake 'scrival:cache:gc'
 end

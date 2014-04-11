@@ -1,5 +1,5 @@
 send_notifications_to({
-  scrival: 'falk.koeppe@infopark.de',
+  scrival: 'falk.koeppe@scrival.com',
 })
 
 buckets 'kickstarter' do

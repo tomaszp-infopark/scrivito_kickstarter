@@ -12,7 +12,7 @@ Gem::Specification.new do |gem|
   gem.license = 'LGPLv3'
 
   gem.authors   = ['Scrival']
-  gem.email     = ['info@infopark.de']
+  gem.email     = ['support@scrival.com']
   gem.homepage  = 'http://www.scrival.com'
 
   gem.bindir      = 'bin'
@@ -29,6 +29,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'bundler'
   gem.add_dependency 'rails'
   gem.add_dependency 'scrival_sdk'
+  gem.add_dependency 'scrival_editors'
 
   gem.add_development_dependency 'pry'
   gem.add_development_dependency 'rspec-rails'

@@ -20,7 +20,7 @@ class BlogExample < ::Scrival::Migration
       published_at: Time.zone.now - 1.days
     )
 
-    add_widget(Obj.find(post['id']), 'main_content',
+    widget = Scrival::BasicWidget.new(
       _obj_class: 'TextWidget',
       content: '<p>Quisque eget sem sit amet risus gravida commodo et sed neque. Morbi pellentesque
         urna ut sapien auctor mattis. Donec quis cursus enim. Pellentesque sodales, elit nec
@@ -29,8 +29,11 @@ class BlogExample < ::Scrival::Migration
         volutpat nibh ut nunc hendrerit porta. Pellentesque habitant morbi tristique senectus et
         netus et malesuada fames ac turpis egestas. Aliquam in felis quis neque aliquet rutrum.
         Morbi interdum aliquet sollicitudin. Curabitur eget erat vitae risus aliquam ultricies ac
-        ut leo. Praesent eget lectus lorem, eu luctus velit. Proin rhoncus consequat consectetur.<p>',
+        ut leo. Praesent eget lectus lorem, eu luctus velit. Proin rhoncus consequat consectetur.<p>'
     )
+
+    widgets = post.send('main_content') << widget
+    post.update('main_content' => widgets)
 
     post_path = "#{blog_path}/post-example-2"
 
@@ -43,30 +46,17 @@ class BlogExample < ::Scrival::Migration
       published_at: Time.zone.now - 3.days
     )
 
-    add_widget(Obj.find(post['id']), 'main_content',
+    widget = Scrival::BasicWidget.new(
       _obj_class: 'TextWidget',
       content: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<p>',
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<p>'
     )
-  end
 
-  private
-
-  def add_widget(obj, attribute, widget_params)
-    workspace_id = Scrival::Workspace.current.id
-    obj_params = Scrival::CmsRestApi.get("workspaces/#{workspace_id}/objs/#{obj.id}")
-    widget_id = Scrival::BasicObj.generate_widget_pool_id
-
-    params = {}
-    params['_widget_pool'] = { widget_id => widget_params }
-    params[attribute] = obj_params[attribute] || {}
-    params[attribute]['list'] ||= []
-    params[attribute]['list'] << { widget: widget_id }
-
-    update_obj(obj_params['id'], params)
+    widgets = post.send('main_content') << widget
+    post.update('main_content' => widgets)
   end
 end
