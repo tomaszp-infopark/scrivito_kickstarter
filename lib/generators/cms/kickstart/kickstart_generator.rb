@@ -12,22 +12,6 @@ module Cms
 
       source_root File.expand_path('../templates', __FILE__)
 
-      def install_gems
-        gem('haml-rails')
-
-        Bundler.with_clean_env do
-          run('bundle --quiet')
-        end
-      end
-
-      def remove_erb_layout
-        path = Rails.root + 'app/views/layouts/application.html.erb'
-
-        if File.exist?(path)
-          remove_file(path)
-        end
-      end
-
       def extend_gitignore
         destination = '.gitignore'
 
@@ -62,7 +46,6 @@ module Cms
 
       def create_structure_migration_file
         migration_template('migration.rb', 'cms/migrate/kickstart.rb')
-        migration_template('create_structure.rb', 'cms/migrate/create_structure.rb')
       rescue Rails::Generators::Error
       end
 
@@ -74,7 +57,7 @@ module Cms
 
       def create_example_content
         if examples?
-          Rails::Generators.invoke('cms:kickstart:simple', [], behavior: behavior)
+          Rails::Generators.invoke('cms:theme:simple', [], behavior: behavior)
         end
       end
 

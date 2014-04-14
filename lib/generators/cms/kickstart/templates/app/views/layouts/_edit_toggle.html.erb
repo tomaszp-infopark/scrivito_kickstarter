@@ -1,0 +1,5 @@
+<% if EditModeDetection.editing_allowed?(request.env) %>
+  <a id="edit-toggle" title="Activates in-place editing.">
+    <i class="editing-icon editing-icon-edit" />
+  </a>
+<% end %>
