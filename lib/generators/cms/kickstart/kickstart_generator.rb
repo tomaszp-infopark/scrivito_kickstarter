@@ -72,7 +72,7 @@ module Cms
       end
 
       def add_initial_content
-        Rails::Generators.invoke('cms:component:editing', ['--editor=redactor'], behavior: behavior)
+        Rails::Generators.invoke('cms:component:editing', [], behavior: behavior)
         Rails::Generators.invoke('cms:component:search', [], behavior: behavior)
         Rails::Generators.invoke('cms:component:search:example', [], behavior: behavior)
         Rails::Generators.invoke('cms:component:login_page', [], behavior: behavior)
