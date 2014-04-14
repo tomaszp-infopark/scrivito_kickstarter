@@ -12,25 +12,8 @@ module Cms
 
       source_root File.expand_path('../templates', __FILE__)
 
-      def remove_index_html
-        path = Rails.root + 'public/index.html'
-
-        if File.exist?(path)
-          remove_file(path)
-        end
-      end
-
-      def remove_rails_image
-        path = Rails.root + 'app/assets/images/rails.png'
-
-        if File.exist?(path)
-          remove_file(path)
-        end
-      end
-
       def install_gems
         gem('haml-rails')
-        gem('utf8-cleaner')
 
         Bundler.with_clean_env do
           run('bundle --quiet')
@@ -45,17 +28,36 @@ module Cms
         end
       end
 
-      def update_application_configuration
-        directory('lib')
-        directory('config', force: true)
-      end
-
       def extend_gitignore
         destination = '.gitignore'
 
         if File.exist?(destination)
           append_file(destination, "config/scrival.yml\n")
         end
+      end
+
+      def set_timezone
+        gsub_file(
+          'config/application.rb',
+          "# config.time_zone = 'Central Time (US & Canada)'",
+          "config.time_zone = 'Berlin'"
+        )
+
+        log(:info, "set timezone to 'Berlin'")
+      end
+
+      def update_production_environment
+        data = []
+
+        data << '# Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)'
+        data << '  config.assets.precompile += %w(editing.css editing.js)'
+        data << ''
+
+        data = data.join("\n")
+
+        environment(data, env: :production)
+
+        log(:environment, 'production: config.assets.precompile += %w(editing.css editing.js)')
       end
 
       def create_structure_migration_file
@@ -68,28 +70,14 @@ module Cms
       end
 
       def override_application
+        directory('lib')
+        directory('config')
         directory('app', force: true)
-      end
-
-      def add_initial_content
-        Rails::Generators.invoke('cms:component:editing', [], behavior: behavior)
-        Rails::Generators.invoke('cms:component:search', [], behavior: behavior)
-        Rails::Generators.invoke('cms:component:search:example', [], behavior: behavior)
-        Rails::Generators.invoke('cms:component:login_page', [], behavior: behavior)
-        Rails::Generators.invoke('cms:component:login_page:example', [], behavior: behavior)
-        Rails::Generators.invoke('cms:component:sitemap', [], behavior: behavior)
-
-        unless examples?
-          Rails::Generators.invoke('cms:widget:text', [], behavior: behavior)
-          Rails::Generators.invoke('cms:widget:image', [], behavior: behavior)
-          Rails::Generators.invoke('cms:widget:headline', [], behavior: behavior)
-          Rails::Generators.invoke('cms:widget:two_column', [], behavior: behavior)
-          Rails::Generators.invoke('cms:widget:three_column', [], behavior: behavior)
-        end
       end
 
       def create_example_content
         if examples?
+          Rails::Generators.invoke('cms:component:sitemap', [], behavior: behavior)
           Rails::Generators.invoke('cms:kickstart:example', [], behavior: behavior)
         end
       end

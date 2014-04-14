@@ -29,7 +29,7 @@ class Obj < ::Scrival::BasicObj
   end
 
   def homepages
-    @homepages ||= parent.children.select { |obj| obj.is_a?(Homepage) }
+    @homepages ||= homepage.parent.children.select { |obj| obj.is_a?(Homepage) }
   end
 
   def locale

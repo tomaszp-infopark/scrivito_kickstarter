@@ -9,12 +9,11 @@ module ScrivalKickstarter
     class IntegrationTask < ::Rake::TaskLib
       def initialize
         namespace :test do
-          desc 'Run Kickstarter Integration Tests'
-
           task :reset do
             reset_cms
           end
 
+          desc 'Run Kickstarter Integration Tests'
           task :integration do
             create_application
             create_configuration_files

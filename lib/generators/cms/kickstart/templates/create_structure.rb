@@ -6,56 +6,99 @@ class CreateStructure < ::Scrival::Migration
     destroy_obj_by_path('/logo.png')
     destroy_obj_by_path('/')
 
-    try_update_obj_class('Publication', is_active: false)
+    update_obj_class('Publication', is_active: false)
 
-    try_create_obj(
+    #
+    # Root component
+    #
+
+    Obj.create(
       _path: '/',
       _obj_class: 'Root'
     )
 
-    try_update_obj_class('Root', is_active: false)
+    update_obj_class('Root', is_active: false)
 
-    try_create_obj(
+    #
+    # Homepage component
+    #
+
+    Obj.create(
       _path: homepage_path,
       _obj_class: 'Homepage',
       locale: 'en',
       headline: 'Company, Inc.'
     )
 
-    try_create_obj(
+    #
+    # Example content page component
+    #
+
+    Obj.create(
       _path: "#{homepage_path}/example-page",
       _obj_class: 'ContentPage',
       headline: 'Content Page'
     )
 
-    error_not_found_page = try_create_obj(
+    #
+    # Error not found page component
+    #
+
+    error_not_found_page = Obj.create(
       _path: "#{configuration_path}/error-not-found",
       _obj_class: 'ErrorPage',
       headline: 'Page not found'
     )
 
-    try_update_obj(
-      Obj.find_by_path(homepage_path),
-      error_not_found_page: error_not_found_page['id'],
+    obj = Obj.find_by_path(homepage_path)
+    obj.update(
+      error_not_found_page: error_not_found_page.id
+    )
+
+    #
+    # Search component
+    #
+
+    search_page = Obj.create(
+      _path: "#{configuration_path}/search",
+      _obj_class: 'SearchPage',
+      headline: 'Search'
+    )
+
+    add_attribute_to('Homepage', {
+      name: 'search_page',
+      type: :reference,
+      title: 'Search Page',
+    })
+
+    obj = Obj.find_by_path(homepage_path)
+    obj.update(
+      search_page: search_page.id
+    )
+
+    #
+    # Login page component
+    #
+
+    login_page = Obj.create(
+      _path: "#{configuration_path}/login",
+      _obj_class: 'LoginPage',
+      headline: 'Log in'
+    )
+
+    add_attribute_to('Homepage', {
+      name: 'login_page',
+      type: :reference,
+      title: 'Login Page',
+    })
+
+    obj = Obj.find_by_path(homepage_path)
+    obj.update(
+      login_page: login_page.id
     )
   end
 
   private
-
-  def try_update_obj_class(id, attributes)
-    update_obj_class(id, attributes)
-  rescue Scrival::ClientError => error
-  end
-
-  def try_create_obj(attributes = {})
-    Obj.create(attributes)
-  rescue Scrival::ClientError => error
-  end
-
-  def try_update_obj(obj, attributes = {})
-    obj.update(attributes)
-  rescue Scrival::ClientError => error
-  end
 
   def destroy_obj_by_path(path)
     obj = Obj.find_by_path(path)

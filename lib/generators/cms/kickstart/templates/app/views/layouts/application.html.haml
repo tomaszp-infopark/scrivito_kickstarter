@@ -23,6 +23,8 @@
     %link{href: '/favicon.ico', rel: 'shortcut icon'}
 
   %body{body_attributes(@obj)}
+    = render('layouts/edit_toggle', current_user: current_user)
+
     .container
       = render('layouts/main_navigation', homepage: @obj.homepage)
 
