@@ -1,3 +1,11 @@
+# v2.0.0
+  * Removed `haml` dependency and changed all views from haml to erb.
+  * Restructured all examples into a `simple` theme. The Kickstarter now generates a core and themes
+    can build upon this core to provide views and overwrite anything necessary. This reduces the
+    amount of generators and has a much better separation of concerns. For some components and
+    widgets, this means that there are no examples anymore. The generators now create the structure
+    for the editor to insert an example anywhere on the page.
+
 # v1.3.0
   * Added `scrival_editors` as a dependency.
 
