@@ -1,18 +1,6 @@
 class Kickstart < ::Scrival::Migration
   def up
     create_obj_class(
-      name: 'Video',
-      type: 'generic',
-      title: 'Video',
-      attributes: [
-        {
-          name: 'headline',
-          type: :string,
-        },
-      ]
-    )
-
-    create_obj_class(
       name: 'Root',
       type: 'publication',
       title: 'Root'
@@ -98,6 +86,30 @@ class Kickstart < ::Scrival::Migration
       name: 'LoginPage',
       type: 'publication',
       title: 'Login',
+      attributes: [
+        {
+          name: 'headline',
+          type: :string,
+        },
+      ]
+    )
+
+    create_obj_class(
+      name: 'Image',
+      type: 'image',
+      title: 'Image',
+      attributes: [
+        {
+          name: 'headline',
+          type: :string,
+        },
+      ]
+    )
+
+    create_obj_class(
+      name: 'Video',
+      type: 'generic',
+      title: 'Video',
       attributes: [
         {
           name: 'headline',

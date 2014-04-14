@@ -3,11 +3,6 @@ class CreateStructure < ::Scrival::Migration
     homepage_path = '/en'
     configuration_path = "#{homepage_path}/_configuration"
 
-    destroy_obj_by_path('/logo.png')
-    destroy_obj_by_path('/')
-
-    update_obj_class('Publication', is_active: false)
-
     #
     # Root component
     #
@@ -96,18 +91,5 @@ class CreateStructure < ::Scrival::Migration
     obj.update(
       login_page: login_page.id
     )
-  end
-
-  private
-
-  def destroy_obj_by_path(path)
-    obj = Obj.find_by_path(path)
-
-    if obj
-      obj.destroy
-    else
-      puts "[delete obj] The object at '#{path}' does not exist."
-    end
-  rescue Scrival::ClientError => error
   end
 end
