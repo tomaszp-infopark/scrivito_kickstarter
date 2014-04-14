@@ -49,7 +49,6 @@ group :test, :development do
 end
 
 gem "haml-rails"
-gem "utf8-cleaner"
 gem "gravatar_image_tag"
 gem "momentjs-rails"
 gem "whenever", require: false
