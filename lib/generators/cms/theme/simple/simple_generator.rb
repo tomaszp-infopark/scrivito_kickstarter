@@ -1,6 +1,6 @@
 module Cms
   module Generators
-    module Kickstart
+    module Theme
       class SimpleGenerator < ::Rails::Generators::Base
         include Migration
 
