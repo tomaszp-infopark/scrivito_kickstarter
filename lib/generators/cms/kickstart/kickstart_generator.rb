@@ -74,8 +74,7 @@ module Cms
 
       def create_example_content
         if examples?
-          Rails::Generators.invoke('cms:component:sitemap', [], behavior: behavior)
-          Rails::Generators.invoke('cms:kickstart:example', [], behavior: behavior)
+          Rails::Generators.invoke('cms:kickstart:simple', [], behavior: behavior)
         end
       end
 

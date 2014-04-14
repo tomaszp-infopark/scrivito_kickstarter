@@ -1,5 +1,20 @@
-class BlogExample < ::Scrival::Migration
+class KickstarterSimpleTheme < ::Scrival::Migration
   def up
+    #
+    # Contact page example
+    #
+
+    Obj.create(
+      _path: '/en/contact',
+      _obj_class: 'ContactPage',
+      headline: 'Contact'
+    )
+
+
+    #
+    # Blog example
+    #
+
     blog_path = '/en/blog'
 
     Obj.create(
