@@ -51,9 +51,9 @@ describe Cms::Generators::Widget::DiagramGenerator do
 
         directory 'views' do
           directory 'diagram_widget' do
-            file 'show.html.haml'
-            file 'details.html.haml'
-            file 'thumbnail.html.haml'
+            file 'show.html.erb'
+            file 'details.html.erb'
+            file 'thumbnail.html.erb'
           end
         end
       end

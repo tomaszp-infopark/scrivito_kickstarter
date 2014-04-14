@@ -1,0 +1,39 @@
+<% if flash[:alert].present? %>
+  <div class="alert alert-danger">
+    <button class="close" type="button" data-dismiss="alert">
+      &times;
+    </button>
+
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
+<% if flash[:notice].present? %>
+  <div class="alert alert-success">
+    <button class="close" type="button" data-dismiss="alert">
+      &times;
+    </button>
+
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<% if flash[:warning].present? %>
+  <div class="alert alert-warning">
+    <button class="close" type="button" data-dismiss="alert">
+      &times;
+    </button>
+
+    <%= flash[:warning] %>
+  </div>
+<% end %>
+
+<% if flash[:info].present? %>
+  <div class="alert alert-info">
+    <button class="close" type="button" data-dismiss="alert">
+      &times;
+    </button>
+
+    <%= flash[:info] %>
+  </div>
+<% end %>

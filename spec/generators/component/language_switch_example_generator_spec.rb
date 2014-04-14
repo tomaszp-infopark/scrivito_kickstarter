@@ -19,7 +19,7 @@ describe Cms::Generators::Component::LanguageSwitch::ExampleGenerator do
 
     mkdir_p(layouts_path)
 
-    File.open("#{layouts_path}/_main_navigation.html.haml", 'w') { |f| f.write('') }
+    File.open("#{layouts_path}/_main_navigation.html.erb", 'w') { |f| f.write("\n      </div>") }
   end
 
   it 'creates files' do
@@ -27,8 +27,8 @@ describe Cms::Generators::Component::LanguageSwitch::ExampleGenerator do
       directory 'app' do
         directory 'views' do
           directory 'layouts' do
-            file '_main_navigation.html.haml' do
-              contains "        = render('layouts/languages', current: homepage, homepages: homepage.homepages)"
+            file '_main_navigation.html.erb' do
+              contains "        <%= render('layouts/languages', current: homepage, homepages: homepage.homepages) %>"
             end
           end
         end

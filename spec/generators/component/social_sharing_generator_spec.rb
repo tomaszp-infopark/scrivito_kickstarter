@@ -22,13 +22,13 @@ describe Cms::Generators::Component::SocialSharingGenerator do
       directory 'app' do
         directory 'views' do
           directory 'layouts' do
-            file '_social_sharing.html.haml'
+            file '_social_sharing.html.erb'
 
             directory 'social_sharing' do
-              file '_facebook.html.haml'
-              file '_google.html.haml'
-              file '_linkedin.html.haml'
-              file '_twitter.html.haml'
+              file '_facebook.html.erb'
+              file '_google.html.erb'
+              file '_linkedin.html.erb'
+              file '_twitter.html.erb'
             end
           end
         end

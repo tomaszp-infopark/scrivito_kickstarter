@@ -1,0 +1,24 @@
+<% previous_post = post.previous_post %>
+<% next_post = post.next_post %>
+
+<ul class="pager">
+  <% if previous_post.present? %>
+    <li class="previous">
+      <%= link_to(cms_path(previous_post)) do %>
+        <span class="glyphicon glyphicon-chevron-left"></span>
+
+        <%= display_field(previous_post, :headline) %>
+      <% end %>
+    </li>
+  <% end %>
+
+  <% if next_post.present? %>
+    <li class="next">
+      <%= link_to(cms_path(next_post)) do %>
+        <%= display_field(next_post, :headline) %>
+
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

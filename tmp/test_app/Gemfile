@@ -48,7 +48,6 @@ group :test, :development do
   gem "scrival_kickstarter", path: "../../"
 end
 
-gem "haml-rails"
 gem "gravatar_image_tag"
 gem "momentjs-rails"
 gem "whenever", require: false

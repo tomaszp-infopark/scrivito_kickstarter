@@ -22,7 +22,7 @@ describe Cms::Generators::Component::LanguageSwitchGenerator do
       directory 'app' do
         directory 'views' do
           directory 'layouts' do
-            file '_languages.html.haml'
+            file '_languages.html.erb'
           end
         end
       end

@@ -1,0 +1,11 @@
+<h4>
+  Headline
+</h4>
+
+<%= cms_tag(:div, @obj, :headline) %>
+
+<h4>
+  File size
+</h4>
+
+<%= number_to_human_size(@obj.body_length) %>

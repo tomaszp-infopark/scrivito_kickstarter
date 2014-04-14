@@ -27,16 +27,18 @@ module Cms
         end
 
         def extend_layout
-          file = 'app/views/layouts/application.html.haml'
+          file = 'app/views/layouts/application.html.erb'
 
           data = [
-            '        .row',
-            '          .col-md-12',
-            "            = render('layouts/breadcrumbs', page: @obj)",
+            '        <div class="row">',
+            '          <div class="col-md-12">',
+            "            <%= render('layouts/breadcrumbs', page: @obj) %>",
+            '          </div>',
+            '        </div>',
             "\n",
           ].join("\n")
 
-          insert_point = "      .content\n"
+          insert_point = "      <div class=\"content\">\n"
 
           insert_into_file(file, data, after: insert_point)
         end

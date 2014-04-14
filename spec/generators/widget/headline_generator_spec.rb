@@ -18,9 +18,9 @@ describe Cms::Generators::Widget::HeadlineGenerator do
       directory 'app' do
         directory 'views' do
           directory 'headline_widget' do
-            file 'show.html.haml'
-            file 'details.html.haml'
-            file 'thumbnail.html.haml'
+            file 'show.html.erb'
+            file 'details.html.erb'
+            file 'thumbnail.html.erb'
           end
         end
 

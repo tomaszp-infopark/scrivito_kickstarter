@@ -6,22 +6,6 @@ module Cms
 
         source_root File.expand_path('../templates', __FILE__)
 
-        def install_gems
-          gem('haml-rails')
-
-          Bundler.with_clean_env do
-            run('bundle --quiet')
-          end
-        end
-
-        def remove_erb_layout
-          path = Rails.root + 'app/views/layouts/application.html.erb'
-
-          if File.exist?(path)
-            remove_file(path)
-          end
-        end
-
         def copy_application_directory
           directory('app', force: true)
         end
