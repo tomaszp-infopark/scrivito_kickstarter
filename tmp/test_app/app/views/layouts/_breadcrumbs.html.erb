@@ -1,0 +1,17 @@
+<% if page.respond_to?(:show_breadcrumbs?) && page.show_breadcrumbs? %>
+  <ol class="breadcrumb">
+    <% page.breadcrumbs.each do |obj| %>
+      <% if obj == page %>
+        <li class="active">
+          <%= display_field(obj, :headline) %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to(cms_path(obj)) do %>
+            <%= display_field(obj, :headline) %>
+          <% end %>
+        </li>
+      <% end %>
+    <% end %>
+  </ol>
+<% end %>

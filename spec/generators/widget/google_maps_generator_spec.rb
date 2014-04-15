@@ -26,8 +26,8 @@ describe Cms::Generators::Widget::Maps::GoogleMapsGenerator do
 
         directory 'views' do
           directory 'google_maps_widget' do
-            file 'show.html.haml'
-            file 'thumbnail.html.haml'
+            file 'show.html.erb'
+            file 'thumbnail.html.erb'
           end
         end
 

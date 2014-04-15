@@ -1,0 +1,31 @@
+<% javascript_id = "##{widget.id}" %>
+
+<div class="carousel slide" id="<%= widget.id %>" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <% widget.images.each_with_index do |_, index| %>
+      <li class="<%= (index == 0 ? 'active' : nil) %>" data-target="<%= javascript_id %>" data-slide-to="<%= index %>"></li>
+    <% end %>
+  </ol>
+
+  <div class="carousel-inner">
+    <% widget.images.each_with_index do |image, index| %>
+      <div class="item <%= (index == 0 ? 'active' : nil) %>">
+        <%= cms_image_tag(image) %>
+
+        <div class="carousel-caption">
+          <h3>
+            <%= image.headline %>
+          </h3>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <a class="carousel-control left" href="<%= javascript_id %>" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+
+  <a class="carousel-control right" href="<%= javascript_id %>" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>

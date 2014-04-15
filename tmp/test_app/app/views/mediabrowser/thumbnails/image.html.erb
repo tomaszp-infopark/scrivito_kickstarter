@@ -1,0 +1,11 @@
+<div class="editing-mediabrowser-preview">
+  <%= cms_image_tag(hit) %>
+</div>
+
+<div class="editing-mediabrowser-meta">
+  <span class="editing-mediabrowser-thumbnails-name">
+    <%= hit.title || hit.name %>
+  </span>
+
+  <span class="editing-mediabrowser-thumbnails-select select-item <%= (selected ? 'active' : '') %>"></span>
+</div>

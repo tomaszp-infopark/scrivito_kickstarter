@@ -19,7 +19,7 @@ describe Cms::Generators::Component::SocialSharing::ExampleGenerator do
 
     mkdir_p(environments_path)
 
-    File.open("#{environments_path}/application.html.haml", 'w') { |file| file.write("      = render('layouts/footer', page: @obj)") }
+    File.open("#{environments_path}/application.html.erb", 'w') { |file| file.write("      <%= render('layouts/footer', page: @obj) %>") }
   end
 
   it 'creates files' do
@@ -27,8 +27,8 @@ describe Cms::Generators::Component::SocialSharing::ExampleGenerator do
       directory 'app' do
         directory 'views' do
           directory 'layouts' do
-            file 'application.html.haml' do
-              contains "      = render('layouts/social_sharing', url: cms_url(@obj))"
+            file 'application.html.erb' do
+              contains "      <%= render('layouts/social_sharing', url: cms_url(@obj)) %>"
             end
           end
         end

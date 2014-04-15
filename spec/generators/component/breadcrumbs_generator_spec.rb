@@ -24,7 +24,7 @@ describe Cms::Generators::Component::BreadcrumbsGenerator do
       mkdir_p(path)
     end
 
-    File.open("#{paths[:layout_path]}/application.html.haml", 'w') { |f| f.write("      .content\n") }
+    File.open("#{paths[:layout_path]}/application.html.erb", 'w') { |f| f.write("      <div class=\"content\">\n") }
     File.open("#{paths[:models_path]}/obj.rb", 'w') { |f| f.write("class Obj\nend") }
   end
 
@@ -40,10 +40,10 @@ describe Cms::Generators::Component::BreadcrumbsGenerator do
 
         directory 'views' do
           directory 'layouts' do
-            file '_breadcrumbs.html.haml'
+            file '_breadcrumbs.html.erb'
 
-            file 'application.html.haml' do
-              contains "            = render('layouts/breadcrumbs', page: @obj)"
+            file 'application.html.erb' do
+              contains "            <%= render('layouts/breadcrumbs', page: @obj) %>"
             end
           end
         end

@@ -34,13 +34,13 @@ module Cms
         end
 
         def add_discovery_link
-          file = 'app/views/layouts/application.html.haml'
-          insert_point = "%link{href: '/favicon.ico', rel: 'shortcut icon'}\n"
+          file = 'app/views/layouts/application.html.erb'
+          insert_point = "<link href=\"/favicon.ico\" rel=\"shortcut icon\" />\n"
 
           data = []
 
           data << ''
-          data << "    = render('blog/discovery', page: @obj)"
+          data << "    <%= render('blog/discovery', page: @obj) %>"
           data << ''
 
           data = data.join("\n")

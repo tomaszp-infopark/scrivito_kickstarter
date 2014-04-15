@@ -9,12 +9,11 @@ module ScrivalKickstarter
     class IntegrationTask < ::Rake::TaskLib
       def initialize
         namespace :test do
-          desc 'Run Kickstarter Integration Tests'
-
           task :reset do
             reset_cms
           end
 
+          desc 'Run Kickstarter Integration Tests'
           task :integration do
             create_application
             create_configuration_files
@@ -76,23 +75,14 @@ module ScrivalKickstarter
           'cms:component:social_sharing:example',
           'cms:component:breadcrumbs',
           'cms:widget:accordion',
-          'cms:widget:accordion:example',
           'cms:widget:video',
-          'cms:widget:video:example',
           'cms:widget:youtube',
-          'cms:widget:youtube:example',
           'cms:widget:vimeo',
-          'cms:widget:vimeo:example',
           'cms:widget:diagram',
-          'cms:widget:diagram:example',
           'cms:widget:flickr',
-          'cms:widget:flickr:example',
           'cms:widget:slider',
-          'cms:widget:slider:example',
           'cms:widget:slideshare',
-          'cms:widget:slideshare:example',
           'cms:widget:text_image',
-          'cms:widget:text_image:example',
         ]
         generators.each do |generator|
           sh("rails generate #{generator}")

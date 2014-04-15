@@ -1,0 +1,16 @@
+<div id="fb-root"></div>
+
+<%= javascript_tag do %>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+
+    if (d.getElementById(id)) return;
+
+    js = d.createElement(s);
+    js.id = id;
+    js.src = '//connect.facebook.net/en_US/all.js#xfbml=1';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+<% end %>
+
+<div class="fb-like" style="font-size: 1px;" data-href="<%= url %>" data-send="false" data-layout="button_count" data-show-faces="false"></div>

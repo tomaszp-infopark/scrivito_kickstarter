@@ -1,0 +1,11 @@
+<div class="panel.panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-heading">
+      <%= cms_tag(:a, widget, :headline, href: "#collapse-panel-#{widget.id}", data: { toggle: 'collapse', parent: "#accordion-#{@obj.id}" }) %>
+    </h4>
+  </div>
+
+  <div class="panel-collapse collapse" id="collapse-panel-<%= widget.id %>">
+    <%= cms_tag(:div, widget, :main_content, class: 'panel-body') %>
+  </div>
+</div>

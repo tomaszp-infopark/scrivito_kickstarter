@@ -1,0 +1,21 @@
+<ul class="pager">
+  <li class="previous <%= (index == 0 ? 'disabled' : '') %>">
+    <% if index > 0 %>
+      <%= link_to(cms_path(page, page_index: index - 1)) do %>
+        <%= render 'newer_posts_link' %>
+      <% end %>
+    <% else %>
+      <span>
+        <%= render 'newer_posts_link' %>
+      </span>
+    <% end %>
+  </li>
+
+  <li class="next">
+    <%= link_to(cms_path(page, page_index: index + 1)) do %>
+      Older posts
+
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    <% end %>
+  </li>
+</ul>
