@@ -3,6 +3,5 @@ class ApplicationController < ActionController::Base
 
   # include ForceHttps
   include ExceptionHandling
-  include I18nSupport
   include Authentication
 end
