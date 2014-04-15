@@ -5,14 +5,6 @@ require File.join(Rails.root + 'lib/scrival/cms_definitions')
 class Obj < ::Scrival::BasicObj
   include Scrival::CmsDefinitions
 
-  def self.homepage
-    default_homepage
-  end
-
-  def self.default_homepage
-    Homepage.for_hostname('default')
-  end
-
   def mediabrowser_details_view_path
     "#{obj_class.underscore}/details"
   end
@@ -24,7 +16,7 @@ class Obj < ::Scrival::BasicObj
     @homepage ||= if parent
       parent.homepage
     else
-      self.class.default_homepage
+      Homepage.default
     end
   end
 

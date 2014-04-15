@@ -9,7 +9,7 @@ Scrival.configure do |config|
   config.api_key = ENV['SCRIVAL_API_KEY'] || scrival_config['api_key']
 
   config.choose_homepage do |env|
-    Homepage.for_hostname(Rack::Request.new(env).host)
+    Homepage.default
   end
 
   # This callback is important for security.

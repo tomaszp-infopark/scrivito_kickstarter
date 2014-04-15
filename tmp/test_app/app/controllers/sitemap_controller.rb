@@ -17,7 +17,7 @@ class SitemapController < ActionController::Base
   private
 
   def homepage
-    Homepage.for_hostname(request.host)
+    Homepage.default
   end
 
   def excluded_obj_classes

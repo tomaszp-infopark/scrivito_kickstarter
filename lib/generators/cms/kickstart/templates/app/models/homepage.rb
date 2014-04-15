@@ -1,10 +1,6 @@
 class Homepage < Obj
-  def self.for_hostname(hostname)
+  def self.default
     find_by_path('/en')
-  end
-
-  def desired_hostname
-    'www.website.com'
   end
 
   def homepage

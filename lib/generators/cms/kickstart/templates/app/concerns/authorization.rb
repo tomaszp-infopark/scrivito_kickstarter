@@ -35,7 +35,7 @@ module Authorization
     if @obj.respond_to?(:homepage)
       @obj.homepage
     else
-      Homepage.for_hostname(request.host)
+      Homepage.default
     end
   end
 end
