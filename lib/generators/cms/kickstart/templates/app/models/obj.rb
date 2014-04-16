@@ -9,10 +9,6 @@ class Obj < ::Scrival::BasicObj
     "#{obj_class.underscore}/details"
   end
 
-  def locale
-    (homepage && homepage[:locale]) || I18n.default_locale
-  end
-
   def show_in_navigation?
     true
   end

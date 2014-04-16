@@ -37,7 +37,6 @@ class KickstarterSimpleTheme < ::Scrival::Migration
     Obj.create(
       _path: homepage_path,
       _obj_class: 'Homepage',
-      locale: 'en',
       headline: 'Company, Inc.',
       main_content: [
         teaser_widget,
