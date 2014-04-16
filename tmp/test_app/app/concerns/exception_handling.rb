@@ -14,7 +14,7 @@ module ExceptionHandling
           status: 404,
         }
 
-        @obj = homepage.try(:error_not_found_page)
+        @obj = Homepage.default.try(:error_not_found_page)
 
         if @obj.present?
           options[:template] = "#{@obj.class.to_s.underscore}/index"
@@ -28,16 +28,6 @@ module ExceptionHandling
       type.all do
         render(nothing: true, status: 404)
       end
-    end
-  end
-
-  private
-
-  def homepage
-    if @obj.respond_to?(:homepage)
-      @obj.homepage
-    else
-      Homepage.default
     end
   end
 end

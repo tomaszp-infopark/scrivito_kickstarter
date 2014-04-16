@@ -7,7 +7,7 @@ class SearchPageController < CmsController
     results = Obj
       .all
       .offset(offset)
-      .and(:_path, :starts_with, @obj.homepage.path)
+      .and(:_path, :starts_with, Homepage.default.path)
 
     if @query.present?
       results.and(:*, :contains_prefix, @query)

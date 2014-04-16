@@ -9,21 +9,6 @@ class Obj < ::Scrival::BasicObj
     "#{obj_class.underscore}/details"
   end
 
-  # Determines the homepage for the current object by traversing up the tree
-  # until a homepage is found. In case of a ghost path (no parent) the default
-  # homepage is returned.
-  def homepage
-    @homepage ||= if parent
-      parent.homepage
-    else
-      Homepage.default
-    end
-  end
-
-  def homepages
-    @homepages ||= homepage.parent.children.select { |obj| obj.is_a?(Homepage) }
-  end
-
   def locale
     (homepage && homepage[:locale]) || I18n.default_locale
   end

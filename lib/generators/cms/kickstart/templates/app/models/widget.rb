@@ -4,8 +4,4 @@ require File.join(Rails.root + 'lib/scrival/cms_definitions')
 # widgets have in common.
 class Widget < ::Scrival::BasicWidget
   include Scrival::CmsDefinitions
-
-  def homepage
-    obj.homepage
-  end
 end
