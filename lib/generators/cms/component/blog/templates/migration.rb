@@ -26,7 +26,7 @@ class Blog < ::Scrival::Migration
           type: :string,
         },
         {
-          name: 'author_id',
+          name: 'author_email',
           type: :string,
         },
         {

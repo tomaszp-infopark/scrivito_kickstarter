@@ -140,7 +140,7 @@ class KickstarterSimpleTheme < ::Scrival::Migration
       _path: post_path,
       _obj_class: 'BlogPost',
       headline: 'Nulla viverra metus vitae nunc iaculis dignissim',
-      author_id: 'admin@example.com',
+      author_email: 'admin@example.com',
       author_name: 'Administrator',
       published_at: Time.zone.now - 1.days
     )
@@ -166,7 +166,7 @@ class KickstarterSimpleTheme < ::Scrival::Migration
       _path: post_path,
       _obj_class: 'BlogPost',
       headline: 'Excepteur sint occaecat cupidatat',
-      author_id: 'admin@example.com',
+      author_email: 'admin@example.com',
       author_name: 'Administrator',
       published_at: Time.zone.now - 3.days
     )

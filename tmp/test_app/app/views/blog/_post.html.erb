@@ -1,8 +1,8 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <div class="media">
-      <% if post.author_id.present? %>
-        <%= render('blog_post/gravatar', email: post.author_id) %>
+      <% if post.author_email.present? %>
+        <%= render('blog_post/gravatar', email: post.author_email) %>
       <% end %>
 
       <div class="media-body">

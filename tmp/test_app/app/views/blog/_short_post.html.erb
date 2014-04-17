@@ -1,6 +1,6 @@
 <div class="media">
-  <% if short_post.author_id.present? %>
-    = render('gravatar', email: short_post.author_id, size: 35)
+  <% if short_post.author_email.present? %>
+    <%= render('gravatar', email: short_post.author_email, size: 35) %>
   <% end %>
 
   <div class="media-body">
