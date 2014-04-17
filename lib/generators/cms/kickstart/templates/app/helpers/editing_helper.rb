@@ -29,21 +29,6 @@ module EditingHelper
     end
   end
 
-  # Displays a CMS reference attribute on an edit page.
-  #
-  # @param [Obj] object the cms object with a reference attribute
-  # @param [String] attribute_name the name of the reference attribute
-  # @param [Hash] options html options passed to the tag method
-  def cms_edit_reference(object, attribute_name, options = {})
-    reference = object.send(attribute_name)
-
-    cms_tag(:div, object, attribute_name, options) do
-      if reference
-        "#{reference.name} (#{reference.id})"
-      end
-    end
-  end
-
   # Displays a CMS referencelist attribute on an edit page and provides data for the referencelist
   # JavaScript editor.
   #
