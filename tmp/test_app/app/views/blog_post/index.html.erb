@@ -3,7 +3,7 @@
     <div class="panel-heading">
       <div class="media">
         <% if @obj.author_id.present? %>
-          = render('gravatar', email: @obj.author_id)
+          <%= render('gravatar', email: @obj.author_id) %>
         <% end %>
 
         <div class="media-body">
