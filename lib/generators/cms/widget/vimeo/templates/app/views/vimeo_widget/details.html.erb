@@ -1,17 +1,19 @@
-<h4>
-  Source
-</h4>
+<div class="details-view">
+  <h4>
+    Source
+  </h4>
 
-<%= cms_edit_linklist(widget, :source) %>
+  <%= cms_edit_linklist(widget, :source) %>
 
-<h4>
-  Width
-</h4>
+  <h4>
+    Width
+  </h4>
 
-<%= cms_tag(:div, widget, :width, data: { editor: 'slider', min: 100, max: 1000, step: 10 }) %>
+  <%= cms_tag(:div, widget, :width, data: { editor: 'slider', min: 100, max: 1000, step: 10 }) %>
 
-<h4>
-  Height
-</h4>
+  <h4>
+    Height
+  </h4>
 
-<%= cms_tag(:div, widget, :height, data: { editor: 'slider', min: 100, max: 600, step: 10 }) %>
+  <%= cms_tag(:div, widget, :height, data: { editor: 'slider', min: 100, max: 600, step: 10 }) %>
+</div>

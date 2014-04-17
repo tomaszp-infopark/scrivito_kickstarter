@@ -1,11 +1,13 @@
-<h4>
-  Alignment
-</h4>
+<div class="details-view">
+  <h4>
+    Alignment
+  </h4>
 
-<%= cms_edit_enum(widget, :align) %>
+  <%= cms_edit_enum(widget, :align) %>
 
-<h4>
-  File size
-</h4>
+  <h4>
+    File size
+  </h4>
 
-<%= number_to_human_size(widget.source.try(:body_length)) %>
+  <%= number_to_human_size(widget.source.try(:body_length)) %>
+</div>

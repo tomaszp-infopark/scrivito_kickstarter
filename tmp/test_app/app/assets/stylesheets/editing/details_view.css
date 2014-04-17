@@ -1,0 +1,17 @@
+.details-view [data-scrival-field-type="string"],
+.details-view [data-scrival-field-type="text"],
+.details-view [data-scrival-field-type="html"],
+.details-view [data-scrival-field-type="linklist"],
+.details-view [data-scrival-field-type="referencelist"],
+.details-view [data-scrival-field-type="reference"],
+.details-view [data-scrival-field-type="date"] {
+  background: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+  margin: 0;
+  padding: 10px 10px 10px 10px;
+}
