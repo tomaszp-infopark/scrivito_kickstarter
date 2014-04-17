@@ -19,10 +19,14 @@ $ ->
     button.on 'click', ->
       $(this).attr('disabled', true)
 
-      prefixPath = $('body').attr('data-current-obj-path')
+      body = $('body')
+      prefixPath = body.attr('data-current-obj-path')
       now = moment().utc()
       year = now.year()
       isoDate = now.format('YYYYMMDDHHmmss')
+
+      email = body.attr('data-current-user-email')
+      firstName = body.attr('data-current-user-first-name')
 
       scrival
         .create_obj
@@ -30,7 +34,7 @@ $ ->
           _path: "#{prefixPath}/#{isoDate}"
           published_at: isoDate
           headline: 'New Blog Post'
-          author_id: current_user.email
-          author_name: current_user.first_name
+          author_id: email
+          author_name: firstName
         .done (data) ->
           window.location.href = "/#{data.id}"
