@@ -1,4 +1,6 @@
 # v2.0.0
+  * Removed homepage and locale logic from `simple` theme, because there only is one homepage and
+    one locale.
   * Removed `ForceHttps` module because it depends on the project and there are better solutions,
     than doing it in the application.
   * Removed the homepage selection, because the `simple` theme only runs under a single domain.
