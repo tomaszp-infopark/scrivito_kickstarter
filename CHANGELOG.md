@@ -1,4 +1,5 @@
 # v2.0.0
+  * Refactored user javascript to use data attributes instead of writing directly into a script tag.
   * Removed homepage and locale logic from `simple` theme, because there only is one homepage and
     one locale.
   * Removed `ForceHttps` module because it depends on the project and there are better solutions,
