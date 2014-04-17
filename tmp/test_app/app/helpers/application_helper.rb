@@ -3,11 +3,12 @@ module ApplicationHelper
     attributes = {}
 
     if obj
-      attributes[:data] = {
-        current_obj_path: obj.path,
-        current_user_email: current_user.try(:email),
-        current_user_first_name: current_user.try(:first_name),
-      }
+      attributes[:data_current_obj_path] = obj.path
+
+      if inplace_editing_allowed?
+        attributes[:data_current_user_email] = current_user.try(:email)
+        attributes[:data_current_first_name] = current_user.try(:first_name)
+      end
     end
 
     attributes
