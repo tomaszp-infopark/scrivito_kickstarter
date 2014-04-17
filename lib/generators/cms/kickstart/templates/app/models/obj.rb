@@ -5,10 +5,6 @@ require File.join(Rails.root + 'lib/scrival/cms_definitions')
 class Obj < ::Scrival::BasicObj
   include Scrival::CmsDefinitions
 
-  def mediabrowser_details_view_path
-    "#{obj_class.underscore}/details"
-  end
-
   def show_in_navigation?
     true
   end
