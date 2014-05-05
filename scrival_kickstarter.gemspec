@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.summary     = 'Scrival Kickstarter'
   gem.description = 'Scrival Kickstarter'
 
-  gem.license = 'LGPLv3'
+  gem.license = 'LGPL-3.0'
 
   gem.authors   = ['Scrival']
   gem.email     = ['support@scrival.com']
