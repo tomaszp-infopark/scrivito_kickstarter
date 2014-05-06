@@ -1,4 +1,5 @@
 # v2.0.0
+  * Simple Theme: Added `autofocus` on the login page for the login input field.
   * Refactored user javascript to use data attributes instead of writing directly into a script tag.
   * Removed homepage and locale logic from `simple` theme, because there only is one homepage and
     one locale.
