@@ -1,4 +1,6 @@
 # v2.0.0
+  * Added an iframe widget, that allows to embedd a URL and set the height, width and scrolling
+    property for the iframe. Run `rails g cms:widget:iframe` to install.
   * Simple Theme: Added `autofocus` on the login page for the login input field.
   * Refactored user javascript to use data attributes instead of writing directly into a script tag.
   * Removed homepage and locale logic from `simple` theme, because there only is one homepage and

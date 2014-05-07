@@ -1,0 +1,7 @@
+<div class="iframe-widget">
+  <% if widget.iframe_src.present? %>
+    <iframe src="<%= widget.iframe_src %>" height="<%= widget.height %>" width="<%= widget.width %>" scrolling="<%= widget.scrolling %>" sandbox="">
+      <p>Your browser does not support iframes.</p>
+    </iframe>
+  <% end %>
+</div>

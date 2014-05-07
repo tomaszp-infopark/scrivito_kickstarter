@@ -83,6 +83,7 @@ module ScrivalKickstarter
           'cms:widget:slider',
           'cms:widget:slideshare',
           'cms:widget:text_image',
+          'cms:widget:iframe',
         ]
         generators.each do |generator|
           sh("rails generate #{generator}")
