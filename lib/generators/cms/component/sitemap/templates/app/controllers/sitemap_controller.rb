@@ -6,8 +6,6 @@ class SitemapController < ActionController::Base
 
         @objects = Obj.where(:_path, :starts_with, homepage.path)
            .and_not(:_obj_class, :equals, excluded_obj_classes)
-           .and(:_valid_from, :is_less_than, now)
-           .and_not(:_valid_until, :is_less_than, now)
            .batch_size(100)
            .to_a
       end
