@@ -1,4 +1,8 @@
 # v2.0.0
+  * Major improvement of the google maps widget. Added autocomplete for places directly on the map
+    for editors, which made the properties view not necessary anymore to enter the location.
+    Multiple map widgets on the same page are supported. It uses the Google Places API, so your
+    number of requests per day are limited without an Google API key.
   * Updated the image class to hold information for the media browser to display a preview of the
     image, instead of a generic icon.
   * Bugfix: A wrong indentation of the footer section of the login panel caused it to break the

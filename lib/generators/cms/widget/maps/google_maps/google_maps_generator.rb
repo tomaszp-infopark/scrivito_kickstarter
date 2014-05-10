@@ -16,6 +16,17 @@ module Cms
             directory('app')
           end
 
+          def add_external_javascript
+            file = 'app/views/layouts/application.html.erb'
+            insert_point = "    <%= javascript_include_tag('application') %>\n"
+
+            data = []
+            data << "    <%= javascript_include_tag('//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places') %>\n"
+            data = data.join("\n")
+
+            insert_into_file(file, data, after: insert_point)
+          end
+
           def notice
             if behavior == :invoke
               log(:migration, 'Make sure to run "rake cms:migrate" to apply CMS changes')
