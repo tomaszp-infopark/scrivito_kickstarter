@@ -1,4 +1,6 @@
 # v2.0.0
+  * Simple Theme: Removed usage of `valid_from` and `valid_until`, because they are no longer system
+    attributes present for all CMS objects.
   * Added an iframe widget, that allows to embedd a URL and set the height, width and scrolling
     property for the iframe. Run `rails g cms:widget:iframe` to install.
   * Simple Theme: Added `autofocus` on the login page for the login input field.
