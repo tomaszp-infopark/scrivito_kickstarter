@@ -1,4 +1,6 @@
 # v2.0.0
+  * Bugfix: A wrong indentation of the footer section of the login panel caused it to break the
+    design.
   * Simple Theme: Removed usage of `valid_from` and `valid_until`, because they are no longer system
     attributes present for all CMS objects.
   * Added an iframe widget, that allows to embedd a URL and set the height, width and scrolling
