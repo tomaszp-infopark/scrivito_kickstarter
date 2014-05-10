@@ -1,4 +1,6 @@
 # v2.0.0
+  * Updated the image class to hold information for the media browser to display a preview of the
+    image, instead of a generic icon.
   * Bugfix: A wrong indentation of the footer section of the login panel caused it to break the
     design.
   * Simple Theme: Removed usage of `valid_from` and `valid_until`, because they are no longer system
