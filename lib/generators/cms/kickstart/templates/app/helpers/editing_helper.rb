@@ -39,35 +39,33 @@ module EditingHelper
     reference_list = object.send(attribute_name)
 
     cms_tag(:div, object, attribute_name, options) do
-      out = ''.html_safe
+      if reference_list.present?
+        content_tag(:ul) do
+          html = ''.html_safe
 
-      out << content_tag(:ul) do
-        html = ''.html_safe
-
-        reference_list.each do |reference|
-          html << content_tag(:li, 'data-name' => reference.name, 'data-id' => reference.id) do
-            "#{reference.name} (#{reference.id})"
+          reference_list.each do |reference|
+            html << content_tag(:li, data: { name: reference.name, id: reference.id }) do
+              reference.to_s
+            end
           end
+
+          html
         end
-
-        html
       end
-
-      out << button_tag(class: 'editing-button editing-green mediabrowser-open') do
-        content_tag(:i, '', class: 'editing-icon editing-icon-search')
-      end
-
-      out
     end
   end
 
+  # Displays a CMS linklist attribute on an edit page and provides data for the linklist
+  # JavaScript editor.
+  #
+  # @param [Obj] object the cms object with a linklist attribute
+  # @param [String] attribute_name the name of the linklist attribute
+  # @param [Hash] options html options passed to the tag method
   def cms_edit_linklist(object, attribute_name, options = {})
     linklist = object.send(attribute_name)
 
     cms_tag(:div, object, attribute_name, options) do
-      out = ''.html_safe
-
-      out << content_tag(:ul) do
+      content_tag(:ul) do
         html = ''.html_safe
 
         linklist.each do |link|
@@ -77,17 +75,26 @@ module EditingHelper
             link.url
           end
 
-          html << content_tag(:li, link.title, 'data-title' => link.title, 'data-url' => url)
+          html << content_tag(:li, data: { title: link.title, url: url }) do
+            "#{link.title} #{link_to(url, url, target: :_blank)}".html_safe
+          end
         end
 
         html
       end
+    end
+  end
 
-      out << button_tag(class: 'editing-button editing-green add-link') do
-        content_tag(:i, '', class: 'editing-icon editing-icon-plus')
+  def cms_edit_link(object, attribute_name, options = {})
+    link = object.send(attribute_name)
+
+    cms_tag(:div, object, attribute_name, options) do
+        url = link && link.internal? ? "/#{link.obj.id}" : link.try(:url)
+        title = link.try(:title)
+
+      content_tag(:ul) do
+        content_tag(:li, title, data: { title: title, url: url })
       end
-
-      out
     end
   end
 end
