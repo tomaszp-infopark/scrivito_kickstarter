@@ -1,4 +1,7 @@
 # v2.0.0
+  * Updated the helper for editing linklist and referencelist attributes, to better separate
+    concerns between the application and the inplace editors for these two attribute types. This
+    also leads to a better read-only user experience. (Thanks @awendt)
   * Major improvement of the google maps widget. Added autocomplete for places directly on the map
     for editors, which made the properties view not necessary anymore to enter the location.
     Multiple map widgets on the same page are supported. It uses the Google Places API, so your
