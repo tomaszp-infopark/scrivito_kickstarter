@@ -1,4 +1,5 @@
 # v2.0.0
+  * The slider widget now displays an error message for the editor, if no images are selected yet.
   * Updated the helper for editing linklist and referencelist attributes, to better separate
     concerns between the application and the inplace editors for these two attribute types. This
     also leads to a better read-only user experience. (Thanks @awendt)

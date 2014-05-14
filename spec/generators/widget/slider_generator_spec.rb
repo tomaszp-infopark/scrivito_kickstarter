@@ -17,6 +17,14 @@ describe Cms::Generators::Widget::SliderGenerator do
   it 'creates files' do
     destination_root.should have_structure {
       directory 'app' do
+        directory 'assets' do
+          directory 'javascripts' do
+            directory 'editing' do
+              file 'slider_widget.js.coffee'
+            end
+          end
+        end
+        
         directory 'views' do
           directory 'slider_widget' do
             file 'show.html.erb'
