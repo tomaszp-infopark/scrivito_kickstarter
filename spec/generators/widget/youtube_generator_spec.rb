@@ -17,6 +17,14 @@ describe Cms::Generators::Widget::YoutubeGenerator do
   it 'creates files' do
     destination_root.should have_structure {
       directory 'app' do
+        directory 'assets' do
+          directory 'javascripts' do
+            directory 'editing' do
+              file 'youtube_widget.js.coffee'
+            end
+          end
+        end
+
         directory 'views' do
           directory 'youtube_widget' do
             file 'show.html.erb'
