@@ -45,7 +45,7 @@ module EditingHelper
 
           reference_list.each do |reference|
             html << content_tag(:li, data: { name: reference.name, id: reference.id }) do
-              reference.to_s
+              content_tag(:span, reference.to_s, class: 'list-content')
             end
           end
 
@@ -76,7 +76,9 @@ module EditingHelper
           end
 
           html << content_tag(:li, data: { title: link.title, url: url }) do
-            "#{link.title} #{link_to(url, url, target: :_blank)}".html_safe
+            content_tag(:span, class: 'list-content') do
+              "#{link.title} #{link_to(url, url, target: :_blank)}".html_safe
+            end
           end
         end
 
