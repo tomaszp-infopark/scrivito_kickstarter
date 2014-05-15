@@ -1,4 +1,6 @@
 # v2.0.0
+  * Removed the edit toggle, because it is no longer necessary, as the scrvial menu bar is displayed
+    by default and can't be closed anymore.
   * The slider and youtube widget now display an error message for the editor, if not set up
     correctly.
   * Updated the helper for editing linklist and referencelist attributes, to better separate
