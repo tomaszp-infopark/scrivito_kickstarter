@@ -17,7 +17,7 @@ $ ->
     template
 
   displayErrorMessage = (headline, message) ->
-    widget = $('.slider-widget')
+    widget = $('[data-scrival-widget-obj-class="SliderWidget"]')
     carousel = widget.find('.carousel')
 
     # Only display the error message when the carousel is missing or the error message already exists.

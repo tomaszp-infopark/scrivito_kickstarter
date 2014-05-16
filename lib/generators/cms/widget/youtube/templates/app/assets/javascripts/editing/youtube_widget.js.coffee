@@ -17,7 +17,7 @@ $ ->
     template
 
   displayErrorMessage = (headline, message) ->
-    widget = $('.youtube-widget')
+    widget = $('[data-scrival-widget-obj-class="YoutubeWidget"]')
     iframe = widget.find('iframe')
 
     # Only display the error message when the iframe is missing or the error message already exists.
