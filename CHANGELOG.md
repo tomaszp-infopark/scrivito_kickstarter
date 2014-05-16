@@ -1,4 +1,6 @@
 # v2.0.0
+  * Updated enum and multienum styles on the details view.
+  * Removed content attribute on details view of the Text-Image widget.
   * Removed the edit toggle, because it is no longer necessary, as the scrvial menu bar is displayed
     by default and can't be closed anymore.
   * The slider and youtube widget now display an error message for the editor, if not set up
