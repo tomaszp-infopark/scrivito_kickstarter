@@ -1,6 +1,8 @@
 .details-view [data-scrival-field-type="string"],
 .details-view [data-scrival-field-type="text"],
 .details-view [data-scrival-field-type="html"],
+.details-view [data-scrival-field-type="enum"],
+.details-view [data-scrival-field-type="multienum"],
 .details-view [data-scrival-field-type="linklist"],
 .details-view [data-scrival-field-type="referencelist"],
 .details-view [data-scrival-field-type="reference"],
