@@ -25,7 +25,7 @@ describe Cms::Generators::Component::RedirectGenerator do
         directory 'views' do
           directory 'redirect' do
             file 'index.html.erb'
-            file 'details.html.erb'
+            no_file 'details.html.erb'
             file 'thumbnail.html.erb'
           end
         end

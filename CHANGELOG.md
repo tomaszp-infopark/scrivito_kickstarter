@@ -1,4 +1,6 @@
 # v2.0.0
+  * Bugfix: The target for a redirect page is now editable, even if a target is already configured.
+    (Thanks @gertimon)
   * Updated enum and multienum styles on the details view.
   * Removed content attribute on details view of the Text-Image widget.
   * Removed the edit toggle, because it is no longer necessary, as the scrvial menu bar is displayed
