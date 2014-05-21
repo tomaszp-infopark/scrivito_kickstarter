@@ -1,0 +1,7 @@
+<div class="google-maps">
+  <% if inplace_editing_allowed? %>
+    <%= cms_tag(:input, widget, :address, type: 'text', data: { editor: 'google-maps' }) %>
+  <% end %>
+
+  <div class="map" data-location="<%= widget.address %>"></div>
+</div>

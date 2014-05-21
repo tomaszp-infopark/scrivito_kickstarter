@@ -1,17 +1,5 @@
-class Kickstart < ::Scrival::Migration
+class Kickstart < ::Scrivito::Migration
   def up
-    create_obj_class(
-      name: 'Video',
-      type: 'generic',
-      title: 'Video',
-      attributes: [
-        {
-          name: 'headline',
-          type: :string,
-        },
-      ]
-    )
-
     create_obj_class(
       name: 'Root',
       type: 'publication',
@@ -34,10 +22,6 @@ class Kickstart < ::Scrival::Migration
         {
           name: 'error_not_found_page',
           type: :reference,
-        },
-        {
-          name: 'locale',
-          type: :string,
         },
         {
           name: 'child_order',
@@ -78,6 +62,54 @@ class Kickstart < ::Scrival::Migration
         {
           name: 'main_content',
           type: :widget,
+        },
+      ]
+    )
+
+    create_obj_class(
+      name: 'SearchPage',
+      type: 'publication',
+      title: 'Search',
+      attributes: [
+        {
+          name: 'headline',
+          type: :string,
+        },
+      ]
+    )
+
+    create_obj_class(
+      name: 'LoginPage',
+      type: 'publication',
+      title: 'Login',
+      attributes: [
+        {
+          name: 'headline',
+          type: :string,
+        },
+      ]
+    )
+
+    create_obj_class(
+      name: 'Image',
+      type: 'image',
+      title: 'Image',
+      attributes: [
+        {
+          name: 'headline',
+          type: :string,
+        },
+      ]
+    )
+
+    create_obj_class(
+      name: 'Video',
+      type: 'generic',
+      title: 'Video',
+      attributes: [
+        {
+          name: 'headline',
+          type: :string,
         },
       ]
     )

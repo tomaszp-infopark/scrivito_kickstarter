@@ -33,11 +33,11 @@ class YoutubeWidget < Widget
 
     JSON.parse(json)
   rescue JSON::ParserError => error
-    Rails.logger.error("Could not parse Vimeo response: #{error.message}")
+    Rails.logger.error("Could not parse oembed response: #{error.message}")
 
     nil
   rescue RestClient::ResourceNotFound
-    Rails.logger.error("Unknown vimeo url: #{source_url}")
+    Rails.logger.error("Unknown youtube url: #{source_url}")
 
     nil
   end

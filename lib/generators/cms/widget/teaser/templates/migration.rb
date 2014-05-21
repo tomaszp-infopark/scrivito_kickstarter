@@ -1,4 +1,4 @@
-class TeaserWidget < ::Scrival::Migration
+class TeaserWidget < ::Scrivito::Migration
   def up
     create_obj_class(
       name: 'TeaserWidget',

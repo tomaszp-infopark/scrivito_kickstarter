@@ -33,9 +33,9 @@ describe Cms::Generators::Widget::FlickrGenerator do
 
         directory 'views' do
           directory 'flickr_widget' do
-            file 'show.html.haml'
-            file 'details.html.haml'
-            file 'thumbnail.html.haml'
+            file 'show.html.erb'
+            file 'details.html.erb'
+            file 'thumbnail.html.erb'
           end
         end
       end

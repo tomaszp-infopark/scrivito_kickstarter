@@ -1,4 +1,4 @@
-class ImageWidget < ::Scrival::Migration
+class ImageWidget < ::Scrivito::Migration
   def up
     create_obj_class(
       name: 'ImageWidget',

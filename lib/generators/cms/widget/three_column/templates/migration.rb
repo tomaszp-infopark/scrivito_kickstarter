@@ -1,4 +1,4 @@
-class ThreeColumnWidget < ::Scrival::Migration
+class ThreeColumnWidget < ::Scrivito::Migration
   def up
     create_obj_class(
       name: 'ThreeColumnWidget',

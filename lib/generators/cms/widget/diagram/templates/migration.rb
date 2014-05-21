@@ -1,4 +1,4 @@
-class DiagramWidget < ::Scrival::Migration
+class DiagramWidget < ::Scrivito::Migration
   def up
     create_obj_class(
       name: 'DiagramWidget',

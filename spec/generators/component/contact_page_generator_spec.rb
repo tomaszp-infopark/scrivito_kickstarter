@@ -28,8 +28,8 @@ describe Cms::Generators::Component::ContactPageGenerator do
 
         directory 'views' do
           directory 'contact_page' do
-            file 'index.html.haml'
-            file 'thumbnail.html.haml'
+            file 'index.html.erb'
+            file 'thumbnail.html.erb'
           end
         end
 

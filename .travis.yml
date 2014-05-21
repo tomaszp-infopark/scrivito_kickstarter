@@ -4,7 +4,7 @@ rvm:
 script: bundle exec rake travis
 env:
   global:
-  # scrival's credentials
+  # scrivito's credentials
   - secure: "Kaca1cMnL5g5F/pV4MXKgtEbLdqazeZ/eIFZ9/bFWm0nxosKCvcXvEw2K6cIncR05Fs2jjlP6Bk0PXUxRKEKI2ALKaDzwuaRH56xdeUe04UUX4X0J+U3JU2EvgQXXnpUX7hDO8gwp+hoblBGOQEYJFtYKp8nDcZVVn0XR8w4AD4="
   - secure: "Grmi0edXrW7bqcf7rtxox9BoQ6BhPh1hmgFT9Rshduq/nsF2gfI718cYBcA7BIcxFUb5AyyrVK6MPwhPySCntp6kmAKEsgkW7+fGB5VnFJWJnP2LZkfA4/8Dnncbj1OrdaHBkh04Yde6swUxCprsj5mNEiTegofmzXQCtO+k9Vo="
   - secure: "K4W7ilB0Q//n9H+7kiXUXOVm4Kia4EaEqNHJHIGl+BBuqVY750KUUBOFIA6n0IdS00cUxshehHXvPqC7QOrQ8WY2Uu2TgXCoIPN3xyyu8eUt3Ylm5Y9r234nsiu/zO5aQKY8O4jJrpZtOSfg9am1a8Bbe73kLqd8JssC8rJ+YVA="

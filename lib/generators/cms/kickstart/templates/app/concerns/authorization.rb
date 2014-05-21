@@ -26,16 +26,8 @@ module Authorization
     query_params = request.query_parameters
     query_params.merge!(return_to: request.path)
 
-    target = cms_path(homepage.login_page, query_params)
+    target = cms_path(Homepage.default.login_page, query_params)
 
     redirect_to(target, alert: "This page is protected. You either don't have neccessary access rights or you are not logged in.")
-  end
-
-  def homepage
-    if @obj.respond_to?(:homepage)
-      @obj.homepage
-    else
-      Homepage.for_hostname(request.host)
-    end
   end
 end

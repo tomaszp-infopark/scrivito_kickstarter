@@ -18,10 +18,10 @@ describe Cms::Generators::Widget::ThreeColumnGenerator do
       directory 'app' do
         directory 'views' do
           directory 'three_column_widget' do
-            file 'show.html.haml'
-            file 'details.html.haml'
-            file 'thumbnail.html.haml' do
-              contains '.editing-icon-3cols'
+            file 'show.html.erb'
+            file 'details.html.erb'
+            file 'thumbnail.html.erb' do
+              contains 'editing-icon-3cols'
             end
           end
         end

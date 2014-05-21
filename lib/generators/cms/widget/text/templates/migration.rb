@@ -1,4 +1,4 @@
-class TextWidget < ::Scrival::Migration
+class TextWidget < ::Scrivito::Migration
   def up
     create_obj_class(
       name: 'TextWidget',

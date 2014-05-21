@@ -1,4 +1,4 @@
-class YoutubeWidget < ::Scrival::Migration
+class YoutubeWidget < ::Scrivito::Migration
   def up
     create_obj_class(
       name: 'YoutubeWidget',

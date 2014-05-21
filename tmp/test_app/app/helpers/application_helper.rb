@@ -3,19 +3,14 @@ module ApplicationHelper
     attributes = {}
 
     if obj
-      attributes[:data] = {
-        current_obj: {
-          id: obj.id,
-          path: obj.path,
-          class: obj.obj_class,
-        },
-      }
+      attributes['data-current-obj-path'] = obj.path
+
+      if inplace_editing_allowed?
+        attributes['data-current-user-email'] = current_user.try(:email)
+        attributes['data-current-first-name'] = current_user.try(:first_name)
+      end
     end
 
     attributes
-  end
-
-  def image_url(image)
-    request.protocol + request.host_with_port + image_path(image)
   end
 end

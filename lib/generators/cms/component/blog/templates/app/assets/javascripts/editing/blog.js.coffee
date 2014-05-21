@@ -1,7 +1,7 @@
 $ ->
   # When in-place editing is active and the editor is in an editable working
   # copy, a button is inserted to be able to create a new blog post.
-  scrival.on 'editing', ->
+  scrivito.on 'editing', ->
     # Create a new DOM element for the button, that allows editors to create a
     # new blog post in place.
     button = $('<button />')
@@ -19,18 +19,22 @@ $ ->
     button.on 'click', ->
       $(this).attr('disabled', true)
 
-      prefixPath = $('body').attr('data-current-obj-path')
+      body = $('body')
+      prefixPath = body.attr('data-current-obj-path')
       now = moment().utc()
       year = now.year()
       isoDate = now.format('YYYYMMDDHHmmss')
 
-      scrival
+      email = body.attr('data-current-user-email')
+      firstName = body.attr('data-current-user-first-name')
+
+      scrivito
         .create_obj
           _obj_class: 'BlogPost'
           _path: "#{prefixPath}/#{isoDate}"
           published_at: isoDate
           headline: 'New Blog Post'
-          author_id: current_user.email
-          author_name: current_user.first_name
+          author_email: email
+          author_name: firstName
         .done (data) ->
           window.location.href = "/#{data.id}"

@@ -21,22 +21,22 @@ describe Cms::Generators::Component::Deployment::OpsworksGenerator do
     mkdir_p(initializers_path)
 
     File.open("#{destination_root}/Gemfile", 'w')
-    File.open("#{initializers_path}/scrival.rb", 'w')
+    File.open("#{initializers_path}/scrivito.rb", 'w')
   end
 
   it 'creates initializer file' do
     destination_root.should have_structure {
       directory 'config' do
         directory 'initializers' do
-          file 'scrival.rb' do
-            contains 'Scrival.configure do |config|'
+          file 'scrivito.rb' do
+            contains 'Scrivito.configure do |config|'
             contains 'config.cache_path = "/tmp/cache/#{Rails.root.basename}"'
           end
         end
 
         file 'schedule.rb' do
           contains "set :output, 'log/cron.log'"
-          contains "rake 'scrival:cache:gc'"
+          contains "rake 'scrivito:cache:gc'"
           contains "job_type :rake, 'cd :path && RAILS_ENV=:environment PATH=/usr/local/bin:/usr/bin:/bin /usr/local/bin/bundle exec rake :task --silent :output'"
           contains 'every 1.day do'
         end

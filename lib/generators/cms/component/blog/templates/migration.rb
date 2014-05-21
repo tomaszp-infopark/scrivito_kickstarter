@@ -1,4 +1,4 @@
-class Blog < ::Scrival::Migration
+class Blog < ::Scrivito::Migration
   def up
     create_obj_class(
       name: 'Blog',
@@ -26,7 +26,7 @@ class Blog < ::Scrival::Migration
           type: :string,
         },
         {
-          name: 'author_id',
+          name: 'author_email',
           type: :string,
         },
         {

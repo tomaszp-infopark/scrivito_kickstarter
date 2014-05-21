@@ -1,0 +1,41 @@
+<div class="col-md-9">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="media">
+        <% if @obj.author_email.present? %>
+          <%= render('gravatar', email: @obj.author_email) %>
+        <% end %>
+
+        <div class="media-body">
+          <%= cms_tag(:h2, @obj, :headline, class: 'media-heading') %>
+
+          <% if @obj.published_at.present? %>
+            <%= render('published_at', post: @obj) %>
+          <% end %>
+
+          <% if @obj.author_name.present? %>
+            <%= render('published_by', post: @obj) %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-body">
+      <%= render('main_content', post: @obj) %>
+    </div>
+
+    <div class="panel-footer">
+      <% if @obj.enable_comments? && @obj.disqus_shortname.present? %>
+        <%= render('comments', post: @obj) %>
+      <% end %>
+    </div>
+  </div>
+
+  <%= render('pagination', post: @obj) %>
+</div>
+
+<div class="col-md-3">
+  <%= render('blog/latest_blog_posts', blog: @obj.blog) %>
+
+  <%= render('blog/useful_links', page: @obj) %>
+</div>

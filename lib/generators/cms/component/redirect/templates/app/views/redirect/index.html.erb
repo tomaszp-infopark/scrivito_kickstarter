@@ -1,0 +1,19 @@
+<div class="alert alert-danger">
+  <h4>
+    Redirect Page
+  </h4>
+
+  <% if @obj.redirect_link.present? %>
+    <p>
+      This page is <strong>not</strong> displayed in production, instead the visitor is redirected
+      to: <%= link_to(cms_path(@obj.redirect_link.first), cms_path(@obj.redirect_link.first)) %>
+    </p>
+  <% else %>
+    <p>
+      You don't have a redirect target configured. Please use the <strong>editor</strong> below
+      to configure a redirect target.
+    </p>
+  <% end %>
+</div>
+
+<%= cms_edit_linklist(@obj, :redirect_link) %>

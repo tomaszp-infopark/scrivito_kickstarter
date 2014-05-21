@@ -1,0 +1,15 @@
+.google-maps input {
+  display: none;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  height: 32px;
+  margin-top: 16px;
+  padding: 0 11px 0 13px;
+  font-size: 15px;
+  font-weight: 300;
+  outline: none;
+  text-overflow: ellipsis;
+  width: 400px;
+}

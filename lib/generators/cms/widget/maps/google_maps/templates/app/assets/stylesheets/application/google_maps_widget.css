@@ -1,9 +1,4 @@
-.google-maps-map {
+.google-maps .map {
   height: 500px;
-  width: 100%;
-}
-
-.google-maps-map iframe {
-  height: 100%;
   width: 100%;
 }

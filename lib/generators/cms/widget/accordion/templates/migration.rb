@@ -1,4 +1,4 @@
-class AccordionWidget < ::Scrival::Migration
+class AccordionWidget < ::Scrivito::Migration
   def up
     create_obj_class(
       name: 'AccordionWidget',

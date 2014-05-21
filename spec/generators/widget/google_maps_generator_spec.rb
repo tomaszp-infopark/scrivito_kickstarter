@@ -10,7 +10,20 @@ describe Cms::Generators::Widget::Maps::GoogleMapsGenerator do
 
   before do
     prepare_destination
+    prepare_environments
     run_generator
+  end
+
+  def prepare_environments
+    paths = {
+      layout: "#{destination_root}/app/views/layouts",
+    }
+
+    paths.each do |_, path|
+      mkdir_p(path)
+    end
+
+    File.open("#{paths[:layout]}/application.html.erb", 'w') { |f| f.write("    <%= javascript_include_tag('application') %>\n") }
   end
 
   it 'creates files' do
@@ -21,13 +34,34 @@ describe Cms::Generators::Widget::Maps::GoogleMapsGenerator do
             directory 'application' do
               file 'google_maps_widget.css'
             end
+
+            directory 'editing' do
+              file 'google_maps_widget.css'
+            end
+          end
+
+          directory 'javascripts' do
+            directory 'application' do
+              file 'google_maps_widget.js.coffee'
+            end
+
+            directory 'editing' do
+              file 'google_maps_widget.js.coffee'
+            end
           end
         end
 
         directory 'views' do
           directory 'google_maps_widget' do
-            file 'show.html.haml'
-            file 'thumbnail.html.haml'
+            no_file 'details.html.erb'
+            file 'show.html.erb'
+            file 'thumbnail.html.erb'
+          end
+
+          directory 'layouts' do
+            file 'application.html.erb' do
+                contains "    <%= javascript_include_tag('//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places') %>"
+            end
           end
         end
 

@@ -25,7 +25,7 @@ describe Cms::Generators::Component::BlogGenerator do
     end
 
     File.open("#{destination_root}/Gemfile", 'w')
-    File.open("#{paths[:layout]}/application.html.haml", 'w') { |f| f.write("%link{href: '/favicon.ico', rel: 'shortcut icon'}\n") }
+    File.open("#{paths[:layout]}/application.html.erb", 'w') { |f| f.write("<link href=\"/favicon.ico\" rel=\"shortcut icon\" />\n") }
     File.open("#{paths[:javascripts]}/editing.js", 'w') { |file| file.write("\n//= require_self") }
   end
 
@@ -44,34 +44,34 @@ describe Cms::Generators::Component::BlogGenerator do
 
         directory 'views' do
           directory 'blog' do
-            file 'index.html.haml'
-            file 'details.html.haml'
-            file 'thumbnail.html.haml'
+            file 'index.html.erb'
+            file 'details.html.erb'
+            file 'thumbnail.html.erb'
             file 'index.atom.builder'
-            file '_comment_count.html.haml'
-            file '_discovery.html.haml'
-            file '_latest_blog_posts.html.haml'
-            file '_pagination.html.haml'
-            file '_post.html.haml'
-            file '_short_post.html.haml'
-            file '_useful_links.html.haml'
+            file '_comment_count.html.erb'
+            file '_discovery.html.erb'
+            file '_latest_blog_posts.html.erb'
+            file '_pagination.html.erb'
+            file '_post.html.erb'
+            file '_short_post.html.erb'
+            file '_useful_links.html.erb'
           end
 
           directory 'blog_post' do
-            file 'index.html.haml'
-            file 'details.html.haml'
-            file '_comments.html.haml'
-            file '_gravatar.html.haml'
-            file '_main_content.html.haml'
-            file '_pagination.html.haml'
-            file '_published_at.html.haml'
-            file '_published_by.html.haml'
-            no_file 'thumbnail.html.haml'
+            file 'index.html.erb'
+            file 'details.html.erb'
+            file '_comments.html.erb'
+            file '_gravatar.html.erb'
+            file '_main_content.html.erb'
+            file '_pagination.html.erb'
+            file '_published_at.html.erb'
+            file '_published_by.html.erb'
+            no_file 'thumbnail.html.erb'
           end
 
           directory 'layouts' do
-            file 'application.html.haml' do
-              contains "    = render('blog/discovery', page: @obj)"
+            file 'application.html.erb' do
+              contains "    <%= render('blog/discovery', page: @obj) %>"
             end
           end
         end

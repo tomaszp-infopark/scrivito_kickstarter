@@ -1,0 +1,19 @@
+.details-view [data-scrivito-field-type="string"],
+.details-view [data-scrivito-field-type="text"],
+.details-view [data-scrivito-field-type="html"],
+.details-view [data-scrivito-field-type="enum"],
+.details-view [data-scrivito-field-type="multienum"],
+.details-view [data-scrivito-field-type="linklist"],
+.details-view [data-scrivito-field-type="referencelist"],
+.details-view [data-scrivito-field-type="reference"],
+.details-view [data-scrivito-field-type="date"] {
+  background: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+  margin: 0;
+  padding: 10px 10px 10px 10px;
+}
