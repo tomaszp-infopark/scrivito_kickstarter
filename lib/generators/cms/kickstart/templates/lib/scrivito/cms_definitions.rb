@@ -1,4 +1,4 @@
-module Scrival
+module Scrivito
   module CmsDefinitions
     extend ActiveSupport::Concern
 
@@ -9,9 +9,9 @@ module Scrival
     module ClassMethods
       def cms_obj_class_definition
         @obj_class_hash ||= begin
-          workspace_id = Scrival::Workspace.current.id
+          workspace_id = Scrivito::Workspace.current.id
 
-          Scrival::CmsRestApi.get("workspaces/#{workspace_id}/obj_classes/#{name}")
+          Scrivito::CmsRestApi.get("workspaces/#{workspace_id}/obj_classes/#{name}")
         end
       end
 

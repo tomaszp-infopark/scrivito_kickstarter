@@ -16,7 +16,7 @@ module Cms
         destination = '.gitignore'
 
         if File.exist?(destination)
-          append_file(destination, "config/scrival.yml\n")
+          append_file(destination, "config/scrivito.yml\n")
         end
       end
 

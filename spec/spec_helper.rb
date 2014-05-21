@@ -2,9 +2,9 @@ ENV['RAILS_ENV'] = 'test'
 
 # Copy config files to dummy app! This has to be done before the
 # rails env is loaded
-require File.expand_path('../../lib/scrival_kickstarter/rake/configuration_helper', __FILE__)
+require File.expand_path('../../lib/scrivito_kickstarter/rake/configuration_helper', __FILE__)
 dummy_config_path = File.expand_path('../dummy/config', __FILE__)
-ScrivalKickstarter::Rake::ConfigurationHelper.new(dummy_config_path).copy
+ScrivitoKickstarter::Rake::ConfigurationHelper.new(dummy_config_path).copy
 
 require File.expand_path('../dummy/config/environment.rb', __FILE__)
 require 'rspec/rails'

@@ -28,8 +28,8 @@ $ ->
   message = "<p>You don't have a <strong>source</strong> URL set. Please use the
     <strong>Widget properties</strong> to set it.</p>"
 
-  scrival.on 'editing', ->
+  scrivito.on 'editing', ->
     displayErrorMessage(headline, message)
 
-  scrival.on 'new_content', ->
+  scrivito.on 'new_content', ->
     displayErrorMessage(headline, message)

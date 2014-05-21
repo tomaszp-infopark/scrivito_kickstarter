@@ -1,20 +1,20 @@
-# Scrival Kickstarter
+# Scrivito Kickstarter
 
-[![Gem Version](https://badge.fury.io/rb/scrival_kickstarter.png)](http://badge.fury.io/rb/scrival_kickstarter)
-[![Code Climate](https://codeclimate.com/github/infopark/scrival_kickstarter.png)](https://codeclimate.com/github/infopark/scrival_kickstarter)
-[![Dependency Status](https://gemnasium.com/infopark/scrival_kickstarter.png)](https://gemnasium.com/infopark/scrival_kickstarter)
-[![Build Status](https://travis-ci.org/infopark/scrival_kickstarter.png)](https://travis-ci.org/infopark/scrival_kickstarter)
+[![Gem Version](https://badge.fury.io/rb/scrivito_kickstarter.png)](http://badge.fury.io/rb/scrivito_kickstarter)
+[![Code Climate](https://codeclimate.com/github/infopark/scrivito_kickstarter.png)](https://codeclimate.com/github/infopark/scrivito_kickstarter)
+[![Dependency Status](https://gemnasium.com/infopark/scrivito_kickstarter.png)](https://gemnasium.com/infopark/scrivito_kickstarter)
+[![Build Status](https://travis-ci.org/infopark/scrivito_kickstarter.png)](https://travis-ci.org/infopark/scrivito_kickstarter)
 
-Scrival Kickstarter provides generators and rake tasks to quickly setup or enhance an
-[Scrival](http://scrival.com) Ruby on Rails project. All generated code
+Scrivito Kickstarter provides generators and rake tasks to quickly setup or enhance an
+[Scrivito](http://scrivito.com) Ruby on Rails project. All generated code
 represents a working example, but can be fully customized within the application.
 
 
 ## Installation and Usage
 
 Please visit our Documentation to get the
-[latest installation and usage information](https://scrival.com/preparation). An [overview and
-and more detailed information](https://scrival.com/kickstarter) are also available.
+[latest installation and usage information](https://scrivito.com/preparation). An [overview and
+and more detailed information](https://scrivito.com/kickstarter) are also available.
 
 
 ## Testing
@@ -29,7 +29,7 @@ There are also integration tests, that can be run by:
     $ rake test:integration
 
 In order to run the tests successfully, you need to download the application configuration from the
-[Scrival Dashboard](https://scrival.com) and unpack it into the ```config``` folder. See the
+[Scrivito Dashboard](https://scrivito.com) and unpack it into the ```config``` folder. See the
 contributing section below for more information.
 
 The integration tests are rather slow, because they create an entire new application, execute
@@ -53,7 +53,7 @@ order to run all Kickstarter Tests on the platform you should:
 
 3. Sign in at [Travis](https://travis-ci.org) with your Github Account.
 
-4. Enable the Travis Webhook for your `scrival_kickstarter` fork.
+4. Enable the Travis Webhook for your `scrivito_kickstarter` fork.
 
 If you now push commits to your forked repository or send a pull request, travis will automatically
 run all tests for you and indicate the build status.
@@ -61,34 +61,34 @@ run all tests for you and indicate the build status.
 
 ## Changelog
 
-See [Changelog](https://github.com/infopark/scrival_kickstarter/blob/master/CHANGELOG.md) for more
+See [Changelog](https://github.com/infopark/scrivito_kickstarter/blob/master/CHANGELOG.md) for more
 details.
 
 
 ## Contributing
 
-We would be very happy and thankful if you open new issues in order to further improve Scrival
+We would be very happy and thankful if you open new issues in order to further improve Scrivito
 Kickstarter. If you want to go a step further and extend the functionality or fix a problem, you can
 do so any time by following the steps below.
 
-1. Signup for a [free Scrival account](http://www.scrival.com/) and setup a test CMS
-   component in the Scrival Dashboard.
+1. Signup for a [free Scrivito account](http://www.scrivito.com/) and setup a test CMS
+   component in the Scrivito Dashboard.
 
 2. Fork and clone the
-   [Scrival Kickstarter GitHub repository](https://github.com/infopark/scrival_kickstarter).
+   [Scrivito Kickstarter GitHub repository](https://github.com/infopark/scrivito_kickstarter).
 
-        git clone git@github.com:_username_/scrival_kickstarter.git
-        cd scrival_kickstarter
+        git clone git@github.com:_username_/scrivito_kickstarter.git
+        cd scrivito_kickstarter
 
 3. We suggest using [rbenv](https://github.com/sstephenson/rbenv/) for managing your local Ruby
    version. Make sure to use at least Ruby version 2.0.
 
         ruby --version
 
-3. Copy the tenant name and api key for your Ruby on Rails application from the Scrival Dashboard
+3. Copy the tenant name and api key for your Ruby on Rails application from the Scrivito Dashboard
    and insert them to your cloned Kickstarter gem `config` folder.
 
-        config/scrival.yml
+        config/scrivito.yml
 
 4. Create the bundle and run all test to make sure everything is working before you add your own
    changes. You find some more details about testing above in the __Testing__ section.

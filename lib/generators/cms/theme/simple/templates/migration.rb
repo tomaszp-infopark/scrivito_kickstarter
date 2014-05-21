@@ -1,4 +1,4 @@
-class KickstarterSimpleTheme < ::Scrival::Migration
+class KickstarterSimpleTheme < ::Scrivito::Migration
   def up
     homepage_path = '/en'
     configuration_path = "#{homepage_path}/_configuration"
@@ -18,18 +18,18 @@ class KickstarterSimpleTheme < ::Scrival::Migration
     # Homepage example
     #
 
-    teaser_widget = Scrival::BasicWidget.new(
+    teaser_widget = Scrivito::BasicWidget.new(
       _obj_class: 'TeaserWidget',
-      headline: 'Welcome to Scrival',
+      headline: 'Welcome to Scrivito',
       content: '<p>You successfully started your
         project. Basic components such as a top navigation, a search panel, this text widget, and a
         login page have been created for you to experiment with the building blocks of your website
-        application. To access the documentation or get in touch with the Scrival support team,
-        visit the Scrival Documentation.</p>',
+        application. To access the documentation or get in touch with the Scrivito support team,
+        visit the Scrivito Documentation.</p>',
       link_to: [
-        Scrival::Link.new(
-          url: 'https://scrival.com/preparation',
-          title: 'Browse Scrival Documentation'
+        Scrivito::Link.new(
+          url: 'https://scrivito.com/preparation',
+          title: 'Browse Scrivito Documentation'
         ),
       ]
     )
@@ -145,7 +145,7 @@ class KickstarterSimpleTheme < ::Scrival::Migration
       published_at: Time.zone.now - 1.days
     )
 
-    widget = Scrival::BasicWidget.new(
+    widget = Scrivito::BasicWidget.new(
       _obj_class: 'TextWidget',
       content: '<p>Quisque eget sem sit amet risus gravida commodo et sed neque. Morbi pellentesque
         urna ut sapien auctor mattis. Donec quis cursus enim. Pellentesque sodales, elit nec
@@ -171,7 +171,7 @@ class KickstarterSimpleTheme < ::Scrival::Migration
       published_at: Time.zone.now - 3.days
     )
 
-    widget = Scrival::BasicWidget.new(
+    widget = Scrivito::BasicWidget.new(
       _obj_class: 'TextWidget',
       content: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

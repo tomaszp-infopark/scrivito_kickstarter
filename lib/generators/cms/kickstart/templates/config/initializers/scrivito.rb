@@ -1,12 +1,12 @@
-def scrival_config
-  YAML.load_file(Rails.root + 'config/scrival.yml') || {}
+def scrivito_config
+  YAML.load_file(Rails.root + 'config/scrivito.yml') || {}
 rescue Errno::ENOENT
   {}
 end
 
-Scrival.configure do |config|
-  config.tenant  = ENV['SCRIVAL_TENANT'] || scrival_config['tenant']
-  config.api_key = ENV['SCRIVAL_API_KEY'] || scrival_config['api_key']
+Scrivito.configure do |config|
+  config.tenant  = ENV['SCRIVITO_TENANT'] || scrivito_config['tenant']
+  config.api_key = ENV['SCRIVITO_API_KEY'] || scrivito_config['api_key']
 
   config.choose_homepage do |env|
     Homepage.default
@@ -20,9 +20,4 @@ Scrival.configure do |config|
   config.editing_auth do |env|
     EditModeDetection.editing_allowed?(env)
   end
-end
-
-Scrival.configure do |config|
-  # Set cache path outside of the application directory.
-  config.cache_path = "/tmp/cache/#{Rails.root.basename}"
 end

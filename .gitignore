@@ -10,7 +10,7 @@ pkg/
 doc/
 
 # Kickstarter configuration files
-config/scrival.yml
+config/scrivito.yml
 
 # Sublime editor files
 *.sublime-project

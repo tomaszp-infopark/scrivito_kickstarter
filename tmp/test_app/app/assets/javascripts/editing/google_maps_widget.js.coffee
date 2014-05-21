@@ -27,11 +27,11 @@ $ ->
       google.maps.event.addListener(autocomplete, 'place_changed', ->
         place = autocomplete.getPlace()
         googleMapsWidget.placeMarker(map, infoWindow, marker, place)
-        input.scrival('save', place.formatted_address)
+        input.scrivito('save', place.formatted_address)
       )
 
-  scrival.on 'editing', ->
+  scrivito.on 'editing', ->
     initialize()
 
-  scrival.on 'new_content', ->
+  scrivito.on 'new_content', ->
     initialize()

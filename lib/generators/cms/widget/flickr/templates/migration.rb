@@ -1,4 +1,4 @@
-class FlickrWidget < ::Scrival::Migration
+class FlickrWidget < ::Scrivito::Migration
   def up
     create_obj_class(
       name: 'FlickrWidget',

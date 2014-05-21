@@ -1,4 +1,4 @@
-class GoogleMapsWidget < ::Scrival::Migration
+class GoogleMapsWidget < ::Scrivito::Migration
   def up
     create_obj_class(
       name: 'GoogleMapsWidget',

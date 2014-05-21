@@ -2,7 +2,7 @@ require 'rake'
 require 'rake/tasklib'
 require 'yaml'
 
-module ScrivalKickstarter
+module ScrivitoKickstarter
   module Rake
     class TravisTask < ::Rake::TaskLib
       def initialize
@@ -26,8 +26,8 @@ module ScrivalKickstarter
         end
 
         configuration = {
-          'SCRIVAL_TENANT' => scrival_config['tenant'],
-          'SCRIVAL_API_KEY' => scrival_config['api_key'],
+          'SCRIVITO_TENANT' => scrivito_config['tenant'],
+          'SCRIVITO_API_KEY' => scrivito_config['api_key'],
         }
 
         contributor = %x(whoami).strip
@@ -44,8 +44,8 @@ module ScrivalKickstarter
         end
       end
 
-      def scrival_config
-        YAML.load_file('config/scrival.yml')
+      def scrivito_config
+        YAML.load_file('config/scrivito.yml')
       end
     end
   end

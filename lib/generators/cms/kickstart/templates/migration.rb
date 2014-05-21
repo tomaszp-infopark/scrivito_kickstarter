@@ -1,4 +1,4 @@
-class Kickstart < ::Scrival::Migration
+class Kickstart < ::Scrivito::Migration
   def up
     create_obj_class(
       name: 'Root',

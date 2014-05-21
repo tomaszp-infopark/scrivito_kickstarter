@@ -1,4 +1,4 @@
-class VimeoWidget < ::Scrival::Migration
+class VimeoWidget < ::Scrivito::Migration
   def up
     create_obj_class(
       name: 'VimeoWidget',

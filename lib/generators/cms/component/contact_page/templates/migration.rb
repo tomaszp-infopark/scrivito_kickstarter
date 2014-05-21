@@ -1,4 +1,4 @@
-class ContactPage < ::Scrival::Migration
+class ContactPage < ::Scrivito::Migration
   def up
     create_obj_class(
       name: 'ContactPage',

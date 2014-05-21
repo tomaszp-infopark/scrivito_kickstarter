@@ -1,5 +1,5 @@
 send_notifications_to({
-  scrival: 'falk.koeppe@scrival.com',
+  scrivito: 'falk.koeppe@scrivito.com',
 })
 
 buckets 'kickstarter' do

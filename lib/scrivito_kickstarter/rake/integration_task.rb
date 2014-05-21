@@ -1,10 +1,10 @@
 require 'rake'
 require 'rake/tasklib'
 
-require 'scrival_kickstarter/rake/configuration_helper'
-require 'scrival_kickstarter/rake/cms_client'
+require 'scrivito_kickstarter/rake/configuration_helper'
+require 'scrivito_kickstarter/rake/cms_client'
 
-module ScrivalKickstarter
+module ScrivitoKickstarter
   module Rake
     class IntegrationTask < ::Rake::TaskLib
       def initialize
@@ -48,7 +48,7 @@ module ScrivalKickstarter
       def create_application
         rm_rf(app_path)
 
-        sh("rails new #{app_path} --skip-test-unit --skip-active-record --skip-bundle --template lib/scrival_kickstarter/rake/template.rb")
+        sh("rails new #{app_path} --skip-test-unit --skip-active-record --skip-bundle --template lib/scrivito_kickstarter/rake/template.rb")
       end
 
       def create_configuration_files
@@ -70,7 +70,6 @@ module ScrivalKickstarter
           'cms:component:redirect',
           'cms:component:deployment --provider=opsworks',
           'cms:component:social_sharing',
-          'cms:component:social_sharing:example',
           'cms:component:breadcrumbs',
           'cms:widget:accordion',
           'cms:widget:video',

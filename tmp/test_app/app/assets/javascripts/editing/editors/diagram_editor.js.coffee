@@ -115,7 +115,7 @@ $ ->
 
     diagramEditor()
       .data('cmsField')
-      .scrival('save', data)
+      .scrivito('save', data)
 
   serialize = ->
     elements = diagramEditor().find('li')
@@ -134,7 +134,7 @@ $ ->
   # The diagram editor is initialized when the widget property window is opened. It is based on a
   # CMS string field. The editor also makes sure, that changes are saved to the CMS and that the
   # diagram is reloaded if changes occur.
-  scrival.on 'new_content', (root) ->
+  scrivito.on 'new_content', (root) ->
     diagramSourceElement = $(root).find('.diagram-source')
     new Diagram(diagramSourceElement).init()
 

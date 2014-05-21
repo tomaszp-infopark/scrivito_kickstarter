@@ -69,15 +69,12 @@ module EditingHelper
         html = ''.html_safe
 
         linklist.each do |link|
-          url = if link.internal?
-            "/#{link.obj.id}"
-          else
-            link.url
-          end
+          url = link.internal? ? "/#{link.obj.id}" : link.url
+          description = link.internal? ? link.obj.description_for_editor : link.url
 
           html << content_tag(:li, data: { title: link.title, url: url }) do
             content_tag(:span, class: 'list-content') do
-              "#{link.title} #{link_to(url, url, target: :_blank)}".html_safe
+              "#{link.title} #{link_to(description, url, target: :_blank)}".html_safe
             end
           end
         end

@@ -1,7 +1,7 @@
 require 'net/http'
 require 'json'
 
-module ScrivalKickstarter
+module ScrivitoKickstarter
   module Rake
     class CmsClient
       def reset_cms
@@ -15,7 +15,7 @@ module ScrivalKickstarter
       def config
         @config ||= begin
           path = File.expand_path('../../../../config', __FILE__)
-          file = File.join(path, 'scrival.yml')
+          file = File.join(path, 'scrivito.yml')
 
           if File.exists?(file)
             YAML.load_file(file)
@@ -34,11 +34,11 @@ module ScrivalKickstarter
       end
 
       def tenant
-        ENV['SCRIVAL_TENANT'] || config['tenant']
+        ENV['SCRIVITO_TENANT'] || config['tenant']
       end
 
       def api_key
-        ENV['SCRIVAL_API_KEY'] || config['api_key']
+        ENV['SCRIVITO_API_KEY'] || config['api_key']
       end
 
       def revision_id

@@ -1,4 +1,4 @@
-class VideoWidget < ::Scrival::Migration
+class VideoWidget < ::Scrivito::Migration
   def up
     create_obj_class(
       name: 'VideoWidget',

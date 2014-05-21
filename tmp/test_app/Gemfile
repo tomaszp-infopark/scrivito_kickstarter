@@ -42,10 +42,10 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem "scrival_sdk"
-gem "scrival_editors"
+gem "scrivito_sdk"
+gem "scrivito_editors"
 group :test, :development do
-  gem "scrival_kickstarter", path: "../../"
+  gem "scrivito_kickstarter", path: "../../"
 end
 
 gem "gravatar_image_tag"

@@ -1,2 +1,2 @@
-class CmsController < Scrival::DefaultCmsController
+class CmsController < Scrivito::DefaultCmsController
 end

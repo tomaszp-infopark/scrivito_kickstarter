@@ -1,4 +1,4 @@
-class HeadlineWidget < ::Scrival::Migration
+class HeadlineWidget < ::Scrivito::Migration
   def up
     create_obj_class(
       name: 'HeadlineWidget',

@@ -17,7 +17,7 @@ $ ->
     template
 
   displayErrorMessage = (headline, message) ->
-    widget = $('[data-scrival-widget-obj-class="SliderWidget"]')
+    widget = $('[data-scrivito-widget-obj-class="SliderWidget"]')
     carousel = widget.find('.carousel')
 
     # Only display the error message when the carousel is missing or the error message already exists.
@@ -28,8 +28,8 @@ $ ->
   message = "<p>You don't have any <strong>images</strong> set. Please use the
     <strong>Widget properties</strong> to select them.</p>"
 
-  scrival.on 'editing', ->
+  scrivito.on 'editing', ->
     displayErrorMessage(headline, message)
 
-  scrival.on 'new_content', ->
+  scrivito.on 'new_content', ->
     displayErrorMessage(headline, message)

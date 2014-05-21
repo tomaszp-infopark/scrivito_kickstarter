@@ -1,6 +1,6 @@
 require 'rails/generators'
 
-require 'scrival_kickstarter/engine'
+require 'scrivito_kickstarter/engine'
 
 require 'generators/cms/migration'
 require 'generators/cms/widget/example'

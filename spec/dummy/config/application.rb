@@ -7,7 +7,7 @@ require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
 Bundler.require(*Rails.groups)
-require 'scrival_kickstarter'
+require 'scrivito_kickstarter'
 
 module Dummy
   class Application < Rails::Application

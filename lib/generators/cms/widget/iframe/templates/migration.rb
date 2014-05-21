@@ -1,4 +1,4 @@
-class CreateIframeWidget < ::Scrival::Migration
+class CreateIframeWidget < ::Scrivito::Migration
   def up
     create_obj_class(
       name: 'IframeWidget',

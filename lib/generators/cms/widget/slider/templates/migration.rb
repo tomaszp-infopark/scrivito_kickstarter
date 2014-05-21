@@ -1,4 +1,4 @@
-class SliderWidget < ::Scrival::Migration
+class SliderWidget < ::Scrivito::Migration
   def up
     create_obj_class(
       name: 'SliderWidget',

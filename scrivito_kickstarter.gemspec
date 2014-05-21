@@ -1,19 +1,19 @@
 $:.push File.expand_path('../lib', __FILE__)
 
-require 'scrival_kickstarter/version'
+require 'scrivito_kickstarter/version'
 
 Gem::Specification.new do |gem|
   gem.platform    = Gem::Platform::RUBY
-  gem.name        = 'scrival_kickstarter'
-  gem.version     = ScrivalKickstarter::VERSION
-  gem.summary     = 'Scrival Kickstarter'
-  gem.description = 'Scrival Kickstarter'
+  gem.name        = 'scrivito_kickstarter'
+  gem.version     = ScrivitoKickstarter::VERSION
+  gem.summary     = 'Scrivito Kickstarter'
+  gem.description = 'Scrivito Kickstarter'
 
   gem.license = 'LGPL-3.0'
 
-  gem.authors   = ['Scrival']
-  gem.email     = ['support@scrival.com']
-  gem.homepage  = 'http://www.scrival.com'
+  gem.authors   = ['Scrivito']
+  gem.email     = ['support@scrivito.com']
+  gem.homepage  = 'http://www.scrivito.com'
 
   gem.bindir      = 'bin'
   gem.executables = []
@@ -28,8 +28,8 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency 'bundler'
   gem.add_dependency 'rails'
-  gem.add_dependency 'scrival_sdk'
-  gem.add_dependency 'scrival_editors'
+  gem.add_dependency 'scrivito_sdk'
+  gem.add_dependency 'scrivito_editors'
 
   gem.add_development_dependency 'pry'
   gem.add_development_dependency 'rspec-rails'

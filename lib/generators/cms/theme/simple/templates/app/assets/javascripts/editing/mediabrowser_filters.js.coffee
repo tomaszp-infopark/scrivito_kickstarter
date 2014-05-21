@@ -13,17 +13,17 @@ $ ->
   #     images: {
   #       title: 'Images',
   #       icon: 'editing-icon-image',
-  #       query: scrival.obj_where('_obj_class', 'equals', 'Image')
+  #       query: scrivito.obj_where('_obj_class', 'equals', 'Image')
   #     }
   #   }
   Mediabrowser.filters = ->
     'images':
       title: 'Images'
-      query: scrival.obj_where('_obj_class', 'equals', 'Image')
+      query: scrivito.obj_where('_obj_class', 'equals', 'Image')
       icon: 'editing-icon-image'
     'videos':
       title: 'Videos'
-      query: scrival.obj_where('_obj_class', 'equals', 'Video')
+      query: scrivito.obj_where('_obj_class', 'equals', 'Video')
     'error_pages':
       title: 'Error Pages'
-      query: scrival.obj_where('_obj_class', 'equals', 'ErrorPage')
+      query: scrivito.obj_where('_obj_class', 'equals', 'ErrorPage')

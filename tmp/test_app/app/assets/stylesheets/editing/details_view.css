@@ -1,12 +1,12 @@
-.details-view [data-scrival-field-type="string"],
-.details-view [data-scrival-field-type="text"],
-.details-view [data-scrival-field-type="html"],
-.details-view [data-scrival-field-type="enum"],
-.details-view [data-scrival-field-type="multienum"],
-.details-view [data-scrival-field-type="linklist"],
-.details-view [data-scrival-field-type="referencelist"],
-.details-view [data-scrival-field-type="reference"],
-.details-view [data-scrival-field-type="date"] {
+.details-view [data-scrivito-field-type="string"],
+.details-view [data-scrivito-field-type="text"],
+.details-view [data-scrivito-field-type="html"],
+.details-view [data-scrivito-field-type="enum"],
+.details-view [data-scrivito-field-type="multienum"],
+.details-view [data-scrivito-field-type="linklist"],
+.details-view [data-scrivito-field-type="referencelist"],
+.details-view [data-scrivito-field-type="reference"],
+.details-view [data-scrivito-field-type="date"] {
   background: #fff;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;

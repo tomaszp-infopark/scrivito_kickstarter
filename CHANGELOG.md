@@ -39,17 +39,17 @@
     for the editor to insert an example anywhere on the page.
 
 # v1.3.0
-  * Added `scrival_editors` as a dependency.
+  * Added `scrivito_editors` as a dependency.
 
 # v1.2.0
-  * Rename `edit.html` to `details.html` as it is now required by the latest Scrival SDK. This also
+  * Rename `edit.html` to `details.html` as it is now required by the latest Scrivito SDK. This also
     changed the method `mediabrowser_edit_view_path` to `mediabrowser_details_view_path`.
   * The `dialog.css` file has been removed. The functionality will be provided by the
-    scrival_editors gem. (Thanks @agessler)
+    scrivito_editors gem. (Thanks @agessler)
 
 # v1.1.0
   * Update Travis Rake task to only use the tenant name and the api key.
-  * Update Scrival SDK configuration.
+  * Update Scrivito SDK configuration.
 
 # v1.0.0
   * Removed usage of `preset_attributes` and moved the logic into the Ruby on Rails application.
@@ -61,7 +61,7 @@
   * Breadcrumbs access is now memoized for better performance on pages like the search result page,
     where breadcrumbs of one object are potentially displayed multiple times.
   * Removed JavaScript editors and the media browser. The functionality is now available with the
-    new gem `scrival_editors`. This allows much easier updates of these components and removes many
+    new gem `scrivito_editors`. This allows much easier updates of these components and removes many
     more complex files from a starting project.
   * Renamed `menubar` to `edit_toggle` which describes better, what it actually does.
   * Update blog posts to edit the author and date in-place instead of on the property view.
@@ -73,21 +73,21 @@
     "linklist", "reference" and "referencelist" can now be used independently from their attribute
     type. This means it is possible to use the `string-editor` for `enum` values, for example or
     define a custom editor for string attributes. The attribute type editors still work by default
-    but the editor can be defined in the `data-editor` HTML attribute on a Scrival `cms_tag` call.
-  * The following generators are removed from the Kickstarter and partially provided by the Scrival
+    but the editor can be defined in the `data-editor` HTML attribute on a Scrivito `cms_tag` call.
+  * The following generators are removed from the Kickstarter and partially provided by the Scrivito
     SDK: `cms:obj`, `cms:widget`, `cms:controller` and `cms:scaffold`.
   * Removed all generators that only configure the Ruby on Rails application. These generators are:
     `component:amazon_ses`, `monitoring:newrelic`, `error_tracking:airbrake`,
     `error_tracking:honeybadger` and `tracking:google_analytics`. All functionality is fully
     described on their respective webpages and provide extensive documentation on how to extend and
     configure the Ruby on Rails application.
-  * The styling for nested widgets is now provided by the Scrival and not necessary
+  * The styling for nested widgets is now provided by the Scrivito and not necessary
     anymore in the Kickstarter.
   * Updated the string editor to use the `contenteditable` HTML5 attribute, which allows to edit
     content while keeping style information. (Thanks @cedrics and @dcsaszar)
   * Renamed `Column2Widget` to `TwoColumnWidget` and `Column3Widget` to `ThreeColumnWidget`.
     (Thanks @kostia)
-  * Default CMS field placeholder and highlighting is moved into the Scrival, so it
+  * Default CMS field placeholder and highlighting is moved into the Scrivito, so it
     can be removed from the Kickstarter.
   * Removed `rails g cms:component:developer_tools` and `rails g cms:component:testing` as both are
     very project specific and have easy installers that are better described on their respective
@@ -124,10 +124,10 @@
     Instead we recommend to publish right after running your generated migrations to have a homepage
     and login page available in your project.
   * Added customizable filters to the media browser. You can now define a set of available filters
-    that have a name, title, icon and a Scrival JavaScript search query. A list of filter names can
+    that have a name, title, icon and a Scrivito JavaScript search query. A list of filter names can
     then be handed over to the media browser that looks up the filters and displays them in the left
     filter column. This allows to restrict or display any kind of filter in the media browser.
   * Removed dependency on `less` by using plain CSS and referencing bootstrap from a CDN.
   * Removed `bootstrap-datepicker-rails` dependency and switched to a jQuery UI datepicker with a
     timepicker addon.
-  * renamed `infopark_kickstarter` to `scrival_kickstarter`
+  * renamed `infopark_kickstarter` to `scrivito_kickstarter`

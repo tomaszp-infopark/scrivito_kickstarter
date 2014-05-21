@@ -1,4 +1,4 @@
-class Blog < ::Scrival::Migration
+class Blog < ::Scrivito::Migration
   def up
     create_obj_class(
       name: 'Blog',

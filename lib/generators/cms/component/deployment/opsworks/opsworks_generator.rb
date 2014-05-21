@@ -14,10 +14,10 @@ module Cms
           end
 
           def append_configuration
-            destination = File.join(destination_root, 'config', 'initializers', 'scrival.rb')
+            destination = File.join(destination_root, 'config', 'initializers', 'scrivito.rb')
 
             append_file(destination) do
-              File.read(find_in_source_paths('scrival.rb'))
+              File.read(find_in_source_paths('scrivito.rb'))
             end
           end
 

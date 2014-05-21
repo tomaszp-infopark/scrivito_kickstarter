@@ -1,6 +1,6 @@
-module ScrivalKickstarter
+module ScrivitoKickstarter
   class Engine < ::Rails::Engine
-    isolate_namespace ScrivalKickstarter
+    isolate_namespace ScrivitoKickstarter
 
     config.generators do |generator|
       generator.test_framework :rspec, fixture: false
