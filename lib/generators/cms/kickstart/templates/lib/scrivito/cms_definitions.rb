@@ -1,4 +1,4 @@
-module Scrivito
+module ScrivitoKickstarter
   module CmsDefinitions
     extend ActiveSupport::Concern
 
