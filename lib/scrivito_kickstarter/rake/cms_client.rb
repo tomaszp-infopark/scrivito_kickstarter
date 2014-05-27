@@ -26,7 +26,7 @@ module ScrivitoKickstarter
       end
 
       def url
-        "https://api.scrival.com/tenants/#{tenant}"
+        "https://api.scrivito.com/tenants/#{tenant}"
       end
 
       def login
