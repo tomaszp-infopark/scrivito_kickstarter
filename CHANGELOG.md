@@ -1,3 +1,6 @@
+# v2.0.1
+  * Use and configure resource browser.
+
 # v2.0.0
   * Bugfix: The target for a redirect page is now editable, even if a target is already configured.
     (Thanks @gertimon)
@@ -14,7 +17,7 @@
     for editors, which made the properties view not necessary anymore to enter the location.
     Multiple map widgets on the same page are supported. It uses the Google Places API, so your
     number of requests per day are limited without an Google API key.
-  * Updated the image class to hold information for the media browser to display a preview of the
+  * Updated the image class to hold information for the resource browser to display a preview of the
     image, instead of a generic icon.
   * Bugfix: A wrong indentation of the footer section of the login panel caused it to break the
     design.
@@ -43,7 +46,7 @@
 
 # v1.2.0
   * Rename `edit.html` to `details.html` as it is now required by the latest Scrivito SDK. This also
-    changed the method `mediabrowser_edit_view_path` to `mediabrowser_details_view_path`.
+    changed the method `resourcebrowser_edit_view_path` to `resourcebrowser_details_view_path`.
   * The `dialog.css` file has been removed. The functionality will be provided by the
     scrivito_editors gem. (Thanks @agessler)
 
@@ -60,7 +63,7 @@
   * The homepage headline is now editable in place, instead of on the property view only.
   * Breadcrumbs access is now memoized for better performance on pages like the search result page,
     where breadcrumbs of one object are potentially displayed multiple times.
-  * Removed JavaScript editors and the media browser. The functionality is now available with the
+  * Removed JavaScript editors and the resource browser. The functionality is now available with the
     new gem `scrivito_editors`. This allows much easier updates of these components and removes many
     more complex files from a starting project.
   * Renamed `menubar` to `edit_toggle` which describes better, what it actually does.
@@ -114,19 +117,19 @@
     page, and the form builder. The user authentication is changed to fixed credentials "root" for
     both login and password. The "custom_cloud.yml" file is no longer needed and the
     "infopark_crm_connector" is no longer included.
-  * Bugfix: It is no longer the case that a resource is uploaded twice when dropped into the media
-    browser. (Thanks @gertimon)
-  * Bugfix: The page is now reloaded if a resource is deleted in the media browser to update all
+  * Bugfix: It is no longer the case that a resource is uploaded twice when dropped into the
+    resource browser. (Thanks @gertimon)
+  * Bugfix: The page is now reloaded if a resource is deleted in the resource browser to update all
     references on the page. (Thanks @gertimon)
   * The `slug` method is no longer overwritten by the generated Kickstarter code to allow full
     customization by gems or the developer within the project.
   * We removed the `NullHomepage` concept that was displayed if no homepage was published yet.
     Instead we recommend to publish right after running your generated migrations to have a homepage
     and login page available in your project.
-  * Added customizable filters to the media browser. You can now define a set of available filters
+  * Added customizable filters to the resource browser. You can now define a set of available filters
     that have a name, title, icon and a Scrivito JavaScript search query. A list of filter names can
-    then be handed over to the media browser that looks up the filters and displays them in the left
-    filter column. This allows to restrict or display any kind of filter in the media browser.
+    then be handed over to the resource browser that looks up the filters and displays them in the left
+    filter column. This allows to restrict or display any kind of filter in the resource browser.
   * Removed dependency on `less` by using plain CSS and referencing bootstrap from a CDN.
   * Removed `bootstrap-datepicker-rails` dependency and switched to a jQuery UI datepicker with a
     timepicker addon.

@@ -16,7 +16,7 @@ class Image < Obj
     super(attributes)
   end
 
-  # Indicate the media browser, that objects of this type are images
+  # Indicate the resource browser, that objects of this type are images
   # that can have a URL that suitable for img tags.
   def image?
     true

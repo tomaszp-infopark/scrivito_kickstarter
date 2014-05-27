@@ -1,10 +1,10 @@
 $ ->
-  # Define available filters for the mediabrowser.
+  # Define available filters for the resource browser.
   #
   # Each filter is composed of a name, a title, an icon and a search query that gets executed, when
   # the filter is activated. The icon is a CSS class used to describe a font icon. If the icon is
-  # omitted a generic icon is used. Look at the various editors that open the media browser for more
-  # details on how to restrict the available list of filters by using their name.
+  # omitted a generic icon is used. Look at the various editors that open the resource browser for
+  # more details on how to restrict the available list of filters by using their name.
   #
   # Examples:
   #
@@ -16,7 +16,7 @@ $ ->
   #       query: scrivito.obj_where('_obj_class', 'equals', 'Image')
   #     }
   #   }
-  Mediabrowser.filters = ->
+  Resourcebrowser.filters = ->
     'images':
       title: 'Images'
       query: scrivito.obj_where('_obj_class', 'equals', 'Image')
