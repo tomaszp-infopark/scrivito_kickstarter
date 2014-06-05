@@ -47,7 +47,7 @@ GEM
     coffee-script-source (1.7.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
-    execjs (2.0.2)
+    execjs (2.1.0)
     gravatar_image_tag (1.2.0)
     hike (1.2.3)
     hyp_diff (0.0.3)
@@ -72,7 +72,7 @@ GEM
       railties (>= 3.1)
     multi_json (1.10.1)
     nokogiri (1.5.11)
-    polyglot (0.3.4)
+    polyglot (0.3.5)
     projekktor-rails (0.0.6)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -101,17 +101,17 @@ GEM
       sass (~> 3.2.0)
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
-    scrivito_editors (0.0.10)
+    scrivito_editors (0.0.11)
       coffee-rails
       jquery-ui-rails
       railties
       scrivito_resourcebrowser
       scrivito_sdk
-    scrivito_resourcebrowser (0.0.1)
+    scrivito_resourcebrowser (0.0.3)
       coffee-rails
       railties
       scrivito_sdk
-    scrivito_sdk (0.13.0)
+    scrivito_sdk (0.15.0)
       addressable (~> 2.3.2)
       diff-lcs (~> 1.2.5)
       hyp_diff (~> 0.0.3)
@@ -134,7 +134,7 @@ GEM
       activesupport (>= 3.0)
       sprockets (~> 2.8)
     thor (0.19.1)
-    thread_safe (0.3.3)
+    thread_safe (0.3.4)
     tilt (1.4.1)
     treetop (1.4.15)
       polyglot

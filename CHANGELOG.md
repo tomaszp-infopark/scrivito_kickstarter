@@ -1,3 +1,6 @@
+# v2.0.2
+  * Updated gems.
+
 # v2.0.1
   * Use and configure resource browser.
 
