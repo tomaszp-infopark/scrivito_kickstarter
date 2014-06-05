@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 require 'generator_spec/test_case'
 require 'generators/cms/widget/headline/headline_generator.rb'
@@ -14,7 +14,7 @@ describe Cms::Generators::Widget::HeadlineGenerator do
   end
 
   it 'creates files' do
-    destination_root.should have_structure {
+    expect(destination_root).to have_structure {
       directory 'app' do
         directory 'views' do
           directory 'headline_widget' do

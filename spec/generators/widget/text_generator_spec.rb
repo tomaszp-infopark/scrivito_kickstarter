@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 require 'generator_spec/test_case'
 require 'rails/generators/test_case'
@@ -15,7 +15,7 @@ describe Cms::Generators::Widget::TextGenerator do
   end
 
   it 'creates files' do
-    destination_root.should have_structure {
+    expect(destination_root).to have_structure {
       directory 'app' do
         directory 'views' do
           directory 'text_widget' do

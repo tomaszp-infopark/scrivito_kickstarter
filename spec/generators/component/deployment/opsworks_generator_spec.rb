@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 require 'generator_spec/test_case'
 require 'generators/cms/component/deployment/opsworks/opsworks_generator'
@@ -25,7 +25,7 @@ describe Cms::Generators::Component::Deployment::OpsworksGenerator do
   end
 
   it 'creates initializer file' do
-    destination_root.should have_structure {
+    expect(destination_root).to have_structure {
       directory 'config' do
         directory 'initializers' do
           file 'scrivito.rb' do

@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 require 'generator_spec/test_case'
 require 'generators/cms/component/breadcrumbs/breadcrumbs_generator'
@@ -29,7 +29,7 @@ describe Cms::Generators::Component::BreadcrumbsGenerator do
   end
 
   it 'create files' do
-    destination_root.should have_structure {
+    expect(destination_root).to have_structure {
       directory 'app' do
         directory 'models' do
           file 'obj.rb' do
