@@ -1,4 +1,5 @@
 # v2.0.2
+  * Integrate new Scrivito SDK JavaScript events.
   * Updated gems.
 
 # v2.0.1
