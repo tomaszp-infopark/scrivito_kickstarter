@@ -45,9 +45,8 @@
     <%= javascript_include_tag('//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js') %>
 
     <% if inplace_editing_allowed? %>
+      <%= scrivito_after_content_tags %>
       <%= javascript_include_tag('editing') %>
     <% end %>
-
-    <%= scrivito_after_content_tags %>
   <% end %>
 </html>

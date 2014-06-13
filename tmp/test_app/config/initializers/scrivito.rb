@@ -22,6 +22,10 @@ Scrivito.configure do |config|
   end
 end
 
+# The application uses separate manifest files for all editing related styles and JavaScript, which
+# are only loaded if required. They need to be integrated into Ruby on Rails asset pipeline.
+Rails.application.config.assets.precompile += %w(editing.css editing.js)
+
 Scrivito.configure do |config|
   # Set cache path outside of the application directory.
   config.cache_path = "/tmp/cache/#{Rails.root.basename}"

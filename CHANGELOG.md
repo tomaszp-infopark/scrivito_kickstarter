@@ -1,3 +1,8 @@
+# v2.0.2
+  * Better integration of the editing manifest into the asset pipeline.
+  * Integrate new Scrivito SDK JavaScript events.
+  * Updated gems.
+
 # v2.0.1
   * Use and configure resource browser.
 

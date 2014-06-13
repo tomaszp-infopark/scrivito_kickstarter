@@ -134,19 +134,20 @@ $ ->
   # The diagram editor is initialized when the widget property window is opened. It is based on a
   # CMS string field. The editor also makes sure, that changes are saved to the CMS and that the
   # diagram is reloaded if changes occur.
-  scrivito.on 'new_content', (root) ->
-    diagramSourceElement = $(root).find('.diagram-source')
-    new Diagram(diagramSourceElement).init()
+  scrivito.on 'content', (root) ->
+    if scrivito.in_editable_view()
+      diagramSourceElement = $(root).find('.diagram-source')
+      new Diagram(diagramSourceElement).init()
 
-    element = $(root).find('[data-editor="diagram"]')
+      element = $(root).find('[data-editor="diagram"]')
 
-    if element? && element.length > 0
-      serializer = new DiagramSerializer
-      sourceData = element.text()
-      barsData = serializer.parse(sourceData)
-      diagramEditorElement = diagramEditorTemplate(barsData)
-        .data('cmsField', element)
-        .on 'click', '.add', addBarEditor
-        .on 'click', '.delete', removeBarEditor
-        .on 'focusout', 'input', save
-        .insertAfter(element)
+      if element? && element.length > 0
+        serializer = new DiagramSerializer
+        sourceData = element.text()
+        barsData = serializer.parse(sourceData)
+        diagramEditorElement = diagramEditorTemplate(barsData)
+          .data('cmsField', element)
+          .on 'click', '.add', addBarEditor
+          .on 'click', '.delete', removeBarEditor
+          .on 'focusout', 'input', save
+          .insertAfter(element)

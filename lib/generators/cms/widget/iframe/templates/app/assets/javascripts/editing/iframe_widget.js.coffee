@@ -28,8 +28,6 @@ $ ->
   message = "<p>You don't have a <strong>source</strong> URL set. Please use the
     <strong>Widget properties</strong> to set it.</p>"
 
-  scrivito.on 'editing', ->
-    displayErrorMessage(headline, message)
-
-  scrivito.on 'new_content', ->
-    displayErrorMessage(headline, message)
+  scrivito.on 'content', ->
+    if scrivito.in_editable_view()
+      displayErrorMessage(headline, message)

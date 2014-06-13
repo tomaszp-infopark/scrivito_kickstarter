@@ -30,8 +30,6 @@ $ ->
         input.scrivito('save', place.formatted_address)
       )
 
-  scrivito.on 'editing', ->
-    initialize()
-
-  scrivito.on 'new_content', ->
-    initialize()
+  scrivito.on 'content', ->
+    if scrivito.in_editable_view()
+      initialize()

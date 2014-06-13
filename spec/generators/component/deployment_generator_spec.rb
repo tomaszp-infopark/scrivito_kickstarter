@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 require 'generator_spec/test_case'
 require 'generators/cms/component/deployment/deployment_generator'

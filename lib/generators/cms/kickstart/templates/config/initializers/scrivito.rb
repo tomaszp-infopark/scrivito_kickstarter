@@ -21,3 +21,7 @@ Scrivito.configure do |config|
     EditModeDetection.editing_allowed?(env)
   end
 end
+
+# The application uses separate manifest files for all editing related styles and JavaScript, which
+# are only loaded if required. They need to be integrated into Ruby on Rails asset pipeline.
+Rails.application.config.assets.precompile += %w(editing.css editing.js)

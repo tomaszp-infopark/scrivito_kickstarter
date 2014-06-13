@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 require 'generator_spec/test_case'
 require 'generators/cms/component/contact_page/contact_page_generator.rb'
@@ -14,7 +14,7 @@ describe Cms::Generators::Component::ContactPageGenerator do
   end
 
   it 'creates file' do
-    destination_root.should have_structure {
+    expect(destination_root).to have_structure {
       directory 'app' do
         directory 'models' do
           file 'contact_page.rb' do
