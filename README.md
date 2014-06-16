@@ -85,7 +85,7 @@ do so any time by following the steps below.
         cd scrivito_kickstarter
 
 3. We suggest using [rbenv](https://github.com/sstephenson/rbenv/) for managing your local Ruby
-   version. Make sure to use at least Ruby version 2.1.
+   version. Make sure to use at least Ruby version 2.0.
 
         ruby --version
 
