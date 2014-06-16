@@ -12,7 +12,7 @@ module Cms
 
       source_root File.expand_path('../templates', __FILE__)
 
-      def extend_secrets
+      def prepare_configuration
         data = []
 
         data << '  scrivito:'
@@ -25,6 +25,19 @@ module Cms
         insert_into_file(file, data, after: "development:\n")
         insert_into_file(file, data, after: "test:\n")
         insert_into_file(file, data, after: "production:\n")
+
+        gem('dotenv-rails', group: [:development, :test])
+
+        Bundler.with_clean_env do
+          run('bundle --quiet')
+        end
+
+        template('.env')
+
+        destination = '.gitignore'
+        if File.exist?(destination)
+          append_file(destination, "/.env\n")
+        end
       end
 
       def set_timezone

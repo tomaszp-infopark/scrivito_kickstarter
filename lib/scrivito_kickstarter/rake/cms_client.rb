@@ -3,7 +3,7 @@ require 'json'
 
 module ScrivitoKickstarter
   module Rake
-    class CmsClient
+    class CmsClient < Struct.new(:tenant, :api_key)
       def reset_cms
         uri = URI("#{url}/workspaces?tenant_name=#{tenant}&revision_id=#{revision_id}")
         request = Net::HTTP::Delete.new(uri.request_uri)
@@ -18,14 +18,6 @@ module ScrivitoKickstarter
 
       def login
         'api_token'
-      end
-
-      def tenant
-        ENV['SCRIVITO_TENANT']
-      end
-
-      def api_key
-        ENV['SCRIVITO_API_KEY']
       end
 
       def revision_id
