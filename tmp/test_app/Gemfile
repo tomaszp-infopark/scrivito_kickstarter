@@ -41,6 +41,7 @@ gem "scrivito_sdk"
 gem "scrivito_editors"
 group :test, :development do
   gem "scrivito_kickstarter", path: "../../"
+  gem "dotenv-rails"
 end
 
 gem "gravatar_image_tag"

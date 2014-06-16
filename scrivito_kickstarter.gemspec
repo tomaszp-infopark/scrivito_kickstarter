@@ -34,4 +34,6 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'pry'
   gem.add_development_dependency 'rspec-rails'
   gem.add_development_dependency 'generator_spec'
+  gem.add_development_dependency 'dotenv'
+  gem.add_development_dependency 'travis'
 end

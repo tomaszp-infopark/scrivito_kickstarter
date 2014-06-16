@@ -1,7 +1,6 @@
 require 'rake'
 require 'rake/tasklib'
 
-require 'scrivito_kickstarter/rake/configuration_helper'
 require 'scrivito_kickstarter/rake/cms_client'
 
 module ScrivitoKickstarter
@@ -9,17 +8,19 @@ module ScrivitoKickstarter
     class IntegrationTask < ::Rake::TaskLib
       def initialize
         namespace :test do
-          task :reset do
+          task reset: :dotenv do
             reset_cms
           end
 
           desc 'Run Kickstarter Integration Tests'
-          task :integration do
+          task integration: :dotenv do
             create_application
             create_configuration_files
 
             cd(app_path) do
               Bundler.with_clean_env do
+                Dotenv.load
+
                 bundle
                 call_generators
                 reset_cms
@@ -29,12 +30,14 @@ module ScrivitoKickstarter
             end
           end
 
-          task :app do
+          task app: :dotenv do
             create_application
             create_configuration_files
 
             cd(app_path) do
               Bundler.with_clean_env do
+                Dotenv.load
+
                 bundle
                 call_generators
               end
@@ -52,8 +55,11 @@ module ScrivitoKickstarter
       end
 
       def create_configuration_files
-        path = Pathname.new(app_path) + 'config'
-        ConfigurationHelper.new(path).copy
+        path = File.join(app_path, '.env')
+        File.open(path, 'w') do |file|
+          file.write("SCRIVITO_TENANT=#{ENV['SCRIVITO_TENANT']}\n")
+          file.write("SCRIVITO_API_KEY=#{ENV['SCRIVITO_API_KEY']}\n")
+        end
       end
 
       def bundle

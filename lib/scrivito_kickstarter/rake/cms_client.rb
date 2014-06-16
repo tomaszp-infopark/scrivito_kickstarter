@@ -12,19 +12,6 @@ module ScrivitoKickstarter
 
       private
 
-      def config
-        @config ||= begin
-          path = File.expand_path('../../../../config', __FILE__)
-          file = File.join(path, 'scrivito.yml')
-
-          if File.exists?(file)
-            YAML.load_file(file)
-          else
-            {}
-          end
-        end
-      end
-
       def url
         "https://api.scrivito.com/tenants/#{tenant}"
       end
@@ -34,11 +21,11 @@ module ScrivitoKickstarter
       end
 
       def tenant
-        ENV['SCRIVITO_TENANT'] || config['tenant']
+        ENV['SCRIVITO_TENANT']
       end
 
       def api_key
-        ENV['SCRIVITO_API_KEY'] || config['api_key']
+        ENV['SCRIVITO_API_KEY']
       end
 
       def revision_id

@@ -1,6 +1,5 @@
 require 'rake'
 require 'rake/tasklib'
-require 'yaml'
 
 module ScrivitoKickstarter
   module Rake
@@ -26,8 +25,8 @@ module ScrivitoKickstarter
         end
 
         configuration = {
-          'SCRIVITO_TENANT' => scrivito_config['tenant'],
-          'SCRIVITO_API_KEY' => scrivito_config['api_key'],
+          'SCRIVITO_TENANT' => ENV['SCRIVITO_TENANT'],
+          'SCRIVITO_API_KEY' => ENV['SCRIVITO_API_KEY'],
         }
 
         contributor = %x(whoami).strip
@@ -42,10 +41,6 @@ module ScrivitoKickstarter
             puts "- secure: #{token}"
           end
         end
-      end
-
-      def scrivito_config
-        YAML.load_file('config/scrivito.yml')
       end
     end
   end

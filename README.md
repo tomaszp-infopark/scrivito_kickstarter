@@ -28,9 +28,13 @@ There are also integration tests, that can be run by:
 
     $ rake test:integration
 
-In order to run the tests successfully, you need to download the application configuration from the
-[Scrivito Dashboard](https://scrivito.com) and unpack it into the ```config``` folder. See the
-contributing section below for more information.
+In order to run the tests successfully, you need to create a `.env` file in the root directory of
+the gem and add a Scrivito `tenant` and `api key` that can be used for development purposes. You can
+find credentials in your [Scrivito Dashboard](https://scrivito.com). See the contributing section
+below for more information.
+
+    SCRIVITO_TENANT=<your development tenant name>
+    SCRIVITO_API_KEY=<your development tenant api key>
 
 The integration tests are rather slow, because they create an entire new application, execute
 ```rails generate cms:kickstart``` and run all the other generators and then execute the tests of
@@ -71,8 +75,8 @@ We would be very happy and thankful if you open new issues in order to further i
 Kickstarter. If you want to go a step further and extend the functionality or fix a problem, you can
 do so any time by following the steps below.
 
-1. Signup for a [free Scrivito account](http://www.scrivito.com/) and setup a test CMS
-   component in the Scrivito Dashboard.
+1. Signup for a [free Scrivito account](http://www.scrivito.com/) and setup a test CMS in the
+   Scrivito Dashboard.
 
 2. Fork and clone the
    [Scrivito Kickstarter GitHub repository](https://github.com/infopark/scrivito_kickstarter).
@@ -81,14 +85,15 @@ do so any time by following the steps below.
         cd scrivito_kickstarter
 
 3. We suggest using [rbenv](https://github.com/sstephenson/rbenv/) for managing your local Ruby
-   version. Make sure to use at least Ruby version 2.0.
+   version. Make sure to use at least Ruby version 2.1.
 
         ruby --version
 
 3. Copy the tenant name and api key for your Ruby on Rails application from the Scrivito Dashboard
-   and insert them to your cloned Kickstarter gem `config` folder.
+   and insert them to your cloned Kickstarter gem `.env` file.
 
-        config/scrivito.yml
+        SCRIVITO_TENANT=<your development tenant name>
+        SCRIVITO_API_KEY=<your development tenant api key>
 
 4. Create the bundle and run all test to make sure everything is working before you add your own
    changes. You find some more details about testing above in the __Testing__ section.

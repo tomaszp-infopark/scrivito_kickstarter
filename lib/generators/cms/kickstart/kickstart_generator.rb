@@ -12,12 +12,19 @@ module Cms
 
       source_root File.expand_path('../templates', __FILE__)
 
-      def extend_gitignore
-        destination = '.gitignore'
+      def extend_secrets
+        data = []
 
-        if File.exist?(destination)
-          append_file(destination, "config/scrivito.yml\n")
-        end
+        data << '  scrivito:'
+        data << "    tenant: <%= ENV['SCRIVITO_TENANT'] %>"
+        data << "    api_key: <%= ENV['SCRIVITO_API_KEY'] %>"
+        data << ''
+        data = data.join("\n")
+
+        file = 'config/secrets.yml'
+        insert_into_file(file, data, after: "development:\n")
+        insert_into_file(file, data, after: "test:\n")
+        insert_into_file(file, data, after: "production:\n")
       end
 
       def set_timezone

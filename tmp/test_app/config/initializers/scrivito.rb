@@ -1,12 +1,6 @@
-def scrivito_config
-  YAML.load_file(Rails.root + 'config/scrivito.yml') || {}
-rescue Errno::ENOENT
-  {}
-end
-
 Scrivito.configure do |config|
-  config.tenant  = ENV['SCRIVITO_TENANT'] || scrivito_config['tenant']
-  config.api_key = ENV['SCRIVITO_API_KEY'] || scrivito_config['api_key']
+  config.tenant = Rails.application.secrets.scrivito['tenant']
+  config.api_key = Rails.application.secrets.scrivito['api_key']
 
   config.choose_homepage do |env|
     Homepage.default
