@@ -9,37 +9,42 @@ module ScrivitoKickstarter
       def initialize
         namespace :test do
           task reset: :dotenv do
-            reset_cms
+            tenant = ENV['SCRIVITO_TENANT']
+            api_key = ENV['SCRIVITO_API_KEY']
+
+            CmsClient.new(tenant, api_key).reset_cms
           end
 
           desc 'Run Kickstarter Integration Tests'
           task integration: :dotenv do
+            tenant = ENV['SCRIVITO_TENANT']
+            api_key = ENV['SCRIVITO_API_KEY']
+
             create_application
-            create_configuration_files
 
             cd(app_path) do
               Bundler.with_clean_env do
-                Dotenv.load
-
-                bundle
-                call_generators
-                reset_cms
-                migrate
-                publish
+                sh('bundle --quiet')
+                generate
+                configure(tenant, api_key)
+                CmsClient.new(tenant, api_key).reset_cms
+                sh('bundle exec rake cms:migrate')
+                sh('bundle exec rake cms:migrate:publish')
               end
             end
           end
 
           task app: :dotenv do
+            tenant = ENV['SCRIVITO_TENANT']
+            api_key = ENV['SCRIVITO_API_KEY']
+
             create_application
-            create_configuration_files
 
             cd(app_path) do
               Bundler.with_clean_env do
-                Dotenv.load
-
-                bundle
-                call_generators
+                sh('bundle --quiet')
+                generate
+                configure(tenant, api_key)
               end
             end
           end
@@ -54,23 +59,15 @@ module ScrivitoKickstarter
         sh("rails new #{app_path} --skip-test-unit --skip-active-record --skip-bundle --template lib/scrivito_kickstarter/rake/template.rb")
       end
 
-      def create_configuration_files
+      def configure(tenant, api_key)
         path = File.join(app_path, '.env')
         File.open(path, 'w') do |file|
-          file.write("SCRIVITO_TENANT=#{ENV['SCRIVITO_TENANT']}\n")
-          file.write("SCRIVITO_API_KEY=#{ENV['SCRIVITO_API_KEY']}\n")
+          file.write("SCRIVITO_TENANT=#{tenant}\n")
+          file.write("SCRIVITO_API_KEY=#{api_key}\n")
         end
       end
 
-      def bundle
-        sh('bundle --quiet')
-      end
-
-      def reset_cms
-        CmsClient.new.reset_cms
-      end
-
-      def call_generators
+      def generate
         generators = [
           'cms:kickstart --examples',
           'cms:component:redirect',
@@ -91,14 +88,6 @@ module ScrivitoKickstarter
         generators.each do |generator|
           sh("rails generate #{generator}")
         end
-      end
-
-      def migrate
-        sh('bundle exec rake cms:migrate')
-      end
-
-      def publish
-        sh('bundle exec rake cms:migrate:publish')
       end
 
       def app_path

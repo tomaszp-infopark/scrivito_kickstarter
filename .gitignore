@@ -5,7 +5,7 @@
 .bundle/
 .yardoc
 .rspec
-.env
+/.env
 /Gemfile.lock
 pkg/
 doc/

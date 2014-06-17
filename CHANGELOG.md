@@ -1,3 +1,7 @@
+# v2.0.3
+  * The kickstarted application is now configured using ENV variables. The gem `dotenv-rails` is
+    used to make it easier to setup ENV variables on a local machine.
+
 # v2.0.2
   * Better integration of the editing manifest into the asset pipeline.
   * Integrate new Scrivito SDK JavaScript events.
