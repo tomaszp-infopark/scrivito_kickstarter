@@ -1,2 +1,0 @@
-class ContentPage < Obj
-end

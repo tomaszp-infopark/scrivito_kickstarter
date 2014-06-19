@@ -1,2 +1,0 @@
-class ErrorPageController < CmsController
-end

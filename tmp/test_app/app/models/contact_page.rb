@@ -1,2 +1,0 @@
-class ContactPage < Obj
-end

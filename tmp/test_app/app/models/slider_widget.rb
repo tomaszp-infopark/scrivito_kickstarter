@@ -1,2 +1,0 @@
-class SliderWidget < Widget
-end

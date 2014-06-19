@@ -1,2 +1,0 @@
-class TextWidget < Widget
-end
