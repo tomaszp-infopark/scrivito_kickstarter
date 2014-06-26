@@ -10,15 +10,8 @@
 pkg/
 doc/
 
-# Ignore generated test files or configuration files in test
-# applications.
+# Ignore generated test files or configuration files in test applications.
 tmp/generators/
-tmp/test_app/log/
-tmp/test_app/config/secrets.yml
-tmp/test_app/config/initializers/secret_token.rb
-tmp/test_app/tmp/
-tmp/test_app/cms/migrate/
-tmp/test_app/app/widgets/**/migrate/
 spec/dummy/log/
 spec/dummy/config/secrets.yml
 spec/dummy/tmp/

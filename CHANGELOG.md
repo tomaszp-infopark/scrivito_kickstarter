@@ -1,3 +1,9 @@
+# v2.0.4
+  * Bugfix: .env template was not packaged. (Thanks @dcsaszar)
+  * The LoginPageController no longer needs a root_path configured.
+  * Removed integration test app in favor of
+    [infopark/kick-it](https://github.com/infopark/kick-it).
+
 # v2.0.3
   * The kickstarted application is now configured using ENV variables. The gem `dotenv-rails` is
     used to make it easier to setup ENV variables on a local machine.

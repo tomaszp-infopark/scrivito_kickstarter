@@ -32,7 +32,10 @@ module Cms
           run('bundle --quiet')
         end
 
-        template('.env')
+        destination = '.env'
+        unless File.exist?(destination)
+          template('env', destination)
+        end
 
         destination = '.gitignore'
         if File.exist?(destination)

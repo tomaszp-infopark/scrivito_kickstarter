@@ -19,27 +19,16 @@ and more detailed information](https://scrivito.com/kickstarter) are also availa
 
 ## Testing
 
-There are two types of tests. First there are rspec tests of the Kickstarter
-engine. You can run these tests by simply calling:
+To run the RSpec tests of the Kickstarter engine, simply call:
 
     $ rake spec
 
-There are also integration tests, that can be run by:
 
-    $ rake test:integration
+### Integration Tests
 
-In order to run the tests successfully, you need to create a `.env` file in the root directory of
-the gem and add a Scrivito `tenant` and `api key` that can be used for development purposes. You can
-find credentials in your [Scrivito Dashboard](https://scrivito.com). See the contributing section
-below for more information.
-
-    SCRIVITO_TENANT=<your development tenant name>
-    SCRIVITO_API_KEY=<your development tenant api key>
-
-The integration tests are rather slow, because they create an entire new application, execute
-```rails generate cms:kickstart``` and run all the other generators and then execute the tests of
-the newly created application. Therefore, all tests can also run on the Continuous Integration
-platform [Travis](https://travis-ci.org).
+If you would like to setup an application and integrate your local gem, we recommend using
+[infopark/kick-it](https://github.com/infopark/kick-it). This also allows you to test the gem in
+combination with other lokal gems more easily.
 
 
 ### Continuous Integration with Travis
@@ -51,13 +40,21 @@ order to run all Kickstarter Tests on the platform you should:
 1. See the **Contributing** section and set up your local fork of the Kickstarter. Make
    sure that all tests are passing on your local machine.
 
-2. Go into your local Kickstarter directory and run `rake travis_encrypt` to get a list of
+2. Create a `.env` file in the root directory of the gem and add a Scrivito `tenant` and `api key`
+   that can be used for development purposes. You can find credentials in your
+   [Scrivito Dashboard](https://scrivito.com). See the contributing section below for more
+   information.
+
+        SCRIVITO_TENANT=<your development tenant name>
+        SCRIVITO_API_KEY=<your development tenant api key>
+
+3. Go into your local Kickstarter directory and run `rake travis_encrypt` to get a list of
    secure travis credentials and add them to the `.travis.yml` file. Please check these changes in
    with your next pull request.
 
-3. Sign in at [Travis](https://travis-ci.org) with your Github Account.
+4. Sign in at [Travis](https://travis-ci.org) with your Github Account.
 
-4. Enable the Travis Webhook for your `scrivito_kickstarter` fork.
+5. Enable the Travis Webhook for your `scrivito_kickstarter` fork.
 
 If you now push commits to your forked repository or send a pull request, travis will automatically
 run all tests for you and indicate the build status.
@@ -89,18 +86,11 @@ do so any time by following the steps below.
 
         ruby --version
 
-3. Copy the tenant name and api key for your Ruby on Rails application from the Scrivito Dashboard
-   and insert them to your cloned Kickstarter gem `.env` file.
-
-        SCRIVITO_TENANT=<your development tenant name>
-        SCRIVITO_API_KEY=<your development tenant api key>
-
 4. Create the bundle and run all test to make sure everything is working before you add your own
    changes. You find some more details about testing above in the __Testing__ section.
 
         bundle
         rake spec
-        rake test:integration
 
 5. Create your feature branch and create a pull request for the `develop` branch. Please take a
    look at the already existing generators and rake tasks to get an impression of our coding style
