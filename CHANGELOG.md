@@ -1,4 +1,6 @@
-# v2.1.0
+# v2.0.4
+  * Bugfix: .env template was not packaged. (Thanks @dcsaszar)
+  * The LoginPageController no longer needs a root_path configured.
   * Removed integration test app in favor of
     [infopark/kick-it](https://github.com/infopark/kick-it).
 
