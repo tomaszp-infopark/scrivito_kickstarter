@@ -32,12 +32,12 @@ module Cms
           run('bundle --quiet')
         end
 
-        destination = '.env'
+        destination = File.join(destination_root, '.env')
         unless File.exist?(destination)
           template('env', destination)
         end
 
-        destination = '.gitignore'
+        destination = File.join(destination_root, '.gitignore')
         if File.exist?(destination)
           append_file(destination, "/.env\n")
         end
