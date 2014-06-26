@@ -11,7 +11,7 @@ class LoginPageController < CmsController
       end
     elsif request.delete?
       self.current_user = nil
-      redirect_to(root_path, notice: 'You logged out successfully.')
+      redirect_to(cms_root_path, notice: 'You logged out successfully.')
     end
   end
 
