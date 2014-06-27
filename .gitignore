@@ -9,6 +9,7 @@
 /Gemfile.lock
 pkg/
 doc/
+coverage/
 
 # Ignore generated test files or configuration files in test applications.
 tmp/generators/

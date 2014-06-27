@@ -11,7 +11,7 @@ module ScrivitoKickstarter
           travis_encrypt
         end
 
-        task travis: ['spec', 'test:integration']
+        task travis: ['spec']
       end
 
       private
