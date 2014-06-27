@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class KickstarterSimpleTheme < ::Scrivito::Migration
   def up
     homepage_path = '/en'
@@ -18,20 +20,29 @@ class KickstarterSimpleTheme < ::Scrivito::Migration
     # Homepage example
     #
 
-    teaser_widget = Scrivito::BasicWidget.new(
-      _obj_class: 'TeaserWidget',
-      headline: 'Welcome to Scrivito',
-      content: '<p>You successfully started your
-        project. Basic components such as a top navigation, a search panel, this text widget, and a
-        login page have been created for you to experiment with the building blocks of your website
-        application. To access the documentation or get in touch with the Scrivito support team,
-        visit the Scrivito Documentation.</p>',
-      link_to: [
-        Scrivito::Link.new(
-          url: 'https://scrivito.com/preparation',
-          title: 'Browse Scrivito Documentation'
-        ),
-      ]
+    image = Obj.create(
+      _path: "_resources/#{SecureRandom.hex(8)}/simple-theme-banner.jpg",
+      _obj_class: 'Image',
+      blob: File.new(open('https://scrivito.com/ccd280604fea80d3'))
+    )
+
+    image_widget = Scrivito::BasicWidget.new(
+      _obj_class: 'ImageWidget',
+      source: image.id
+    )
+
+    headline_widget = Scrivito::BasicWidget.new(
+      _obj_class: 'HeadlineWidget',
+      headline: 'Welcome to Scrivito'
+    )
+
+    text_widget = Scrivito::BasicWidget.new(
+      _obj_class: 'TextWidget',
+      content: '<p>You successfully started your project! Basic components such as a top navigation,
+        a search panel, this text widget, and a login page have been created for you to experiment
+        with the building blocks of your website application.</p><p>If you want to start editing
+        your pages, you need to log in first as an editor.</p><p>The credentials of the default
+        editor are <code>login: root</code> and <code>password: root</code>.</p>',
     )
 
     Obj.create(
@@ -39,7 +50,9 @@ class KickstarterSimpleTheme < ::Scrivito::Migration
       _obj_class: 'Homepage',
       headline: 'Company, Inc.',
       main_content: [
-        teaser_widget,
+        image_widget,
+        headline_widget,
+        text_widget,
       ]
     )
 

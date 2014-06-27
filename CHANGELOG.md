@@ -1,3 +1,7 @@
+# v2.0.5
+  * The welcome page of the simple theme is now more beginner friendly. It includes different kinds
+    of standard widgets, a nice welcome image and points the user to log in to start editing.
+
 # v2.0.4
   * Bugfix: .env template was not packaged. (Thanks @dcsaszar)
   * The LoginPageController no longer needs a root_path configured.

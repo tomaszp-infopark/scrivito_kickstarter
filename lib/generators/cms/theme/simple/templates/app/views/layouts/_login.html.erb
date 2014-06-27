@@ -2,16 +2,12 @@
   <li>
     <% if login_page.present? %>
       <% if current_user.logged_in? %>
-        <%= link_to(cms_path(login_page), method: :delete) do %>
-          <span class="label label-danger">
-            Logout
-          </span>
+        <%= button_to(cms_path(login_page), method: :delete, class: 'btn btn-danger navbar-btn') do %>
+          Log out
         <% end %>
       <% else %>
-        <%= link_to(cms_path(login_page)) do %>
-          <span class="label label-success">
-            Log in
-          </span>
+        <%= button_to(cms_path(login_page), method: :get, class: 'btn btn-success navbar-btn') do %>
+          Log in
         <% end %>
       <% end %>
     <% end %>
