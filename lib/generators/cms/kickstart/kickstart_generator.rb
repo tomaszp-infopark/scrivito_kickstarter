@@ -22,9 +22,9 @@ module Cms
         data = data.join("\n")
 
         file = 'config/secrets.yml'
-        insert_into_file(file, data, after: "development:\n")
-        insert_into_file(file, data, after: "test:\n")
-        insert_into_file(file, data, after: "production:\n")
+        insert_into_file(file, data, after: "development:\n", force: true)
+        insert_into_file(file, data, after: "test:\n", force: true)
+        insert_into_file(file, data, after: "production:\n", force: true)
 
         gem('dotenv-rails', group: [:development, :test])
 

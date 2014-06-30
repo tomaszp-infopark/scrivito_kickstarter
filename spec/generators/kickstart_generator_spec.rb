@@ -30,7 +30,7 @@ describe Cms::Generators::KickstartGenerator do
     File.open("#{destination_root}/Gemfile", 'w')
     File.open("#{destination_root}/.gitignore", 'w')
     File.open("#{paths[:javascripts_path]}/editing.js", 'w')
-    File.open("#{paths[:config_path]}/secrets.yml", 'w') { |file| file.write("development:\n") }
+    File.open("#{paths[:config_path]}/secrets.yml", 'w') { |file| file.write("development:\ntest:\nproduction:\n") }
 
     File.open("#{paths[:config_path]}/application.rb", 'w') do |file|
       file.write("# config.time_zone = 'Central Time (US & Canada)'")
@@ -45,6 +45,9 @@ describe Cms::Generators::KickstartGenerator do
     expect(destination_root).to have_structure {
       directory 'config' do
         file 'secrets.yml' do
+          contains "development:\n  scrivito:"
+          contains "test:\n  scrivito:"
+          contains "production:\n  scrivito:"
           contains '  scrivito:'
           contains "    tenant: <%= ENV['SCRIVITO_TENANT'] %>"
           contains "    api_key: <%= ENV['SCRIVITO_API_KEY'] %>"
