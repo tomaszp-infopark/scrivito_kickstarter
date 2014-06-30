@@ -1,4 +1,6 @@
 # v2.0.5
+  * The simple theme comes now with a Bootswatch theme selector. You can choose from any of the
+    provided Twitter Bootstrap themes to give your webpage a new look and feel.
   * The welcome page of the simple theme is now more beginner friendly. It includes different kinds
     of standard widgets, a nice welcome image and points the user to log in to start editing.
 

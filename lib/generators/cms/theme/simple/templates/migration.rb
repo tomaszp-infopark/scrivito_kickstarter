@@ -45,6 +45,8 @@ class KickstarterSimpleTheme < ::Scrivito::Migration
         editor are <code>login: root</code> and <code>password: root</code>.</p>',
     )
 
+    add_attribute_to('Homepage', { name: 'theme', type: :string })
+
     Obj.create(
       _path: homepage_path,
       _obj_class: 'Homepage',
