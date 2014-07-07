@@ -1,8 +1,6 @@
 #!/usr/bin/env rake
 
-require 'bundler/setup'
-Bundler::GemHelper.install_tasks
-
+require 'bundler/gem_tasks'
 require 'dotenv/tasks'
 
 require 'rspec/core/rake_task'
