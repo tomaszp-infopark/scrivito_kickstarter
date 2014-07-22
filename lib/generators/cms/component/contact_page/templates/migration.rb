@@ -1,9 +1,8 @@
 class ContactPage < ::Scrivito::Migration
   def up
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'ContactPage',
-      type: 'publication',
-      title: 'Contact',
+      is_binary: false,
       attributes: [
         {
           name: 'headline',

@@ -1,9 +1,8 @@
 class TwoColumnWidget < ::Scrivito::Migration
   def up
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'TwoColumnWidget',
-      type: 'publication',
-      title: 'Two Column',
+      is_binary: false,
       attributes: [
         {
           name: 'column_1',

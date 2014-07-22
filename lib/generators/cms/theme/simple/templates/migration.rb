@@ -14,7 +14,7 @@ class KickstarterSimpleTheme < ::Scrivito::Migration
       _obj_class: 'Root'
     )
 
-    update_obj_class('Root', is_active: false)
+    Scrivito::ObjClass.find('root').update(is_active: false)
 
     #
     # Homepage example
@@ -45,7 +45,7 @@ class KickstarterSimpleTheme < ::Scrivito::Migration
         editor are <code>login: root</code> and <code>password: root</code>.</p>',
     )
 
-    add_attribute_to('Homepage', { name: 'theme', type: :string })
+    Scrivito::ObjClass.find('Homepage').attributes.add(name: 'theme', type: :string)
 
     Obj.create(
       _path: homepage_path,
@@ -83,11 +83,8 @@ class KickstarterSimpleTheme < ::Scrivito::Migration
       headline: 'Search'
     )
 
-    add_attribute_to('Homepage', {
-      name: 'search_page',
-      type: :reference,
-      title: 'Search Page',
-    })
+    Scrivito::ObjClass.find('Homepage').attributes
+      .add(name: 'search_page', type: :reference)
 
     obj = Obj.find_by_path(homepage_path)
     obj.update(
@@ -104,11 +101,8 @@ class KickstarterSimpleTheme < ::Scrivito::Migration
       headline: 'Log in'
     )
 
-    add_attribute_to('Homepage', {
-      name: 'login_page',
-      type: :reference,
-      title: 'Login Page',
-    })
+    Scrivito::ObjClass.find('Homepage').attributes
+      .add(name: 'login_page', type: :reference)
 
     obj = Obj.find_by_path(homepage_path)
     obj.update(

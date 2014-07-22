@@ -1,9 +1,8 @@
 class HeadlineWidget < ::Scrivito::Migration
   def up
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'HeadlineWidget',
-      type: 'publication',
-      title: 'Headline',
+      is_binary: false,
       attributes: [
         {
           name: 'headline',

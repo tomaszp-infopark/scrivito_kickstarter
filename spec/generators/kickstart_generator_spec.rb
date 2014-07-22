@@ -74,12 +74,6 @@ describe Cms::Generators::KickstartGenerator do
         end
       end
 
-      directory 'lib' do
-        directory 'scrivito_kickstarter' do
-          file 'cms_definitions.rb'
-        end
-      end
-
       directory 'app' do
         directory 'assets' do
           directory 'javascripts' do

@@ -1,8 +1,8 @@
 class DiagramWidget < ::Scrivito::Migration
   def up
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'DiagramWidget',
-      type: 'publication',
+      is_binary: false,
       attributes: [
         {
           name: 'data',

@@ -1,9 +1,8 @@
 class GoogleMapsWidget < ::Scrivito::Migration
   def up
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'GoogleMapsWidget',
-      type: 'publication',
-      title: 'Google Maps',
+      is_binary: false,
       attributes: [
         {
           name: 'address',

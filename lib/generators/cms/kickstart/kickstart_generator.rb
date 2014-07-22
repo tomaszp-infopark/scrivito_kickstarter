@@ -73,7 +73,6 @@ module Cms
       end
 
       def override_application
-        directory('lib')
         directory('config')
         directory('app', force: true)
       end

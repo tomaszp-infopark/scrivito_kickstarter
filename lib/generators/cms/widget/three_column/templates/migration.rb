@@ -1,9 +1,8 @@
 class ThreeColumnWidget < ::Scrivito::Migration
   def up
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'ThreeColumnWidget',
-      type: 'publication',
-      title: 'Three Column',
+      is_binary: false,
       attributes: [
         {
           name: 'column_1',

@@ -1,9 +1,8 @@
 class TextWidget < ::Scrivito::Migration
   def up
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'TextWidget',
-      type: 'publication',
-      title: 'Text',
+      is_binary: false,
       attributes: [
         {
           name: 'content',

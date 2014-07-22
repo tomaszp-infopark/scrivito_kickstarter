@@ -1,4 +1,6 @@
 # v2.0.5
+  * Use the new Scrivito SDK functionality to retrieve object class information. Migrations and
+    the edit helper for `enum` and `multienum` fields now make use of `Scrivito::ObjClass`.
   * The simple theme comes now with a Bootswatch theme selector. You can choose from any of the
     provided Twitter Bootstrap themes to give your webpage a new look and feel.
   * The welcome page of the simple theme is now more beginner friendly. It includes different kinds
