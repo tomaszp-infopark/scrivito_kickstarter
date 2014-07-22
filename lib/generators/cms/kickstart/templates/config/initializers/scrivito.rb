@@ -12,11 +12,7 @@ Scrivito.configure do |config|
   # on the client side, the server side also uses this callback to determine if CMS data
   # can be modified in the database.
   config.editing_auth do |env|
-    if EditModeDetection.editing_allowed?(env)
-      Scrivito::User.new('default').tap do |user|
-        user.can(:publish_workspace) { true }
-      end
-    end
+    EditModeDetection.editing_allowed?(env)
   end
 end
 
