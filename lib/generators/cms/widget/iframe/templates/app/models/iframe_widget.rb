@@ -1,8 +1,6 @@
 class IframeWidget < Widget
   def iframe_src
-    if source.present?
-      source.first.url
-    end
+    source && source.url
   end
 
   def width

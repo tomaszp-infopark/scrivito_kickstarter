@@ -6,7 +6,7 @@ class SlideshareWidget < ::Scrivito::Migration
       attributes: [
         {
           name: 'source',
-          type: :linklist,
+          type: :link,
         },
       ]
     )

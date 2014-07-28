@@ -1,4 +1,6 @@
 # v2.0.5
+  * Turn `linklist` into `link` attributes, where only one link is needed. The new `link` attributes
+    also make use of the new `cms_edit_link` helper provided by the `scrivito_editors` gem.
   * Use the new Scrivito SDK functionality to retrieve object class information. Migrations and
     the edit helper for `enum` and `multienum` fields now make use of `Scrivito::ObjClass`.
   * The simple theme comes now with a Bootswatch theme selector. You can choose from any of the

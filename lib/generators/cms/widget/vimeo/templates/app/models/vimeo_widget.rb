@@ -16,9 +16,7 @@ class VimeoWidget < Widget
   private
 
   def source_url
-    if source.first.present?
-      @source_url ||= source.first.url
-    end
+    @source_url ||= source && source.url
   end
 
   def oembed_information

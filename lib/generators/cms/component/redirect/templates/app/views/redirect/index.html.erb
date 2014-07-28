@@ -3,10 +3,10 @@
     Redirect Page
   </h4>
 
-  <% if @obj.redirect_link.present? %>
+  <% if @obj.redirect_link %>
     <p>
       This page is <strong>not</strong> displayed in production, instead the visitor is redirected
-      to: <%= link_to(cms_path(@obj.redirect_link.first), cms_path(@obj.redirect_link.first)) %>
+      to: <%= link_to(cms_path(@obj.redirect_link), cms_path(@obj.redirect_link)) %>
     </p>
   <% else %>
     <p>
@@ -16,4 +16,4 @@
   <% end %>
 </div>
 
-<%= cms_edit_linklist(@obj, :redirect_link) %>
+<%= cms_edit_link(@obj, :redirect_link) %>

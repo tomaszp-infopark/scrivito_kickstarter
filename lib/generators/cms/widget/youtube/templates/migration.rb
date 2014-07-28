@@ -6,7 +6,7 @@ class YoutubeWidget < ::Scrivito::Migration
       attributes: [
         {
           name: 'source',
-          type: :linklist,
+          type: :link,
         },
         {
           name: 'max_width',

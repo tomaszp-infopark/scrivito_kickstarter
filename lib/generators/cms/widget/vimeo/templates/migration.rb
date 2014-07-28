@@ -6,7 +6,7 @@ class VimeoWidget < ::Scrivito::Migration
       attributes: [
         {
           name: 'source',
-          type: :linklist,
+          type: :link,
         },
         {
           name: 'width',

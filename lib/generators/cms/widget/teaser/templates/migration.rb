@@ -14,7 +14,7 @@ class TeaserWidget < ::Scrivito::Migration
         },
         {
           name: 'link_to',
-          type: :linklist,
+          type: :link,
         },
       ]
     )

@@ -14,7 +14,7 @@ class CreateIframeWidget < ::Scrivito::Migration
         },
         {
           name: 'source',
-          type: :linklist,
+          type: :link,
         },
         {
           name: 'scrolling',

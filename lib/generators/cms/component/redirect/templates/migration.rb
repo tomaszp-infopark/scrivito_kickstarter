@@ -6,7 +6,7 @@ class Redirect < ::Scrivito::Migration
       attributes: [
         {
           name: 'redirect_link',
-          type: :linklist,
+          type: :link,
         },
       ]
     )
