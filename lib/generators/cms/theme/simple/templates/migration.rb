@@ -14,7 +14,7 @@ class KickstarterSimpleTheme < ::Scrivito::Migration
       _obj_class: 'Root'
     )
 
-    Scrivito::ObjClass.find('root').update(is_active: false)
+    Scrivito::ObjClass.find('Root').update(is_active: false)
 
     #
     # Homepage example
