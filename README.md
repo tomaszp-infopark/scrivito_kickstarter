@@ -1,7 +1,7 @@
 # Scrivito Kickstarter
 
 [![Gem Version](https://badge.fury.io/rb/scrivito_kickstarter.png)](http://badge.fury.io/rb/scrivito_kickstarter)
-[![Coverage Status](http://img.shields.io/coveralls/infopark/scrivito_kickstarter/master.svg)](https://coveralls.io/r/infopark/scrivito_kickstarter)
+[![Coverage Status](https://coveralls.io/repos/infopark/scrivito_kickstarter/badge.png?branch=master)](https://coveralls.io/r/infopark/scrivito_kickstarter?branch=master)
 [![Code Climate](https://codeclimate.com/github/infopark/scrivito_kickstarter.png)](https://codeclimate.com/github/infopark/scrivito_kickstarter)
 [![Dependency Status](https://gemnasium.com/infopark/scrivito_kickstarter.png)](https://gemnasium.com/infopark/scrivito_kickstarter)
 [![Build Status](https://travis-ci.org/infopark/scrivito_kickstarter.png)](https://travis-ci.org/infopark/scrivito_kickstarter)
