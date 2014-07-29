@@ -41,21 +41,9 @@ order to run all Kickstarter Tests on the platform you should:
 1. See the **Contributing** section and set up your local fork of the Kickstarter. Make
    sure that all tests are passing on your local machine.
 
-2. Create a `.env` file in the root directory of the gem and add a Scrivito `tenant` and `api key`
-   that can be used for development purposes. You can find credentials in your
-   [Scrivito Dashboard](https://scrivito.com). See the contributing section below for more
-   information.
+2. Sign in at [Travis](https://travis-ci.org) with your Github Account.
 
-        SCRIVITO_TENANT=<your development tenant name>
-        SCRIVITO_API_KEY=<your development tenant api key>
-
-3. Go into your local Kickstarter directory and run `rake travis_encrypt` to get a list of
-   secure travis credentials and add them to the `.travis.yml` file. Please check these changes in
-   with your next pull request.
-
-4. Sign in at [Travis](https://travis-ci.org) with your Github Account.
-
-5. Enable the Travis Webhook for your `scrivito_kickstarter` fork.
+3. Enable the Travis Webhook for your `scrivito_kickstarter` fork.
 
 If you now push commits to your forked repository or send a pull request, travis will automatically
 run all tests for you and indicate the build status.

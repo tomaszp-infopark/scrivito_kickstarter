@@ -2,17 +2,15 @@
 .DS_Store
 
 # Kickstarter gem related files
-.bundle/
-.yardoc
-.rspec
-/.env
+/.bundle/
 /Gemfile.lock
-pkg/
-doc/
-coverage/
+/pkg/
+/doc/
+/coverage/
 
 # Ignore generated test files or configuration files in test applications.
-tmp/generators/
-spec/dummy/log/
-spec/dummy/config/secrets.yml
-spec/dummy/tmp/
+/.rspec
+/tmp/
+/spec/dummy/log/
+/spec/dummy/config/secrets.yml
+/spec/dummy/tmp/

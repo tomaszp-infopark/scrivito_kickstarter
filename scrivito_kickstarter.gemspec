@@ -1,4 +1,4 @@
-$:.push File.expand_path('../lib', __FILE__)
+$LOAD_PATH << File.expand_path('../lib', __FILE__)
 
 require 'scrivito_kickstarter/version'
 
@@ -31,6 +31,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'scrivito_sdk'
   gem.add_dependency 'scrivito_editors'
 
+  gem.add_development_dependency 'rake'
   gem.add_development_dependency 'pry'
   gem.add_development_dependency 'rspec-rails'
   gem.add_development_dependency 'generator_spec'
