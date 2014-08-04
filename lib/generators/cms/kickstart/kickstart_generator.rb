@@ -22,9 +22,9 @@ module Cms
         data = data.join("\n")
 
         file = 'config/secrets.yml'
-        insert_into_file(file, data, after: "development:\n")
-        insert_into_file(file, data, after: "test:\n")
-        insert_into_file(file, data, after: "production:\n")
+        insert_into_file(file, data, after: "development:\n", force: true)
+        insert_into_file(file, data, after: "test:\n", force: true)
+        insert_into_file(file, data, after: "production:\n", force: true)
 
         gem('dotenv-rails', group: [:development, :test])
 
@@ -32,12 +32,12 @@ module Cms
           run('bundle --quiet')
         end
 
-        destination = '.env'
+        destination = File.join(destination_root, '.env')
         unless File.exist?(destination)
           template('env', destination)
         end
 
-        destination = '.gitignore'
+        destination = File.join(destination_root, '.gitignore')
         if File.exist?(destination)
           append_file(destination, "/.env\n")
         end
@@ -73,7 +73,6 @@ module Cms
       end
 
       def override_application
-        directory('lib')
         directory('config')
         directory('app', force: true)
       end

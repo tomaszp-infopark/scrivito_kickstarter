@@ -1,9 +1,8 @@
 class ImageWidget < ::Scrivito::Migration
   def up
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'ImageWidget',
-      type: 'publication',
-      title: 'Image',
+      is_binary: false,
       attributes: [
         {
           name: 'source',

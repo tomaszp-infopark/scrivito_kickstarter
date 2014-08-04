@@ -4,6 +4,7 @@
 .details-view [data-scrivito-field-type="enum"],
 .details-view [data-scrivito-field-type="multienum"],
 .details-view [data-scrivito-field-type="linklist"],
+.details-view [data-scrivito-field-type="link"],
 .details-view [data-scrivito-field-type="referencelist"],
 .details-view [data-scrivito-field-type="reference"],
 .details-view [data-scrivito-field-type="date"] {

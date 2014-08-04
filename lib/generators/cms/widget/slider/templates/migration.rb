@@ -1,9 +1,8 @@
 class SliderWidget < ::Scrivito::Migration
   def up
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'SliderWidget',
-      type: 'publication',
-      title: 'Slider',
+      is_binary: false,
       attributes: [
         {
           name: 'images',

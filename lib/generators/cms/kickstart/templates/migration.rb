@@ -1,15 +1,13 @@
 class Kickstart < ::Scrivito::Migration
   def up
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'Root',
-      type: 'publication',
-      title: 'Root'
+      is_binary: false
     )
 
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'Homepage',
-      type: 'publication',
-      title: 'Homepage',
+      is_binary: false,
       attributes: [
         {
           name: 'headline',
@@ -30,10 +28,9 @@ class Kickstart < ::Scrivito::Migration
       ]
     )
 
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'ContentPage',
-      type: 'publication',
-      title: 'Content',
+      is_binary: false,
       attributes: [
         {
           name: 'headline',
@@ -50,10 +47,9 @@ class Kickstart < ::Scrivito::Migration
       ]
     )
 
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'ErrorPage',
-      type: 'publication',
-      title: 'Error',
+      is_binary: false,
       attributes: [
         {
           name: 'headline',
@@ -66,10 +62,9 @@ class Kickstart < ::Scrivito::Migration
       ]
     )
 
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'SearchPage',
-      type: 'publication',
-      title: 'Search',
+      is_binary: false,
       attributes: [
         {
           name: 'headline',
@@ -78,10 +73,9 @@ class Kickstart < ::Scrivito::Migration
       ]
     )
 
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'LoginPage',
-      type: 'publication',
-      title: 'Login',
+      is_binary: false,
       attributes: [
         {
           name: 'headline',
@@ -90,10 +84,9 @@ class Kickstart < ::Scrivito::Migration
       ]
     )
 
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'Image',
-      type: 'image',
-      title: 'Image',
+      is_binary: true,
       attributes: [
         {
           name: 'headline',
@@ -102,10 +95,9 @@ class Kickstart < ::Scrivito::Migration
       ]
     )
 
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'Video',
-      type: 'generic',
-      title: 'Video',
+      is_binary: true,
       attributes: [
         {
           name: 'headline',

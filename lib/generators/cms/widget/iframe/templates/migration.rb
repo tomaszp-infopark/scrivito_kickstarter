@@ -1,9 +1,8 @@
 class CreateIframeWidget < ::Scrivito::Migration
   def up
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'IframeWidget',
-      title: 'Iframe',
-      type: 'publication',
+      is_binary: false,
       attributes: [
         {
           name: 'height',
@@ -15,7 +14,7 @@ class CreateIframeWidget < ::Scrivito::Migration
         },
         {
           name: 'source',
-          type: :linklist,
+          type: :link,
         },
         {
           name: 'scrolling',

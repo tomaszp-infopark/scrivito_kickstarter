@@ -1,13 +1,12 @@
 class YoutubeWidget < ::Scrivito::Migration
   def up
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'YoutubeWidget',
-      type: 'publication',
-      title: 'Youtube',
+      is_binary: false,
       attributes: [
         {
           name: 'source',
-          type: :linklist,
+          type: :link,
         },
         {
           name: 'max_width',

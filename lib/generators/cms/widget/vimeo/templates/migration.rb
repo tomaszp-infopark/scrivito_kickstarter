@@ -1,13 +1,12 @@
 class VimeoWidget < ::Scrivito::Migration
   def up
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'VimeoWidget',
-      type: 'publication',
-      title: 'Vimeo',
+      is_binary: false,
       attributes: [
         {
           name: 'source',
-          type: :linklist,
+          type: :link,
         },
         {
           name: 'width',

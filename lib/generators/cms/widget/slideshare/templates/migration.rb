@@ -1,13 +1,12 @@
 class SlideshareWidget < ::Scrivito::Migration
   def up
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'SlideshareWidget',
-      type: 'publication',
-      title: 'Slideshare',
+      is_binary: false,
       attributes: [
         {
           name: 'source',
-          type: :linklist,
+          type: :link,
         },
       ]
     )

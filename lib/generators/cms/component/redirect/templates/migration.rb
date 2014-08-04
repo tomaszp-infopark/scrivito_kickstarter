@@ -1,13 +1,12 @@
 class Redirect < ::Scrivito::Migration
   def up
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'Redirect',
-      type: 'publication',
-      title: 'Redirect',
+      is_binary: false,
       attributes: [
         {
           name: 'redirect_link',
-          type: :linklist,
+          type: :link,
         },
       ]
     )

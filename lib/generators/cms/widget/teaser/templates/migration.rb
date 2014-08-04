@@ -1,9 +1,8 @@
 class TeaserWidget < ::Scrivito::Migration
   def up
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'TeaserWidget',
-      type: 'publication',
-      title: 'Teaser',
+      is_binary: false,
       attributes: [
         {
           name: 'headline',
@@ -15,7 +14,7 @@ class TeaserWidget < ::Scrivito::Migration
         },
         {
           name: 'link_to',
-          type: :linklist,
+          type: :link,
         },
       ]
     )

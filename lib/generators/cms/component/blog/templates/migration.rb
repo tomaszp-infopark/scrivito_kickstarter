@@ -1,9 +1,8 @@
 class Blog < ::Scrivito::Migration
   def up
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'Blog',
-      type: 'publication',
-      title: 'Blog',
+      is_binary: false,
       attributes: [
         {
           name: 'headline',
@@ -16,10 +15,9 @@ class Blog < ::Scrivito::Migration
       ]
     )
 
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'BlogPost',
-      type: 'publication',
-      title: 'Blog Post',
+      is_binary: false,
       attributes: [
         {
           name: 'headline',

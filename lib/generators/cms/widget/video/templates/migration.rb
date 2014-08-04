@@ -1,9 +1,8 @@
 class VideoWidget < ::Scrivito::Migration
   def up
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'VideoWidget',
-      type: 'publication',
-      title: 'Video',
+      is_binary: false,
       attributes: [
         {
           name: 'source',

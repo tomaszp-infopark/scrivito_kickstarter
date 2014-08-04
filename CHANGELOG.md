@@ -1,3 +1,13 @@
+# v2.0.5
+  * Turn `linklist` into `link` attributes, where only one link is needed. The new `link` attributes
+    also make use of the new `cms_edit_link` helper provided by the `scrivito_editors` gem.
+  * Use the new Scrivito SDK functionality to retrieve object class information. Migrations and
+    the edit helper for `enum` and `multienum` fields now make use of `Scrivito::ObjClass`.
+  * The simple theme comes now with a Bootswatch theme selector. You can choose from any of the
+    provided Twitter Bootstrap themes to give your webpage a new look and feel.
+  * The welcome page of the simple theme is now more beginner friendly. It includes different kinds
+    of standard widgets, a nice welcome image and points the user to log in to start editing.
+
 # v2.0.4
   * Bugfix: .env template was not packaged. (Thanks @dcsaszar)
   * The LoginPageController no longer needs a root_path configured.

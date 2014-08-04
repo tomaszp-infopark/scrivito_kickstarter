@@ -10,7 +10,7 @@ class SlideshareWidget < Widget
   private
 
   def source_url
-    @source_url ||= source.first.try(:url)
+    @source_url ||= source.try(:url)
   end
 
   def embedded_information(slide_url)

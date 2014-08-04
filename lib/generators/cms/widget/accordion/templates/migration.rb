@@ -1,9 +1,8 @@
 class AccordionWidget < ::Scrivito::Migration
   def up
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'AccordionWidget',
-      type: 'publication',
-      title: 'Accordion',
+      is_binary: false,
       attributes: [
         {
           name: 'panels',
@@ -12,10 +11,9 @@ class AccordionWidget < ::Scrivito::Migration
       ]
     )
 
-    create_obj_class(
+    Scrivito::ObjClass.create(
       name: 'AccordionPanelWidget',
-      type: 'publication',
-      title: 'Accordion Panel',
+      is_binary: false,
       attributes: [
         {
           name: 'headline',

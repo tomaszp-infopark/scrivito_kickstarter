@@ -1,7 +1,6 @@
 module EditingHelper
   def cms_edit_enum(object, attribute_name, options = {})
-    attribute_definition = object.cms_attribute_definition(attribute_name)
-    values = attribute_definition['values']
+    values = object.obj_class.attributes[attribute_name].values
 
     options.reverse_merge!({
       data: {
@@ -15,12 +14,12 @@ module EditingHelper
   end
 
   def cms_edit_multienum(object, attribute_name, options = {})
-    attribute_definition = object.cms_attribute_definition(attribute_name)
+    values = object.obj_class.attributes[attribute_name].values
 
     options.reverse_merge!({
       multiple: true,
       data: {
-        values: attribute_definition['values'],
+        values: values,
       }
     })
 
