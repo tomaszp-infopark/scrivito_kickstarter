@@ -28,7 +28,7 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency 'bundler'
   gem.add_dependency 'rails'
-  gem.add_dependency 'scrivito_sdk'
+  gem.add_dependency 'scrivito_sdk', '~> 0.18.0'
   gem.add_dependency 'scrivito_editors'
 
   gem.add_development_dependency 'rake'
